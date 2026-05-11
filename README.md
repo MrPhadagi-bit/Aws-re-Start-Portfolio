@@ -1,4 +1,5 @@
-Introduction
+#Introduction
+---
 **Aspiring Cloud & Technical Support Professional | AWS re/Start Learner | South Africa**
 
 ---
