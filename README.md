@@ -11,7 +11,7 @@ My goal is to land an entry-level role in cloud infrastructure, technical suppor
 
 ---
 
-## 🛠️ What I'm Learning
+##  What I'm Learning
 
 | Domain | Topics |
 |---|---|
@@ -24,10 +24,10 @@ My goal is to land an entry-level role in cloud infrastructure, technical suppor
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
-📦 aws-restart-portfolio
+ aws-restart-portfolio
 ├── Cloud-Foundations/     # Cloud concepts, AWS infrastructure, economics
 ├── Compute/               # EC2, instance lifecycle, Auto Scaling, ELB
 ├── Networking/            # VPC design, subnetting, DNS, routing
@@ -40,7 +40,7 @@ My goal is to land an entry-level role in cloud infrastructure, technical suppor
 
 ---
 
-## 🎯 Goals
+##  Goals
 
 - [x] Start AWS re/Start Programme
 - [ ] Complete all core curriculum modules
