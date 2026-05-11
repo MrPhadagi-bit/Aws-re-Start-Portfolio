@@ -51,7 +51,7 @@ My goal is to land an entry-level role in cloud infrastructure, technical suppor
 
 ---
 
-## 💡 What Drives Me
+##  What Drives Me
 
 Cloud computing is reshaping how the world builds and runs technology — and I want to be part of that. AWS re/Start is giving me the foundation to understand not just *how* these services work, but *why* they matter in real environments.
 
@@ -59,7 +59,7 @@ Every lab I complete, every script I write, and every concept I document here is
 
 ---
 
-## 📬 Connect with Me
+##  Connect with Me
 
 Feel free to explore this repository and follow my progress. I'm always open to connecting with others in the cloud and tech community.
 
