@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to my AWS re/Start portfolio. My name is Vhutshilo Phadagi, and I am currently doing the AWS re/Start program.
+Welcome to my AWS re/Start portfolio. My name is Raven Mannda Phadagi, and I am currently doing the AWS re/Start program.
 
 This repository documents my learning journey as I build foundational skills in cloud computing, Linux, networking, security, databases, and Python. The program combines technical theory with hands-on labs, helping me understand how cloud services are used in real-world environments.
 
