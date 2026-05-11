@@ -1,5 +1,5 @@
 
-**Aspiring Cloud & Technical Support Professional | AWS re/Start Learner | South Africa**
+**Aspiring Cloud & Ai Engineer Professional | AWS re/Start Learner | South Africa**
 
 ---
 
