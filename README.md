@@ -1,6 +1,6 @@
 ---
 
-# AWS re/Start Portfolio 🚀
+# AWS re/Start Portfolio 
 
 Welcome to my **AWS re/Start Portfolio** — a hands-on learning journey through cloud computing, Linux, networking, security, databases, and Python.
 
@@ -8,7 +8,7 @@ Welcome to my **AWS re/Start Portfolio** — a hands-on learning journey through
 
 ---
 
-## 🌟 Why This Repo?
+##  Why This Repo?
 
 Cloud computing is reshaping how the world builds and runs technology. This portfolio documents my growth as I work through the **AWS re/Start Programme** — combining theory with real labs to develop practical skills for entry-level cloud and infrastructure roles.
 
@@ -21,7 +21,7 @@ Here you will find:
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Getting Started](#-getting-started)
 - [What I'm Learning](#-what-im-learning)
@@ -34,7 +34,7 @@ Here you will find:
 
 ---
 
-## 🎯 Getting Started
+##  Getting Started
 
 New to cloud computing? Start here:
 
@@ -45,7 +45,7 @@ New to cloud computing? Start here:
 
 ---
 
-## 📚 What I'm Learning
+##  What I'm Learning
 
 | Domain | Key Topics |
 |---|---|
@@ -59,7 +59,7 @@ New to cloud computing? Start here:
 
 ---
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 📦 Aws-re-Start-Portfolio
