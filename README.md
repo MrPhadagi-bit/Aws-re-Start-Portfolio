@@ -122,7 +122,7 @@ This portfolio is a living repository and will continue to grow as I complete mo
 
 If you're on a similar path or want to connect, feel free to reach out!
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-profile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](www.linkedin.com/in/raven-mannda-phadagi-b0782639a)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/MrPhadagi-bit)
 
 **Keep building. Keep learning.** 
