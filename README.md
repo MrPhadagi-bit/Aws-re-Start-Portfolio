@@ -62,7 +62,7 @@ New to cloud computing? Start here:
 ##  Repository Structure
 
 ```
-📦 Aws-re-Start-Portfolio
+ Aws-re-Start-Portfolio
 ├── 🧪 Labs/
 ├── 🏗️ Projects/
 ├── 🏅 Certifications and Badges/
@@ -71,35 +71,35 @@ New to cloud computing? Start here:
 
 ---
 
-### 🧪 Labs
+###  Labs
 
 Hands-on lab exercises completed throughout the AWS re/Start curriculum.
 
 Each lab folder contains notes, screenshots, or written walkthroughs of AWS tasks completed during the programme — covering services like EC2, S3, VPC, IAM, RDS, and more.
 
-📁 [`Labs/`](./Labs/)
+ [`Labs/`](./Labs/)
 
 ---
 
-### 🏗️ Projects
+###  Projects
 
 End-to-end AWS projects demonstrating practical cloud skills.
 
 These projects go beyond individual labs — combining multiple AWS services to solve real-world scenarios and showcase what I've built during the programme.
 
-📁 [`Projects/`](./Projects/)
+ [`Projects/`](./Projects/)
 
 ---
 
-### 🏅 Certifications and Badges
+###  Certifications and Badges
 
 A record of certifications, digital badges, and completion milestones earned throughout the AWS re/Start Programme.
 
-📁 [`Certifications and Badges/`](./Certifications%20and%20Badges/)
+ [`Certifications and Badges/`](./Certifications%20and%20Badges/)
 
 ---
 
-## 🎯 Goals
+##  Goals
 
 - [x] Enrol in AWS re/Start Programme
 - [x] Begin building foundational cloud skills
@@ -110,13 +110,13 @@ A record of certifications, digital badges, and completion milestones earned thr
 
 ---
 
-## 📜 License
+##  License
 
 This repository is open for reference and learning. Feel free to explore, adapt, and use anything here to support your own journey.
 
 ---
 
-## 💬 Connect
+##  Connect
 
 This portfolio is a living repository and will continue to grow as I complete more labs, projects, and milestones.
 
@@ -125,4 +125,4 @@ If you're on a similar path or want to connect, feel free to reach out!
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/your-profile)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/MrPhadagi-bit)
 
-**Keep building. Keep learning.** ☁️
+**Keep building. Keep learning.** 
