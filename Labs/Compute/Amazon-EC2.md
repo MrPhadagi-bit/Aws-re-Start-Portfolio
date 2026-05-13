@@ -60,8 +60,6 @@ Web Server
 
 This name helps identify the EC2 instance in the AWS console.
 
-![Launch instance - name and tags](./images/amazon-ec2/01-name-and-tags.png)
-
 ---
 
 ## Step 2 - Select an Amazon Machine Image
@@ -75,8 +73,6 @@ Amazon Linux 2023 kernel-6.1 AMI
 ```
 
 This AMI is free tier eligible and optimized for AWS workloads.
-
-![Amazon Linux AMI selection](./images/amazon-ec2/02-ami-selection.png)
 
 ---
 
@@ -94,8 +90,6 @@ The `t3.micro` instance type is free tier eligible and provides:
 - 1 GiB memory
 - Current generation performance
 
-![Instance type selection](./images/amazon-ec2/03-instance-type.png)
-
 ---
 
 ## Step 4 - Configure Key Pair
@@ -107,8 +101,6 @@ Proceed without a key pair (Not recommended)
 ```
 
 This was used for the lab environment. In a real production environment, a key pair should be created and stored securely so that administrators can connect to the instance using SSH.
-
-![Key pair configuration](./images/amazon-ec2/04-key-pair.png)
 
 ---
 
@@ -126,8 +118,6 @@ Under **Network settings**, I configured the instance with the lab VPC and publi
 
 Enabling the public IP allows the instance to be reachable from the internet, depending on the security group rules.
 
-![Network settings](./images/amazon-ec2/05-network-settings.png)
-
 ---
 
 ## Step 6 - Create a Security Group
@@ -140,8 +130,6 @@ I created a new security group for the web server.
 | Description | Security group for my web server |
 
 At this stage, no inbound rules were added. Security group rules can be added later depending on the traffic the instance needs to allow, such as HTTP or SSH.
-
-![Security group settings](./images/amazon-ec2/06-security-group.png)
 
 ---
 
@@ -158,8 +146,6 @@ The default storage configuration was used:
 
 Amazon EBS provides persistent block storage for EC2 instances. The `gp3` volume type is a general-purpose SSD volume suitable for many workloads.
 
-![Configure storage](./images/amazon-ec2/07-storage.png)
-
 ---
 
 ## Step 8 - Enable Termination Protection
@@ -168,8 +154,6 @@ In **Advanced details**, I enabled termination protection.
 
 Termination protection helps prevent accidental deletion of an EC2 instance. If this setting is enabled, the instance cannot be terminated until termination protection is disabled.
 
-![Termination protection enabled](./images/amazon-ec2/08-termination-protection.png)
-
 ---
 
 ## Step 9 - Launch the Instance
@@ -177,8 +161,6 @@ Termination protection helps prevent accidental deletion of an EC2 instance. If 
 After reviewing the configuration, I clicked **Launch instance**.
 
 The **Preview code** option can also be used to view equivalent infrastructure code for the selected launch configuration.
-
-![Launch instance button](./images/amazon-ec2/09-launch-instance.png)
 
 ---
 

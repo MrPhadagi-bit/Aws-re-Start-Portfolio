@@ -4,4 +4,4 @@ Labs and notes related to Amazon EC2, instance lifecycle, Auto Scaling, Elastic 
 
 ## Labs
 
-- [Introduction to Amazon EC2](./Amazon-EC2.md)
+- [Amazon EC2 Lab](./Amazon-EC2.md) - Launching and configuring an EC2 instance in the AWS Management Console.
