@@ -4,7 +4,7 @@ This folder contains hands-on labs and practice exercises completed during the A
 
 ## Lab Areas
 
-- `Compute/` - EC2, Auto Scaling, Elastic Load Balancing, and compute-related labs.
+- `Compute, Serverless and Containers/` - EC2, Auto Scaling, Elastic Load Balancing, AWS Lambda, serverless concepts, and container-related labs.
 - `Networking/` - VPC, subnetting, routing, DNS, and network security labs.
 - `Linux/` - Linux command line, permissions, users, processes, and shell scripting exercises.
 - `Python/` - Python programming fundamentals and automation exercises.
