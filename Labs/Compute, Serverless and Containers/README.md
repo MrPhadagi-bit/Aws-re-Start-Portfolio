@@ -7,3 +7,4 @@ This section includes Amazon EC2 instance management, Auto Scaling, Elastic Load
 ## Labs
 
 - [Amazon EC2 Lab](./Amazon-EC2.md) - Launching and configuring an EC2 instance in the AWS Management Console.
+- [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md) - Connecting to an Amazon Linux EC2 instance and exploring Linux man pages.
