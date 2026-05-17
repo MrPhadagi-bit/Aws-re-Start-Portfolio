@@ -11,7 +11,6 @@ The main focus of this section is understanding how cloud workloads run, how ins
 | Area | Topics |
 |---|---|
 | Amazon EC2 | Instances, AMIs, instance types, storage, networking, security groups, and lifecycle management. |
-| Amazon Linux | SSH access, Linux command-line practice, manual pages, and basic administration tasks. |
 | Auto Scaling | Scaling compute capacity based on demand. |
 | Elastic Load Balancing | Distributing traffic across multiple compute resources. |
 | Serverless | Introduction to AWS Lambda and event-driven compute. |
@@ -24,7 +23,6 @@ The main focus of this section is understanding how cloud workloads run, how ins
 | Lab | Description | Status |
 |---|---|---|
 | [Amazon EC2 Lab](./Amazon-EC2.md) | Launching and configuring an EC2 instance in the AWS Management Console. | Complete |
-| [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md) | Connecting to an Amazon Linux EC2 instance and exploring Linux man pages. | Complete |
 
 ---
 
@@ -33,8 +31,6 @@ The main focus of this section is understanding how cloud workloads run, how ins
 - Launching and configuring Amazon EC2 instances.
 - Selecting Amazon Machine Images and instance types.
 - Understanding public subnets, VPC settings, and security groups.
-- Using SSH to connect to Linux-based EC2 instances.
-- Navigating Linux help documentation with the `man` command.
 - Understanding how compute services support cloud applications.
 
 ---
