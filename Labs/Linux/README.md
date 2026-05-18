@@ -24,6 +24,7 @@ The main focus of this section is building confidence with Linux systems, remote
 | Lab | Description | Status |
 |---|---|---|
 | [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md) | Connecting to an Amazon Linux EC2 instance and exploring Linux man pages. | Complete |
+| [Linux Command Line Lab](./Linux-Command-Line-Lab.md) | Practicing basic Linux commands, SSH access, bash history, and command-line workflow. | Complete |
 
 ---
 
@@ -34,12 +35,14 @@ The main focus of this section is building confidence with Linux systems, remote
 - Identifying common manual page sections such as `NAME`, `SYNOPSIS`, `DESCRIPTION`, and `OPTIONS`.
 - Practicing command-line learning directly from a Linux terminal.
 - Understanding how Amazon Linux is used as an EC2 operating system.
+- Running basic system information commands such as `whoami`, `hostname`, `uptime`, `who`, `date`, `cal`, and `id`.
+- Using bash history shortcuts such as `history`, `Ctrl + R`, and `!!`.
 
 ---
 
 ## Next Learning Goals
 
-- Add labs for Linux file system navigation.
+- Add more labs for Linux file system navigation.
 - Add notes for users, groups, and permissions.
 - Add process management and package management practice.
 - Add bash scripting exercises.
