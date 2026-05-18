@@ -26,6 +26,7 @@ The main focus of this section is building confidence with Linux systems, remote
 | [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md) | Connecting to an Amazon Linux EC2 instance and exploring Linux man pages. | Complete |
 | [Linux Command Line Lab](./Linux-Command-Line-Lab.md) | Practicing basic Linux commands, SSH access, bash history, and command-line workflow. | Complete |
 | [Linux Users and Groups Lab](./Linux-Users-and-Groups-Lab.md) | Creating Linux users and groups, assigning memberships, testing permissions, and reviewing security logs. | Complete |
+| [Linux Editing Files Lab](./Linux-Editing-Files-Lab.md) | Creating and editing files with Vim and nano on an Amazon Linux EC2 instance. | Complete |
 
 ---
 
@@ -42,12 +43,15 @@ The main focus of this section is building confidence with Linux systems, remote
 - Creating groups with `groupadd` and assigning users with `usermod`.
 - Testing permissions with `su`, `touch`, and `sudo`.
 - Reviewing Linux security logs in `/var/log/secure`.
+- Editing files from the terminal with Vim and nano.
+- Using Vim commands such as `i`, `Esc`, `:w`, `:wq`, `:q!`, `dd`, and `u`.
+- Using nano shortcuts such as `Ctrl + O`, `Ctrl + X`, `Ctrl + K`, `Ctrl + U`, and `Ctrl + W`.
 
 ---
 
 ## Next Learning Goals
 
-- Add more labs for Linux file system navigation.
+- Add more labs for Linux file system navigation and text processing.
 - Add deeper notes for users, groups, and permissions.
 - Add process management and package management practice.
 - Add bash scripting exercises.
