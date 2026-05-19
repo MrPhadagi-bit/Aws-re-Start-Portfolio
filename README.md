@@ -26,9 +26,9 @@ Here you will find:
 - [Getting Started](#-getting-started)
 - [What I'm Learning](#-what-im-learning)
 - [Repository Structure](#-repository-structure)
-  - [🧪 Labs](#-labs)
-  - [🏗️ Projects](#-projects)
-  - [🏅 Certifications and Badges](#-certifications-and-badges)
+  - [ Labs](#-labs)
+  - [ Projects](#-projects)
+  - [ Certifications and Badges](#-certifications-and-badges)
 - [Goals](#-goals)
 - [Connect](#-connect)
 
@@ -49,13 +49,13 @@ New to cloud computing? Start here:
 
 | Domain | Key Topics |
 |---|---|
-| ☁️ **Cloud & AWS Core** | EC2, S3, RDS, VPC, Route 53, CloudWatch, Auto Scaling, ELB |
-| 🐧 **Linux** | CLI navigation, file permissions, user management, bash scripting |
-| 🐍 **Python** | Syntax, functions, loops, conditionals, automation scripts |
-| 🌐 **Networking** | TCP/IP, IP addressing, subnetting, DNS, routing concepts |
-| 🔐 **Security** | IAM, Shared Responsibility Model, users, groups, roles, policies |
-| 🗄️ **Databases** | Relational database concepts, SQL basics, Amazon RDS |
-| ⚙️ **Operations** | CloudWatch monitoring, troubleshooting fundamentals, support basics |
+|  **Cloud & AWS Core** | EC2, S3, RDS, VPC, Route 53, CloudWatch, Auto Scaling, ELB |
+|  **Linux** | CLI navigation, file permissions, user management, bash scripting |
+|  **Python** | Syntax, functions, loops, conditionals, automation scripts |
+|  **Networking** | TCP/IP, IP addressing, subnetting, DNS, routing concepts |
+|  **Security** | IAM, Shared Responsibility Model, users, groups, roles, policies |
+|  **Databases** | Relational database concepts, SQL basics, Amazon RDS |
+|  **Operations** | CloudWatch monitoring, troubleshooting fundamentals, support basics |
 
 ---
 
@@ -63,10 +63,10 @@ New to cloud computing? Start here:
 
 ```
  Aws-re-Start-Portfolio
-├── 🧪 Labs/
-├── 🏗️ Projects/
-├── 🏅 Certifications and Badges/
-└── 📄 README.md
+├── Labs/
+├── Projects/
+├── Certifications and Badges/
+└──  README.md
 ```
 
 ---
