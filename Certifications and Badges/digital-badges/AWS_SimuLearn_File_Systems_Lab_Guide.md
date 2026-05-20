@@ -8,9 +8,9 @@
 
 ---
 
-## 📜 AWS Training & Certification Completion Certificate
+## AWS Training & Certification Completion Certificate
 
-![AWS SimuLearn: File Systems in the Cloud - Completion Certificate](sandbox:///mnt/agents/output/AWS_Certificate_Screenshot.png)
+Certificate evidence can be added to this folder as a PDF or image when available.
 
 > **Officially Completed:** May 20, 2026  
 > **Awarded To:** Phadagi Mannda Raven  
