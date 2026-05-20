@@ -15,9 +15,6 @@
 > **Officially Completed:** May 20, 2026  
 > **Awarded To:** Phadagi Mannda Raven  
 > **Issued By:** Michelle Vaz, Director, AWS Training & Certification
-
-**View your official certificate (PDF):** [AWS_Certificate_File_Systems_Cloud.pdf](sandbox:///mnt/agents/output/AWS_Certificate_File_Systems_Cloud.pdf)
-
 ---
 
 ## Table of Contents
