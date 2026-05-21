@@ -23,7 +23,7 @@ The main focus of this section is understanding how cloud workloads run, how ins
 | Lab | Description | Status |
 |---|---|---|
 | [Amazon EC2 Lab](./Amazon-EC2.md) | Launching and configuring an EC2 instance in the AWS Management Console. | Complete |
-| [178-[JAWS]-Activity - Working with AWS Lambda](./178-%5BJAWS%5D-Activity%20-%20Working%20with%20AWS%20Lambda.md) | Building a serverless sales reporting workflow with AWS Lambda, IAM, SNS, CloudWatch Events, Parameter Store, and VPC access. | Complete |
+| [Working with AWS Lambda](./Working%20with%20AWS%20Lambda.md) | Building a serverless sales reporting workflow with AWS Lambda, IAM, SNS, CloudWatch Events, Parameter Store, and VPC access. | Complete |
 
 ---
 
