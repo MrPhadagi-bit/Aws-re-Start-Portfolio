@@ -1,4 +1,4 @@
-# 178-[JAWS]-Activity - Working with AWS Lambda
+#  Working with AWS Lambda
 
 > **Lab Duration:** ~90 minutes  
 > **Services:** AWS Lambda, IAM, SNS, CloudWatch Events, Systems Manager Parameter Store, EC2, VPC  
