@@ -4,30 +4,30 @@
 
 ---
 
-## 📋 Lab Overview
+##  Lab Overview
 
 In this challenge lab, you will create an **AWS Lambda function** that automatically counts the number of words in a text file. The function is triggered when a file is uploaded to an **Amazon S3** bucket and reports the word count via **Amazon SNS** (email and optionally SMS).
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 After completing this lab, you will be able to:
 
-- ✅ Create a Lambda function to count the number of words in a text file.
-- ✅ Configure an **Amazon S3** bucket to invoke a Lambda function on file upload.
-- ✅ Create an **Amazon SNS** topic to report the word count via email.
-- ✅ (Optional) Send the word count result via SMS.
+-  Create a Lambda function to count the number of words in a text file.
+-  Configure an **Amazon S3** bucket to invoke a Lambda function on file upload.
+-  Create an **Amazon SNS** topic to report the word count via email.
+-  (Optional) Send the word count result via SMS.
 
 ---
 
-## ⏱️ Duration
+##  Duration
 
 Approximately **90 minutes**.
 
 ---
 
-## 🚀 Your Challenge
+##  Your Challenge
 
 ### Goal
 Create a Lambda function that counts words in a text file and reports the result via SNS.
@@ -44,7 +44,7 @@ Create a Lambda function that counts words in a text file and reports the result
 
 ---
 
-## 📝 Message Format Requirements
+##  Message Format Requirements
 
 ### Email / SMS Body
 ```
@@ -60,7 +60,7 @@ Word Count Result
 
 ---
 
-## 🔐 IAM Role & Permissions
+##  IAM Role & Permissions
 
 > **Important:** The lab policy does **not** permit the creation of an IAM role. Use the pre-existing **`LambdaAccessRole`** role.
 
@@ -75,7 +75,7 @@ The `LambdaAccessRole` includes the following managed policies:
 
 ---
 
-## 🛠️ Architecture Diagram
+##  Architecture Diagram
 
 ```
 +-------------+      Upload .txt       +-----------------+
@@ -123,17 +123,7 @@ The `LambdaAccessRole` includes the following managed policies:
 
 ---
 
-## 💡 Hints
-
-- 🌍 **Create all resources in the same AWS Region** to avoid cross-region latency and permission issues.
-- 🔗 Ensure the **S3 bucket notification** is properly configured to trigger the Lambda function on `PUT` events for `.txt` files.
-- 📧 Verify your **SNS topic subscription** (email) by clicking the confirmation link sent by AWS.
-- 📱 For SMS, ensure the destination phone number is in **E.164 format** (e.g., `+1234567890`).
-- 🐍 Use Python's built-in string methods (`.split()`) to count words efficiently.
-
----
-
-## 📚 Additional Guidance
+##  Additional Guidance
 
 Refer to the following lab for foundational Lambda concepts:
 
@@ -141,13 +131,13 @@ Refer to the following lab for foundational Lambda concepts:
 
 ---
 
-## ✅ Conclusion
+##  Conclusion
 
 Congratulations! Upon successful completion of this lab, you will have:
 
-- ✅ Created a Lambda function to count the number of words in a text file.
-- ✅ Configured an S3 bucket to invoke a Lambda function when a text file is uploaded.
-- ✅ Created an Amazon SNS topic to report the word count in an email.
+-  Created a Lambda function to count the number of words in a text file.
+-  Configured an S3 bucket to invoke a Lambda function when a text file is uploaded.
+-  Created an Amazon SNS topic to report the word count in an email.
 
 ---
 
