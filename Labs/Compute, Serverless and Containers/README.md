@@ -23,6 +23,7 @@ The main focus of this section is understanding how cloud workloads run, how ins
 | Lab | Description | Status |
 |---|---|---|
 | [Amazon EC2 Lab](./Amazon-EC2.md) | Launching and configuring an EC2 instance in the AWS Management Console. | Complete |
+| [AWS Lambda Sales Analysis Report Lab](./AWS-Lambda-Sales-Analysis-Report.md) | Building a serverless sales reporting workflow with AWS Lambda, IAM, SNS, CloudWatch Events, Parameter Store, and VPC access. | Complete |
 
 ---
 
@@ -32,12 +33,17 @@ The main focus of this section is understanding how cloud workloads run, how ins
 - Selecting Amazon Machine Images and instance types.
 - Understanding public subnets, VPC settings, and security groups.
 - Understanding how compute services support cloud applications.
+- Creating AWS Lambda functions and Lambda layers.
+- Configuring IAM roles for serverless workloads.
+- Using Amazon SNS for email notifications.
+- Using CloudWatch Events/EventBridge to schedule serverless workflows.
+- Troubleshooting Lambda functions with CloudWatch Logs.
 
 ---
 
 ## Next Learning Goals
 
 - Add labs for Auto Scaling and Elastic Load Balancing.
-- Add notes for AWS Lambda and serverless concepts.
+- Add more AWS Lambda and serverless practice notes.
 - Add container practice using Docker or Amazon ECS.
 - Document troubleshooting steps and lessons learned from each lab.
