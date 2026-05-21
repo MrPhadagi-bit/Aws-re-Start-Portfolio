@@ -6,42 +6,6 @@
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Objectives](#objectives)
-- [Prerequisites](#prerequisites)
-- [Task 1: Observing IAM Role Settings](#task-1-observing-iam-role-settings)
-  - [Task 1.1: salesAnalysisReportRole](#task-11-salesanalysisreportrole)
-  - [Task 1.2: salesAnalysisReportDERole](#task-12-salesanalysisreportderole)
-- [Task 2: Creating a Lambda Layer and Data Extractor Function](#task-2-creating-a-lambda-layer-and-data-extractor-function)
-  - [Task 2.1: Creating a Lambda Layer](#task-21-creating-a-lambda-layer)
-  - [Task 2.2: Creating the Data Extractor Function](#task-22-creating-the-data-extractor-function)
-  - [Task 2.3: Adding the Layer to the Function](#task-23-adding-the-layer-to-the-function)
-  - [Task 2.4: Importing the Function Code](#task-24-importing-the-function-code)
-  - [Task 2.5: Configuring Network Settings](#task-25-configuring-network-settings)
-- [Task 3: Testing the Data Extractor Function](#task-3-testing-the-data-extractor-function)
-  - [Task 3.1: Launching a Test](#task-31-launching-a-test)
-  - [Task 3.2: Troubleshooting Timeout Errors](#task-32-troubleshooting-timeout-errors)
-  - [Task 3.3: Analyzing and Correcting the Function](#task-33-analyzing-and-correcting-the-function)
-  - [Task 3.4: Placing Orders and Retesting](#task-34-placing-orders-and-retesting)
-- [Task 4: Configuring Notifications](#task-4-configuring-notifications)
-  - [Task 4.1: Creating an SNS Topic](#task-41-creating-an-sns-topic)
-  - [Task 4.2: Subscribing to the Topic](#task-42-subscribing-to-the-topic)
-- [Task 5: Creating the Sales Analysis Report Function](#task-5-creating-the-sales-analysis-report-function)
-  - [Task 5.1: Connecting to the CLI Host](#task-51-connecting-to-the-cli-host)
-  - [Task 5.2: Configuring the AWS CLI](#task-52-configuring-the-aws-cli)
-  - [Task 5.3: Creating the Function via AWS CLI](#task-53-creating-the-function-via-aws-cli)
-  - [Task 5.4: Configuring Environment Variables](#task-54-configuring-environment-variables)
-  - [Task 5.5: Testing the Function](#task-55-testing-the-function)
-  - [Task 5.6: Adding a CloudWatch Events Trigger](#task-56-adding-a-cloudwatch-events-trigger)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Cleanup](#cleanup)
-- [Key Takeaways](#key-takeaways)
-
----
-
 ## Overview
 
 This lab deploys a serverless sales analysis reporting solution using AWS Lambda. The system generates a daily sales report by extracting data from a MySQL database running on an EC2 LAMP instance, then emails the results to an administrator via Amazon SNS.
