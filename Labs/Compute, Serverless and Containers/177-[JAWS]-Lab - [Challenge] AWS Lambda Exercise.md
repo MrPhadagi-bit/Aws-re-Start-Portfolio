@@ -112,7 +112,7 @@ The `LambdaAccessRole` includes the following managed policies:
 
 ---
 
-## 🧪 Testing Instructions
+##  Testing Instructions
 
 1. **Create a few sample `.txt` files** with different word counts.
    - Example: `sample1.txt` (5 words), `sample2.txt` (50 words), `sample3.txt` (200 words).
@@ -141,7 +141,7 @@ Congratulations! Upon successful completion of this lab, you will have:
 
 ---
 
-## 📁 Sample Lambda Function (Python)
+##  Sample Lambda Function (Python)
 
 > **Note:** This is a reference implementation. You should build and test this in the AWS Management Console as part of the lab.
 
@@ -194,7 +194,7 @@ def lambda_handler(event, context):
 
 ---
 
-## 🔗 Useful AWS Documentation
+##  Useful AWS Documentation
 
 - [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
 - [Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/userguide/NotificationHowTo.html)
