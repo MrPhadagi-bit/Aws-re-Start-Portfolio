@@ -19,16 +19,6 @@ In this lab, you will:
 
 ---
 
-## Table of Contents
-
-- [Task 1: Connect to EC2 Instance](#task-1-use-ssh-to-connect-to-an-amazon-linux-ec2-instance)
-- [Task 2: Create a Folder Structure](#task-2-create-a-folder-structure)
-- [Task 3: Delete and Reorganize Folders](#task-3-delete-and-reorganize-folders)
-- [Command Reference](#command-reference)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## Task 1: Use SSH to Connect to an Amazon Linux EC2 Instance
 
 In this task, you will connect to an Amazon Linux EC2 instance using an SSH utility. The instructions vary slightly depending on your operating system.
