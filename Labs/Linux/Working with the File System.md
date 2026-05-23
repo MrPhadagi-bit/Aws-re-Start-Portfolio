@@ -8,14 +8,14 @@ This lab provides hands-on experience with fundamental Linux file system operati
 
 In this lab, you will:
 
-- ✅ Create a folder structure as specified
-- ✅ Create files
-- ✅ Copy and move files and directories
-- ✅ Delete files and directories
+-  Create a folder structure as specified
+-  Create files
+-  Copy and move files and directories
+-  Delete files and directories
 
 ## Duration
 
-⏱️ This lab requires approximately **30 minutes** to complete.
+ This lab requires approximately **30 minutes** to complete.
 
 ---
 
@@ -35,7 +35,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 ### Windows Users: Using SSH to Connect
 
-> ⚠️ **macOS/Linux users:** Skip to the next section.
+>  **macOS/Linux users:** Skip to the next section.
 
 1. **Access Credentials:**
    - Select the **Details** drop-down menu above these instructions
@@ -309,7 +309,7 @@ ProfitAndLossStatements.csv  Salary.csv
 
 #### Step 4: Remove the Original Finance Folder
 
-> ⚠️ **Note:** `rmdir` only works on empty directories.
+>  **Note:** `rmdir` only works on empty directories.
 
 **Option A - Remove files first, then directory:**
 ```bash
