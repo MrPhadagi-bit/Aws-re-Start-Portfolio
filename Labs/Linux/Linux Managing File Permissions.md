@@ -1,14 +1,6 @@
 # Linux Managing File Permissions
 
 A hands-on lab for managing file and folder ownership, permission modes, and access control on Amazon Linux EC2.
-
-## Table of Contents
-- [Task 1: Connect via SSH](#task-1-connect-via-ssh)
-- [Task 2: Change File and Folder Ownership](#task-2-change-file-and-folder-ownership)
-- [Task 3: Change Permission Modes](#task-3-change-permission-modes)
-- [Task 4: Assign Permissions](#task-4-assign-permissions)
-- [Quick Reference](#quick-reference)
-
 ---
 
 ## Task 1: Connect via SSH
