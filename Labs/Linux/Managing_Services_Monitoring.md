@@ -4,29 +4,12 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Objectives](#objectives)
-- [Duration](#duration)
-- [AWS Service Restrictions](#aws-service-restrictions)
-- [Task 1: Connect to EC2 via SSH](#task-1-use-ssh-to-connect-to-an-amazon-linux-ec2-instance)
-  - [Windows Users](#-windows-users-using-ssh-to-connect)
-  - [macOS / Linux Users](#-macos--linux-users-using-ssh-to-connect)
-- [Task 2: Check Service Status](#task-2-check-the-status-of-the-httpd-service)
-- [Task 3: Test HTTP Connectivity](#task-3-test-http-connectivity)
-- [Task 4: Monitor with Linux `top` Command](#task-4-monitor-with-linux-top-command)
-- [Task 5: Monitor with AWS CloudWatch](#task-5-monitor-with-aws-cloudwatch)
-- [Troubleshooting](#troubleshooting)
-- [Cleanup](#cleanup)
-
----
-
 ## Objectives
 
 In this lab, you will:
 
-- ✅ Check the status of the `httpd` service to ensure that it is running, and that you can make an HTTP connection to the local host IP address.
-- ✅ Learn how to monitor your Amazon Linux 2 EC2 instance using:
+-  Check the status of the `httpd` service to ensure that it is running, and that you can make an HTTP connection to the local host IP address.
+-  Learn how to monitor your Amazon Linux 2 EC2 instance using:
   - The Linux `top` command
   - AWS CloudWatch
 
@@ -34,13 +17,7 @@ In this lab, you will:
 
 ## Duration
 
-⏱️ **Estimated Time**: 30 minutes
-
----
-
-## AWS Service Restrictions
-
-> ⚠️ **Important**: In this lab environment, access to AWS services and service actions might be restricted to the ones needed to complete the lab instructions. You might encounter errors if you attempt to access other services or perform actions beyond those described in this lab.
+ **Estimated Time**: 30 minutes
 
 ---
 
@@ -50,7 +27,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 ---
 
-### 🪟 Windows Users: Using SSH to Connect
+###  Windows Users: Using SSH to Connect
 
 > **If you are using macOS or Linux, [skip to the next section](#-macos--linux-users-using-ssh-to-connect).**
 
@@ -72,7 +49,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 1. Open `putty.exe`
 2. Configure your session following the official AWS guide:  
-   📖 [Connect to your Linux instance using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+    [Connect to your Linux instance using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 | Setting | Value |
 |---------|-------|
@@ -86,7 +63,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 ---
 
-### 🍎 macOS / Linux Users: Using SSH to Connect
+###  macOS / Linux Users: Using SSH to Connect
 
 #### Step 1: Retrieve Credentials
 
@@ -105,7 +82,7 @@ Open a terminal and restrict permissions on your private key file:
 chmod 400 ~/Downloads/labsuser.pem
 ```
 
-> ⚠️ **Security Note**: The private key file must have permissions of `400` (read-only for owner) or SSH will refuse to use it.
+>  **Security Note**: The private key file must have permissions of `400` (read-only for owner) or SSH will refuse to use it.
 
 #### Step 3: Connect via SSH
 
@@ -211,7 +188,7 @@ curl http://127.0.0.1
 curl http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
 ```
 
-> 💡 **Tip**: The command `curl http://169.254.169.254/latest/meta-data/public-ipv4` retrieves the instance's public IP from the EC2 instance metadata service (IMDS).
+>  **Tip**: The command `curl http://169.254.169.254/latest/meta-data/public-ipv4` retrieves the instance's public IP from the EC2 instance metadata service (IMDS).
 
 ### Step 4: Verify from External Browser (Optional)
 
@@ -414,7 +391,7 @@ sudo systemctl status httpd
 
 ## Cleanup
 
-> 🧹 **Important**: To avoid incurring unnecessary charges, terminate your EC2 instance after completing the lab.
+>  **Important**: To avoid incurring unnecessary charges, terminate your EC2 instance after completing the lab.
 
 ### Step 1: Terminate EC2 Instance
 
@@ -437,7 +414,7 @@ sudo systemctl status httpd
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [Amazon EC2 User Guide - Connect to your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html)
 - [Amazon CloudWatch Documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)
@@ -446,7 +423,7 @@ sudo systemctl status httpd
 
 ---
 
-## ✅ Lab Completion Checklist
+##  Lab Completion Checklist
 
 - [ ] Connected to EC2 instance via SSH
 - [ ] Verified `httpd` service is running
