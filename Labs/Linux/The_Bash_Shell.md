@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Objectives
+##  Objectives
 
 In this lab, you will:
 
@@ -13,17 +13,9 @@ In this lab, you will:
 
 ---
 
-## ⏱️ Duration
+##  Duration
 
 This lab requires approximately **30 minutes** to complete.
-
----
-
-## Table of Contents
-
-- [Task 1: Use SSH to Connect to an Amazon Linux EC2 Instance](#task-1-use-ssh-to-connect-to-an-amazon-linux-ec2-instance)
-- [Task 2: Create an Alias for a Backup Operation](#task-2-create-an-alias-for-a-backup-operation)
-- [Task 3: Explore and Update the PATH Environment Variable](#task-3-explore-and-update-the-path-environment-variable)
 
 ---
 
@@ -278,7 +270,7 @@ hello ec2-user
 
 ---
 
-## 📝 Summary
+##  Summary
 
 | Task | What You Learned |
 |------|------------------|
@@ -288,7 +280,7 @@ hello ec2-user
 
 ---
 
-## 🔗 Additional Resources
+##  Additional Resources
 
 - [AWS Docs: Connect to your Linux instance using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 - [Linux `tar` Command Manual](https://man7.org/linux/man-pages/man1/tar.1.html)
