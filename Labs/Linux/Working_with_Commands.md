@@ -4,23 +4,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Objectives](#objectives)
-- [Duration](#duration)
-- [Prerequisites](#prerequisites)
-- [AWS Service Restrictions](#aws-service-restrictions)
-- [Task 1: Connect to EC2 Instance](#task-1-use-ssh-to-connect-to-an-amazon-linux-ec2-instance)
-- [Task 2: Use the tee Command](#task-2-use-the-tee-command)
-- [Task 3: Use the sort Command and Pipe Operator](#task-3-use-the-sort-command-and-pipe-operator)
-- [Task 4: Use the cut Command](#task-4-use-the-cut-command)
-- [Additional Challenge: sed Command](#additional-challenge-use-the-sed-command)
-- [Summary](#summary)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## Overview
 
 This lab provides hands-on experience with essential Linux command-line utilities commonly used in cloud environments. You will practice redirecting output, sorting data, extracting fields, and performing text transformations on an Amazon Linux EC2 instance.
@@ -31,17 +14,17 @@ This lab provides hands-on experience with essential Linux command-line utilitie
 
 In this lab, you will:
 
-- ✅ Use the `tee` command to direct output to a file
-- ✅ Use the `sort` command to reorganize the contents of a `.csv` file
-- ✅ Use the `cut` command to edit the contents of a file
-- ✅ Use the `sed` command for text substitution
-- ✅ Use the pipe operator (`|`) to chain commands
+-  Use the `tee` command to direct output to a file
+-  Use the `sort` command to reorganize the contents of a `.csv` file
+-  Use the `cut` command to edit the contents of a file
+-  Use the `sed` command for text substitution
+-  Use the pipe operator (`|`) to chain commands
 
 ---
 
 ## Duration
 
-⏱️ This lab requires approximately **30 minutes** to complete.
+ This lab requires approximately **30 minutes** to complete.
 
 ---
 
@@ -56,7 +39,7 @@ In this lab, you will:
 
 ## AWS Service Restrictions
 
-⚠️ **Important:** In this lab environment, access to AWS services and service actions might be restricted to the ones that you need to complete the lab instructions. You might encounter errors if you attempt to access other services or perform actions beyond the ones that this lab describes.
+ **Important:** In this lab environment, access to AWS services and service actions might be restricted to the ones that you need to complete the lab instructions. You might encounter errors if you attempt to access other services or perform actions beyond the ones that this lab describes.
 
 ---
 
@@ -64,7 +47,7 @@ In this lab, you will:
 
 In this task, you will connect to an Amazon Linux EC2 instance using an SSH utility. The following instructions vary slightly depending on your operating system.
 
-### 🔷 Windows Users: Using PuTTY to Connect
+###  Windows Users: Using PuTTY to Connect
 
 > These instructions are specifically for Windows users. If you are using macOS or Linux, skip to the [macOS/Linux section](#-macoslinux-users-using-openssh-to-connect).
 
@@ -86,7 +69,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 1. Open `putty.exe`
 2. Configure your session following the official AWS documentation:  
-   📖 [Connect to your Linux instance using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+    [Connect to your Linux instance using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 #### Step 4: Connect
 
@@ -95,7 +78,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 ---
 
-### 🔶 macOS/Linux Users: Using OpenSSH to Connect
+###  macOS/Linux Users: Using OpenSSH to Connect
 
 > These instructions are for macOS and Linux users.
 
@@ -122,7 +105,7 @@ Replace `<PublicIP>` with the actual public IP address of your instance.
 
 ---
 
-### ✅ Verification
+###  Verification
 
 Once connected, your terminal prompt should look similar to:
 
@@ -170,7 +153,7 @@ hostname | tee file1.txt
 ip-10-0-10-81.us-west-2.compute.internal
 ```
 
-> 💡 **Note:** Your actual output will vary based on your instance's IP and region (format: `ip-(xx-xx-xx-xx).(region).compute.internal`).
+>  **Note:** Your actual output will vary based on your instance's IP and region (format: `ip-(xx-xx-xx-xx).(region).compute.internal`).
 
 #### Step 3: Verify File Creation
 
@@ -199,7 +182,7 @@ ip-10-0-10-81.us-west-2.compute.internal
 
 ---
 
-### 📚 tee Command Reference
+###  tee Command Reference
 
 | Syntax | Description |
 |--------|-------------|
@@ -258,7 +241,7 @@ Factory, 5, Tokyo
 
 Press **CTRL+D** to exit the file and save.
 
-> 💡 **Tip:** CTRL+D sends an EOF (End of File) signal, telling the system you're done inputting data.
+>  **Tip:** CTRL+D sends an EOF (End of File) signal, telling the system you're done inputting data.
 
 #### Step 5: Verify File Creation
 
@@ -323,7 +306,7 @@ This achieves the same result by piping the output of `cat` into `grep`.
 
 ---
 
-### 📚 sort & grep Reference
+###  sort & grep Reference
 
 | Command | Description |
 |---------|-------------|
@@ -422,11 +405,11 @@ cut -d ',' -f 2 cities.csv
  New York
 ```
 
-> 💡 **Note:** There may be a leading space since the original data had a space after the comma.
+>  **Note:** There may be a leading space since the original data had a space after the comma.
 
 ---
 
-### 📚 cut Command Reference
+###  cut Command Reference
 
 | Syntax | Description |
 |--------|-------------|
@@ -492,7 +475,7 @@ Store. 4, Algiers
 Factory. 5, Tokyo
 ```
 
-> 💡 **Note:** Only the **first** comma on each line is replaced because we didn't use the global (`g`) flag.
+>  **Note:** Only the **first** comma on each line is replaced because we didn't use the global (`g`) flag.
 
 ---
 
@@ -521,11 +504,11 @@ sed -i 's/,/./' cities.csv
 sed -i 's/,/./' test.csv
 ```
 
-> ⚠️ **Warning:** The `-i` flag modifies the file in-place. Use with caution!
+> **Warning:** The `-i` flag modifies the file in-place. Use with caution!
 
 ---
 
-### 📚 sed Command Reference
+###  sed Command Reference
 
 | Syntax | Description |
 |--------|-------------|
@@ -565,7 +548,7 @@ sed -i 's/,/./' test.csv
 
 ---
 
-## 📖 Additional Resources
+##  Additional Resources
 
 - [Linux tee Command Documentation](https://man7.org/linux/man-pages/man1/tee.1.html)
 - [Linux sort Command Documentation](https://man7.org/linux/man-pages/man1/sort.1.html)
@@ -575,7 +558,7 @@ sed -i 's/,/./' test.csv
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 
 You have successfully completed the **Working with Commands** lab! You now have practical experience with:
 
