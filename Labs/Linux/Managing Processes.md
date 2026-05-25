@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Lab Overview
+##  Lab Overview
 
 | Attribute | Details |
 |-----------|---------|
@@ -14,7 +14,7 @@
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 In this lab, you will:
 
@@ -24,13 +24,13 @@ In this lab, you will:
 
 ---
 
-## ⚠️ AWS Service Restrictions
+##  AWS Service Restrictions
 
 In this lab environment, access to AWS services and service actions might be restricted to the ones needed to complete the lab instructions. You might encounter errors if you attempt to access other services or perform actions beyond those described in this lab.
 
 ---
 
-## 🚀 Task 1: Use SSH to Connect to an Amazon Linux EC2 Instance
+##  Task 1: Use SSH to Connect to an Amazon Linux EC2 Instance
 
 In this task, you will connect to an Amazon Linux EC2 instance using an SSH utility. Instructions vary slightly depending on your operating system.
 
@@ -85,7 +85,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using an SSH util
 
 ---
 
-## 📝 Task 2: Create List of Processes
+##  Task 2: Create List of Processes
 
 In this exercise, you will create a log file from the `ps` command. This log file should be added to the **SharedFolders** section.
 
@@ -130,7 +130,7 @@ The console displays output from the `ps -aux` command showing all current proce
 
 ---
 
-## 📊 Task 3: List the Processes Using the `top` Command
+##  Task 3: List the Processes Using the `top` Command
 
 In this exercise, you will use the `top` command to display processes and threads that are active in the system.
 
@@ -184,7 +184,7 @@ top -hv
 
 ---
 
-## ⏰ Task 4: Create a Cron Job
+##  Task 4: Create a Cron Job
 
 In this exercise, you will create a cron job that will create an audit file with `#####` to cover all `.csv` files.
 
@@ -292,7 +292,7 @@ MAILTO=root
 
 ---
 
-## ✅ Validation Checklist
+##  Validation Checklist
 
 | Task | Validation Command | Expected Result |
 |------|---------------------|-----------------|
@@ -302,7 +302,7 @@ MAILTO=root
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [AWS EC2 User Guide - Connect using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 - [Linux `ps` Command Documentation](https://man7.org/linux/man-pages/man1/ps.1.html)
@@ -311,7 +311,7 @@ MAILTO=root
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### Permission Denied Errors
 - Use `sudo` before commands that require elevated privileges
@@ -331,7 +331,7 @@ MAILTO=root
 
 ---
 
-## 📄 License
+##  License
 
 This lab material is provided for educational purposes.
 
