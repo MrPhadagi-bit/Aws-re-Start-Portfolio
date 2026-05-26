@@ -8,24 +8,6 @@
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Objectives](#objectives)
-- [Prerequisites](#prerequisites)
-- [Task 1: Connect to EC2 via SSH](#task-1-connect-to-ec2-via-ssh)
-  - [Windows Users (PuTTY)](#windows-users-putty)
-  - [macOS / Linux Users](#macos--linux-users)
-- [Task 2: Write the Backup Shell Script](#task-2-write-the-backup-shell-script)
-  - [Step-by-Step Script Creation](#step-by-step-script-creation)
-  - [Script Breakdown](#script-breakdown)
-  - [Execution & Verification](#execution--verification)
-- [Script Reference](#script-reference)
-- [Troubleshooting](#troubleshooting)
-- [Next Steps](#next-steps)
-
----
-
 ## Overview
 
 This lab guides you through creating a **Bash shell script** that automates the backup of a folder (`CompanyA`) as a compressed archive. The archive filename includes the current date to ensure unique, timestamped backups.
