@@ -17,26 +17,11 @@ By the end of this lab, you will be able to:
 
 ---
 
-## Table of Contents
-
-- [Task 1: Connect to the EC2 Instance via SSH](#task-1-connect-to-the-ec2-instance-via-ssh)
-  - [Windows Users](#-windows-users)
-  - [macOS / Linux Users](#-macos--linux-users)
-- [Task 2: Review Secure Log Files](#task-2-review-secure-log-files)
-  - [Step 2.1: Verify Working Directory](#step-21-verify-working-directory)
-  - [Step 2.2: Inspect the Secure Log](#step-22-inspect-the-secure-log)
-  - [Step 2.3: Review Last Login Times](#step-23-review-last-login-times)
-- [Additional Challenge](#-additional-challenge)
-- [Key Takeaways](#-key-takeaways)
-- [Troubleshooting](#-troubleshooting)
-
----
-
 ## Task 1: Connect to the EC2 Instance via SSH
 
 > **Note:** The following instructions vary slightly depending on your operating system. Select the section that applies to you.
 
-### 🪟 Windows Users
+###  Windows Users
 
 These instructions are specifically for Windows users. If you are using macOS or Linux, skip to the [next section](#-macos--linux-users).
 
@@ -60,11 +45,11 @@ These instructions are specifically for Windows users. If you are using macOS or
    - Follow the AWS documentation to configure your session: [Connect to your Linux instance using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
    - Use the downloaded `.ppk` file for authentication.
 
-> ✅ **Windows Users:** Once connected, proceed to [Task 2](#task-2-review-secure-log-files).
+>  **Windows Users:** Once connected, proceed to [Task 2](#task-2-review-secure-log-files).
 
 ---
 
-### 🍎 macOS / Linux Users
+###  macOS / Linux Users
 
 These instructions are for users on macOS or Linux systems.
 
@@ -172,7 +157,7 @@ adm                                        **Never logged in**
 
 ---
 
-## 🎯 Additional Challenge
+##  Additional Challenge
 
 Now that you've reviewed the logs, consider the following questions for your business or security operations:
 
@@ -193,7 +178,7 @@ Now that you've reviewed the logs, consider the following questions for your bus
 
 ---
 
-## 📚 Key Takeaways
+##  Key Takeaways
 
 | Command | Purpose |
 |---------|---------|
@@ -210,7 +195,7 @@ Now that you've reviewed the logs, consider the following questions for your bus
 
 ---
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -221,7 +206,7 @@ Now that you've reviewed the logs, consider the following questions for your bus
 
 ---
 
-## ✅ Lab Complete
+##  Lab Complete
 
 You have successfully:
 - Connected to an Amazon Linux EC2 instance via SSH
