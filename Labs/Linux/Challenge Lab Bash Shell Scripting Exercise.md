@@ -1,26 +1,10 @@
 # Challenge Lab: Bash Shell Scripting Exercise
 
 [![Bash](https://img.shields.io/badge/Language-Bash%20Shell%20Scripting-4EAA25?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Duration:** ~55 minutes  
 > **Level:** Beginner to Intermediate  
 > **Environment:** Amazon Linux EC2 / Any Linux/Unix system with Bash
-
----
-
-## Table of Contents
-
-- [Objectives](#objectives)
-- [Prerequisites](#prerequisites)
-- [Task 1: Connect to EC2 via SSH](#task-1-connect-to-ec2-via-ssh)
-  - [Windows Users (PuTTY)](#windows-users-putty)
-  - [macOS/Linux Users (Terminal)](#macoslinux-users-terminal)
-- [Your Challenge](#your-challenge)
-- [Solution & Explanation](#solution--explanation)
-- [Testing & Validation](#testing--validation)
-- [Advanced Enhancements](#advanced-enhancements)
-- [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -428,7 +412,7 @@ echo "$(date): Created batch $((max_num+1))-$((max_num+BATCH_SIZE))" >> "$LOG_FI
 
 ---
 
-## Lab Complete! 🎉
+## Lab Complete! 
 
 You have successfully:
 - Connected to an Amazon Linux EC2 instance via SSH
