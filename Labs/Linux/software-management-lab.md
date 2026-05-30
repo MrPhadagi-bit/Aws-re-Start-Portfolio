@@ -4,21 +4,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Prerequisites](#prerequisites)
-3. [Task 1: Connect to EC2 via SSH](#task-1-connect-to-ec2-via-ssh)
-4. [Task 2: Update the Linux Machine](#task-2-update-the-linux-machine)
-5. [Task 3: Roll Back a Package](#task-3-roll-back-a-package)
-6. [Task 4: Install the AWS CLI](#task-4-install-the-aws-cli)
-7. [Task 5: Configure the AWS CLI](#task-5-configure-the-aws-cli)
-8. [Cleanup](#cleanup)
-9. [Troubleshooting](#troubleshooting)
-10. [Key Takeaways](#key-takeaways)
-
----
-
 ## Overview
 
 This lab walks you through essential software management tasks on an Amazon Linux EC2 instance. You will:
