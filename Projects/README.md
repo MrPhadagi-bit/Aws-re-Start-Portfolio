@@ -4,5 +4,5 @@ This folder contains hands-on projects that demonstrate practical AWS, Linux, ne
 
 ## Project Folders
 
-- `Project-1-Description/` - First project documentation and files.
+- `Project-Static-Website-AWS/` - Static website hosting project using Amazon S3.
 - `Project-2-Description/` - Second project documentation and files.
