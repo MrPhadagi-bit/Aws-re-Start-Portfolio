@@ -1,0 +1,123 @@
+{
+  "restaurant": {
+    "name": "Zani’s Eatery",
+    "cuisine": "Gourmet Street Food & Grills",
+    "location": "Waterfront Boulevard"
+  },
+  "categories": [
+    "Appetizers",
+    "Mains",
+    "Desserts",
+    "Beverages"
+  ],
+  "items": [
+    {
+      "id": "item-01",
+      "name": "Zani’s Monster Double Burger",
+      "description": "Double decker premium Wagyu beef patties basted in our secret glaze, layered with melted double cheddar, fresh crisp lettuce, ripe tomatoes, and red onions on a toasted brioche bun, served with rustic skin-on fries.",
+      "category": "Mains",
+      "price": 165.00,
+      "rating": 5.0,
+      "isVegetarian": false,
+      "isPopular": true,
+      "imageUrl": "../resources/images/image_1.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-02",
+      "name": "Zani’s Signature Feast Platter",
+      "description": "The ultimate carnivore combo: a flame-grilled beef burger, tender quarter chicken marinated in secret spices, artisan gourmet sausage cuts, served over crispy hand-cut chips, basted with premium relish and accompanied by our signature chef's pink dip.",
+      "category": "Mains",
+      "price": 195.00,
+      "rating": 4.9,
+      "isVegetarian": false,
+      "isPopular": true,
+      "imageUrl": "../resources/images/image_2.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-03",
+      "name": "Bistro Gourmet Wrap Combo",
+      "description": "Grilled marinated chicken breast chunks, wrapped snugly in a toasted soft tortilla wrap with fresh shredded greens and garlic sauce, alongside sizzling golden fries, peri-peri wings, and cheese sauce.",
+      "category": "Mains",
+      "price": 145.00,
+      "rating": 4.8,
+      "isVegetarian": false,
+      "isPopular": true,
+      "imageUrl": "../resources/images/image_3.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1626700051175-6518c4793f4f?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-04",
+      "name": "Eatery Flame-Grilled Wings",
+      "description": "Eight flame-licked buffalo chicken wings glazed in our sweet and tangy Zani sauce, served over golden fries with spicy dipping aioli.",
+      "category": "Mains",
+      "price": 115.00,
+      "rating": 4.7,
+      "isVegetarian": false,
+      "isPopular": false,
+      "imageUrl": "../resources/images/image_4.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-05",
+      "name": "Zani’s Waffle Cone & Ice Cream",
+      "description": "A delightful deconstructed dessert tray featuring premium vanilla bean and milk gelato scoops, mini crunchy waffle sections, edible sugar cones, and a drizzle of warm dark Belgian chocolate sauce.",
+      "category": "Desserts",
+      "price": 85.00,
+      "rating": 4.9,
+      "isVegetarian": true,
+      "isPopular": true,
+      "imageUrl": "../resources/images/image_5.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-06",
+      "name": "Zani's Classic Oreo Shakes",
+      "description": "Our famous triple-thick milkshakes blended with premium cookies-and-cream ice cream, topped with clouds of fresh whipped cream, rich chocolate syrup, and a whole crunchy Oreo cookie.",
+      "category": "Beverages",
+      "price": 65.00,
+      "rating": 5.0,
+      "isPopular": true,
+      "isVegetarian": true,
+      "imageUrl": "../resources/images/image_6.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-07",
+      "name": "Gourmet Ribs & Double Patty Combo",
+      "description": "Three basted pork loin ribs paired with a double-stack cheddar cheese burger and golden rustic french fries. Ultimate satiety guaranteed.",
+      "category": "Mains",
+      "price": 220.00,
+      "rating": 4.9,
+      "isPopular": false,
+      "isVegetarian": false,
+      "imageUrl": "../resources/images/image_7.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-08",
+      "name": "Bistro Sunset Mocktail",
+      "description": "A carbonated tropical mixture of fresh passion fruit pulp, squeezed lemonade, organic orange nectar, and a splash of wild rose syrup, served ice-cold.",
+      "category": "Beverages",
+      "price": 55.00,
+      "rating": 4.8,
+      "isPopular": false,
+      "isVegetarian": true,
+      "imageUrl": "../resources/images/image_8.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": "item-09",
+      "name": "Fresh Berry Sparkler",
+      "description": "A sparkling refreshing crush of organic summer strawberries, wild blueberries, freshly sprigged mint leaves, lime slices, and tonic water.",
+      "category": "Beverages",
+      "price": 50.00,
+      "rating": 4.7,
+      "isPopular": false,
+      "isVegetarian": true,
+      "imageUrl": "../resources/images/image_9.jpeg",
+      "alternateUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80"
+    }
+  ]
+}
