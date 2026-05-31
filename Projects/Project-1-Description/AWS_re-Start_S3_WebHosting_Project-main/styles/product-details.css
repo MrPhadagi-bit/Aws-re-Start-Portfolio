@@ -1,0 +1,189 @@
+/*
+  L'Aura Bistro - Product Details Stylesheet (Vanilla CSS)
+*/
+
+@import url("./main.css");
+
+.back-link {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0;
+  display: inline-flex;
+  transition: var(--transition-smooth);
+}
+
+.back-link:hover {
+  color: var(--accent-gold);
+  transform: translateX(-3px);
+}
+
+/* Detail Structure Grid layout */
+.product-structure-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* Image framing with custom elegant gold edge accents */
+.product-image-frame {
+  padding: 1.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.image-sub-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: #000;
+}
+
+.gourmet-image-render {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.image-sub-wrapper:hover .gourmet-image-render {
+  transform: scale(1.02);
+}
+
+.gold-edge-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-gold);
+}
+
+/* Category tags formatting */
+.category-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #ffffff;
+  background-color: var(--border-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tag-appetizers { background-color: rgba(14, 165, 233, 0.15); color: #0ea5e9; border-color: rgba(14, 165, 233, 0.3); }
+.tag-mains { background-color: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); }
+.tag-desserts { background-color: rgba(236, 72, 153, 0.15); color: #ec4899; border-color: rgba(236, 72, 153, 0.3); }
+.tag-beverages { background-color: rgba(139, 92, 246, 0.15); color: #8b5cf6; border-color: rgba(139, 92, 246, 0.3); }
+
+.popularity-badge {
+  background-color: var(--accent-glow);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.6rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+
+.vegetarian-badge {
+  background-color: rgba(16, 185, 129, 0.08);
+  color: var(--accent-green);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  padding: 0.25rem 0.6rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+}
+
+.product-title {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.rating-badge {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  border: 1px solid var(--border-color);
+}
+
+/* Descriptive context spacing */
+.product-description {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* Actions Panel */
+.purchase-panel-card {
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.gourmet-price {
+  font-size: 1.8rem;
+}
+
+/* Quantity Box */
+.quantity-picker-box {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 50px;
+}
+
+.qty-btn {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.qty-btn:hover {
+  background-color: var(--accent-glow);
+  color: var(--accent-gold);
+}
+
+.qty-count {
+  width: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.btn-purchase {
+  height: 50px;
+}
+
+@media (max-width: 900px) {
+  .product-structure-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

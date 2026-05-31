@@ -1,0 +1,296 @@
+/*
+  L'Aura Bistro - Checkout and Cart Processing Stylesheet (Vanilla CSS)
+*/
+
+@import url("./main.css");
+
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.history-direct-link {
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.history-direct-link:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-hover);
+  transform: translateY(-1px);
+}
+
+/* Three-column modular grid (Checkout Left 1.2fr, Right 0.8fr) */
+.checkout-form-structure {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* Left: Cart Table formatting */
+.cart-list-wrapper {
+  background-color: var(--bg-secondary);
+}
+
+.cart-table-header {
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 500;
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+}
+
+.cart-row:last-child {
+  border-bottom: none;
+}
+
+.cart-row:hover {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.cart-col-product {
+  flex: 1;
+}
+
+.cart-thumb {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background-color: #000;
+  border: 1px solid var(--border-color);
+}
+
+.cart-item-name {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.cart-col-quantity {
+  width: 110px;
+}
+
+.cart-qty-adjust-btn {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.cart-qty-adjust-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  background-color: var(--accent-glow);
+}
+
+.cart-entry-count {
+  width: 32px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.cart-col-total {
+  width: 100px;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.cart-col-action {
+  width: 50px;
+}
+
+.cart-delete-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: var(--transition-smooth);
+  border-radius: var(--radius-sm);
+}
+
+.cart-delete-btn:hover {
+  color: var(--accent-rose);
+  background-color: rgba(253, 164, 175, 0.08);
+}
+
+
+/* Right: Panel Cards for logistics and payment */
+.purchase-segment-card {
+  padding: 1.75rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+}
+
+.pane-segment-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+/* Filter/Logistics Option grid selectors */
+.logistics-label {
+  cursor: pointer;
+  position: relative;
+}
+
+.logistics-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.selector-card-body {
+  display: block;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.logistics-label:hover .selector-card-body {
+  border-color: var(--border-glow);
+}
+
+.logistics-label input[type="radio"]:checked + .selector-card-body {
+  border-color: var(--accent-gold);
+  background-color: var(--accent-glow);
+}
+
+.logistics-label input[type="radio"]:checked + .selector-card-body .title-bold {
+  color: var(--accent-gold);
+}
+
+.title-bold {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.sub-muted {
+  color: var(--text-secondary);
+}
+
+/* Custom form components */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-label {
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-field {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  width: 100%;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.input-field::placeholder {
+  color: #4b5163;
+}
+
+.btn-checkout-submit {
+  height: 52px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.empty-state {
+  border: 1px dashed var(--border-color);
+  margin: 1.5rem;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 968px) {
+  .checkout-form-structure {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-table-header {
+    display: none;
+  }
+  .cart-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  .cart-col-product {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .cart-col-quantity {
+    width: auto;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  .cart-col-total {
+    width: auto;
+    flex: 1;
+    text-align: left;
+  }
+  .cart-col-action {
+    width: auto;
+  }
+  .logistics-select-group {
+    grid-template-columns: 1fr;
+  }
+}

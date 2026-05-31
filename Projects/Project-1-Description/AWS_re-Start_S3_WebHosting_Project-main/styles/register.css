@@ -1,0 +1,7 @@
+/*
+  L'Aura Bistro - Patron Registration Stylesheet (Vanilla CSS)
+*/
+
+@import url("./login.css");
+
+/* Extends login styles directly, keeping classes congruent and fast */

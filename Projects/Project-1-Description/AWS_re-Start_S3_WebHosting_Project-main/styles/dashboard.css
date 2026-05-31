@@ -1,0 +1,234 @@
+/*
+  Zani's Eatery - Exquisite CEO & Executive Analytics Dashboard Stylesheet (Vanilla CSS)
+*/
+
+@import url("./main.css");
+
+.dashboard-hero {
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.08) 0%, rgba(7, 7, 9, 0) 60%), var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent-gold), #fae082);
+}
+
+.hero-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.mini-stat-card {
+  background: rgba(7, 7, 9, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.mini-stat-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  background: rgba(197, 168, 128, 0.03);
+}
+
+.stat-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+}
+
+/* Tab Navigation System */
+.dashboard-navigation {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.15rem;
+  margin-bottom: 2.5rem;
+  gap: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.dashboard-navigation::-webkit-scrollbar {
+  display: none; /* Safari & Chrome */
+}
+
+.tab-trigger {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  padding: 1rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.tab-trigger:hover {
+  color: #ffffff;
+}
+
+.tab-trigger.active {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+.tab-trigger.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Bento grid layouts */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.grid-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-color: rgba(212, 175, 55, 0.15);
+}
+
+.colspan-12 { grid-column: span 12; }
+.colspan-8 { grid-column: span 8; }
+.colspan-6 { grid-column: span 6; }
+.colspan-4 { grid-column: span 4; }
+
+@media (max-width: 991px) {
+  .colspan-8, .colspan-6, .colspan-4 {
+    grid-column: span 12;
+  }
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Tables in Dashboard */
+.executive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.executive-table th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.executive-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+}
+
+.executive-table tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* Progress-bar components */
+.progress-meter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.progress-label-wrap {
+  display: flex;
+  justify-content: space-between;
+  text-size: 0.8rem;
+}
+
+.progress-rail {
+  background: var(--gray-800);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent-gold) 0%, #ffeaa7 100%);
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Pie Chart Circle representation style */
+.pie-chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.legend-dot-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

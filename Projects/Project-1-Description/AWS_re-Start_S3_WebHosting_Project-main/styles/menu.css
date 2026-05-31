@@ -1,0 +1,247 @@
+/*
+  L'Aura Bistro - Gastronomic Catalog Grid Stylesheet (Vanilla CSS)
+  Imports core reset variables from main.css and specifies design mechanics
+*/
+
+@import url("./main.css");
+
+/* Decorative cover banner with delicate background blending */
+.menu-cover-container {
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(7, 7, 9, 0.45) 30%, rgba(7, 7, 9, 1.0)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+.menu-cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 7, 9, 0.55);
+  z-index: 1;
+}
+
+.menu-header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tag-mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.menu-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.menu-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Category panel buttons */
+.category-panel {
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.filter-btn {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-gold);
+  color: var(--bg-primary);
+  border-color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Product Catalog Grid layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+}
+
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+}
+
+.card-thumbnail-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.catalog-card:hover .card-image {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* Absolute Tags in thumbnail */
+.category-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  z-index: 5;
+}
+
+/* Color palettes based on categories */
+.tag-appetizers { background-color: #0ea5e9; color: #ffffff; }
+.tag-mains { background-color: #f59e0b; color: #ffffff; }
+.tag-desserts { background-color: #ec4899; color: #ffffff; }
+.tag-beverages { background-color: #8b5cf6; color: #ffffff; }
+
+.grid-signature-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(212, 175, 55, 0.9);
+  color: #000000;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  z-index: 5;
+}
+
+.grid-vegetarian-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: var(--accent-green);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Card Body detail segments */
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-item-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.card-item-rating {
+  font-size: 0.85rem;
+}
+
+.card-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.card-price {
+  font-size: 1.15rem;
+  color: var(--accent-gold);
+}
+
+.btn-grid-details {
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-grid-details:hover {
+  color: var(--accent-gold);
+  transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+  .menu-cover-container {
+    padding: 7rem 1.2rem 3rem;
+  }
+  .menu-title {
+    font-size: 2.2rem;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,121 @@
+/*
+  L'Aura Bistro - Order Successful Splash Stylesheet (Vanilla CSS)
+*/
+
+@import url("./main.css");
+
+/* Confirmation card container styling */
+.success-layout-card {
+  max-width: 650px;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 3.5rem 3rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+
+.success-ring {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(16, 185, 129, 0.08);
+  border-size: 1px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+
+.success-check-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--accent-green);
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.25em;
+  display: block;
+}
+
+.success-title {
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.success-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.max-w-paragraph {
+  max-width: 480px;
+  margin: 0.75rem auto 0;
+}
+
+.invoice-tag {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Logistic arrival timer box */
+.success-eta-box {
+  background-color: var(--accent-glow);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-gold);
+  font-size: 0.88rem;
+}
+
+.inline-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.success-actions {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+@keyframes zoomSuccess {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-success-zoom {
+  animation: zoomSuccess 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@media (max-width: 600px) {
+  .success-layout-card {
+    padding: 2.5rem 1.5rem;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+  }
+  .success-title {
+    font-size: 1.8rem;
+  }
+  .success-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .success-actions .btn-primary,
+  .success-actions .btn-secondary {
+    width: 100%;
+  }
+}

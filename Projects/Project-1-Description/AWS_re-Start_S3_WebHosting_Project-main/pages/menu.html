@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gourmet Collection — Zani's Eatery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Page Specific Stylesheet. Links EXACTLY to one CSS file per page rule, which imports main.css -->
+    <link rel="stylesheet" href="../styles/menu.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">L'AURA</span>
+          <span class="logo-sub">BISTRO</span>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="menu.html" class="nav-item active">Culinary Menu</a>
+          <a href="orders-history.html" class="nav-item">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="orders.html" class="cart-anchor" title="View Gourmet Selection">
+            <i data-lucide="shopping-cart" class="cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+          </a>
+          <div id="navbar-auth-container" class="auth-box">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MENU MASTER HEADER -->
+    <div class="menu-cover-container">
+      <div class="menu-cover-overlay"></div>
+      <div class="menu-header-content text-center">
+        <span class="tag-mono">THE BILL OF FARE</span>
+        <h1 class="menu-title font-serif">Our Gastronomic Collection</h1>
+        <p class="menu-subtitle">Explore courses assembled with organic ingredients, seasonal nuances, and deep culinary discipline.</p>
+      </div>
+    </div>
+
+    <!-- MAIN GRID SECTION -->
+    <main class="max-width-container" style="padding-top:4rem; padding-bottom:6rem;">
+      
+      <!-- Luxury Interactive Search Bar -->
+      <div class="search-wrap" style="max-width: 520px; margin: -1rem auto 2.5rem; position: relative; z-index: 10;">
+        <i data-lucide="search" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--accent-gold); pointer-events: none;"></i>
+        <input type="text" id="menu-search-input" placeholder="Search our gastronomic masterpieces... (e.g., burger, platter)" style="width: 100%; padding: 0.9rem 1.25rem 0.9rem 3rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 40px; color: #ffffff; font-size: 0.9rem; outline: none; transition: all var(--transition-normal); box-shadow: 0 4px 12px rgba(0,0,0,0.25);" />
+        <button id="menu-search-clear" style="position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; display: none; padding: 4px;"><i data-lucide="x" style="width: 16px; height: 16px;"></i></button>
+      </div>
+
+      <!-- Category Nav filters -->
+      <div class="category-panel flex justify-center gap-3 flex-wrap" id="category-filter-bar">
+        <!-- populated dynamically from json structure -->
+        <button class="filter-btn active" data-category="ALL">All Manifest</button>
+        <button class="filter-btn" data-category="Appetizers">Appetizers</button>
+        <button class="filter-btn" data-category="Mains">Mains</button>
+        <button class="filter-btn" data-category="Desserts">Desserts</button>
+        <button class="filter-btn" data-category="Beverages">Beverages</button>
+      </div>
+
+      <!-- Food card grid -->
+      <div class="menu-grid" id="menu-grid-items">
+        <div class="grid-loading text-center text-muted col-span">
+          <i data-lucide="loader" class="animate-spin text-accent" style="width: 32px; height: 32px; margin: 0 auto 1rem;"></i>
+          <p>Sourcing dining tables...</p>
+        </div>
+      </div>
+
+      <!-- Interactive Pagination Navigation -->
+      <div class="pagination-container flex justify-center align-center gap-2 mt-12 mb-4" style="margin-top: 4rem;">
+        <button id="page-prev-btn" class="pagination-btn" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border-color); color: var(--text-muted); background: none; border-radius: var(--radius-sm); cursor: pointer;"><i data-lucide="chevron-left" style="width:14px; height:14px; display: inline-block; vertical-align: middle;"></i></button>
+        <button id="page-num-1" class="pagination-btn" style="padding: 0.5rem 1rem; border: 1px solid var(--accent-gold); color: var(--accent-gold); background: rgba(197, 168, 128, 0.1); border-radius: var(--radius-sm); font-weight: 600; cursor: pointer;">1</button>
+        <button id="page-num-2" class="pagination-btn" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color); color: var(--text-secondary); background: none; border-radius: var(--radius-sm); cursor: pointer;">2</button>
+        <button id="page-num-3" class="pagination-btn" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color); color: var(--text-secondary); background: none; border-radius: var(--radius-sm); cursor: pointer;">3</button>
+        <button id="page-next-btn" class="pagination-btn" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border-color); color: var(--text-muted); background: none; border-radius: var(--radius-sm); cursor: pointer;"><i data-lucide="chevron-right" style="width:14px; height:14px; display: inline-block; vertical-align: middle;"></i></button>
+      </div>
+    </main>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Core App Module Scripts -->
+    <script src="../scripts/app.js"></script>
+    
+    <!-- Render catalog scripts with full resiliency & custom coming-soon Modal -->
+    <style>
+      /* Smooth transitions for the custom dismissible modal */
+      @keyframes modalFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes modalSlideUp {
+        from { transform: scale(0.9) translateY(20px); opacity: 0; }
+        to { transform: scale(1) translateY(0); opacity: 1; }
+      }
+      .custom-modal-fade-in {
+        animation: modalFadeIn 0.25s ease-out forwards;
+      }
+      .custom-modal-slide-up {
+        animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+          const gridItems = document.getElementById('menu-grid-items');
+          const paginationContainer = document.querySelector('.pagination-container');
+          
+          if (!gridItems) return;
+
+          // Highly robust loader prioritizing local dataset so it never shows errors
+          let fullCatalog = window.ZANI_MENU_ITEMS || [];
+
+          if (fullCatalog.length === 0) {
+              try {
+                  const response = await fetch('../data/menu.json');
+                  if (response.ok) {
+                      const data = await response.json();
+                      fullCatalog = data.items || [];
+                  }
+              } catch (err) {
+                  console.warn("Could not fetch remote menu database, using hardcoded items fallback", err);
+              }
+          }
+
+          let currentPage = 1;
+          const itemsPerPage = 6;
+          let currentCategory = 'ALL';
+          let searchQuery = '';
+
+          // Highly synchronized search and category filtering processor
+          function applyFilters() {
+              let dataset = fullCatalog;
+              
+              if (searchQuery) {
+                  dataset = dataset.filter(item => 
+                      item.name.toLowerCase().includes(searchQuery) ||
+                      item.description.toLowerCase().includes(searchQuery) ||
+                      item.category.toLowerCase().includes(searchQuery)
+                  );
+              }
+
+              renderFilteredGrid(dataset, currentCategory);
+              syncPaginationControls(dataset.length);
+          }
+
+          // Initial render call
+          applyFilters();
+
+          // Bind interactive search controls
+          const searchInput = document.getElementById('menu-search-input');
+          const searchClear = document.getElementById('menu-search-clear');
+
+          if (searchInput) {
+              searchInput.addEventListener('input', (e) => {
+                  searchQuery = e.target.value.toLowerCase().trim();
+                  if (searchClear) {
+                      searchClear.style.display = searchQuery ? 'block' : 'none';
+                  }
+                  currentPage = 1; // reset search viewports
+                  applyFilters();
+              });
+
+              searchInput.addEventListener('focus', () => {
+                  searchInput.style.borderColor = 'var(--accent-gold)';
+                  searchInput.style.boxShadow = '0 0 10px rgba(197, 168, 128, 0.2)';
+              });
+              searchInput.addEventListener('blur', () => {
+                  searchInput.style.borderColor = 'var(--border-color)';
+                  searchInput.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
+              });
+          }
+
+          if (searchClear) {
+              searchClear.addEventListener('click', () => {
+                  searchInput.value = '';
+                  searchQuery = '';
+                  searchClear.style.display = 'none';
+                  currentPage = 1;
+                  applyFilters();
+              });
+          }
+
+          // Assign click filters
+          const filterButtons = document.querySelectorAll('.filter-btn');
+          filterButtons.forEach(btn => {
+              btn.addEventListener('click', (e) => {
+                  const selectedCat = btn.getAttribute('data-category');
+                  
+                  if (selectedCat !== 'ALL') {
+                      // Show beautiful, custom, dismissible HTML modal
+                      showComingSoonModal(selectedCat);
+                  }
+
+                  // Toggle active buttons
+                  filterButtons.forEach(b => b.classList.remove('active'));
+                  btn.classList.add('active');
+
+                  currentCategory = selectedCat;
+                  currentPage = 1; // reset page on filter change
+                  
+                  applyFilters();
+              });
+          });
+
+          // Pagination Button click handlers
+          const prevBtn = document.getElementById('page-prev-btn');
+          const nextBtn = document.getElementById('page-next-btn');
+          const num1Btn = document.getElementById('page-num-1');
+          const num2Btn = document.getElementById('page-num-2');
+          const num3Btn = document.getElementById('page-num-3');
+
+          if (num1Btn) {
+              num1Btn.addEventListener('click', () => {
+                  if (currentPage !== 1) {
+                      currentPage = 1;
+                      applyFilters();
+                  }
+              });
+          }
+
+          if (num2Btn) {
+              num2Btn.addEventListener('click', () => {
+                  if (currentPage !== 2) {
+                      currentPage = 2;
+                      applyFilters();
+                  }
+              });
+          }
+
+          if (num3Btn) {
+              num3Btn.addEventListener('click', () => {
+                  alert("Feature Coming Soon! There are no courses in our registry on Page 3 yet. Currently page 2 is the maximum limit of our signature gourmet menu.");
+              });
+          }
+
+          if (prevBtn) {
+              prevBtn.addEventListener('click', () => {
+                  if (currentPage > 1) {
+                      currentPage = 1;
+                      applyFilters();
+                  }
+              });
+          }
+
+          if (nextBtn) {
+              nextBtn.addEventListener('click', () => {
+                  if (currentPage < 2) {
+                      currentPage = 2;
+                      applyFilters();
+                  }
+              });
+          }
+
+          function syncPaginationControls(filteredLength) {
+              if (currentCategory !== 'ALL') {
+                  if (paginationContainer) {
+                      paginationContainer.style.display = 'none';
+                  }
+                  return;
+              }
+
+              if (paginationContainer) {
+                  paginationContainer.style.display = 'flex';
+              }
+
+              const prevBtnEl = document.getElementById('page-prev-btn');
+              const nextBtnEl = document.getElementById('page-next-btn');
+              const btn1 = document.getElementById('page-num-1');
+              const btn2 = document.getElementById('page-num-2');
+
+              if (!btn1 || !btn2) return;
+
+              // Page 1 styling
+              if (currentPage === 1) {
+                  btn1.style.border = '1px solid var(--accent-gold)';
+                  btn1.style.color = 'var(--accent-gold)';
+                  btn1.style.background = 'rgba(197, 168, 128, 0.1)';
+                  
+                  btn2.style.border = '1px solid var(--border-color)';
+                  btn2.style.color = 'var(--text-secondary)';
+                  btn2.style.background = 'none';
+
+                  if (prevBtnEl) {
+                      prevBtnEl.style.opacity = '0.35';
+                      prevBtnEl.style.cursor = 'default';
+                  }
+                  if (nextBtnEl) {
+                      nextBtnEl.style.opacity = '1';
+                      nextBtnEl.style.cursor = 'pointer';
+                  }
+              } else if (currentPage === 2) {
+                  btn2.style.border = '1px solid var(--accent-gold)';
+                  btn2.style.color = 'var(--accent-gold)';
+                  btn2.style.background = 'rgba(197, 168, 128, 0.1)';
+                  
+                  btn1.style.border = '1px solid var(--border-color)';
+                  btn1.style.color = 'var(--text-secondary)';
+                  btn1.style.background = 'none';
+
+                  if (prevBtnEl) {
+                      prevBtnEl.style.opacity = '1';
+                      prevBtnEl.style.cursor = 'pointer';
+                  }
+                  if (nextBtnEl) {
+                      nextBtnEl.style.opacity = '0.35';
+                      nextBtnEl.style.cursor = 'default';
+                  }
+              }
+          }
+
+          // Function to display an elegant custom modal matching premium gold theme
+          function showComingSoonModal(category) {
+              const modalId = 'zani-soon-modal';
+              
+              // Remove if already exists
+              const oldModal = document.getElementById(modalId);
+              if (oldModal) oldModal.remove();
+
+              const modal = document.createElement('div');
+              modal.id = modalId;
+              modal.className = 'custom-modal-fade-in';
+              modal.style.position = 'fixed';
+              modal.style.top = '0';
+              modal.style.left = '0';
+              modal.style.width = '100vw';
+              modal.style.height = '100vh';
+              modal.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+              modal.style.backdropFilter = 'blur(10px)';
+              modal.style.webkitBackdropFilter = 'blur(10px)';
+              modal.style.display = 'flex';
+              modal.style.alignItems = 'center';
+              modal.style.justifyContent = 'center';
+              modal.style.zIndex = '999999';
+
+              modal.innerHTML = `
+                  <div class="custom-modal-slide-up" style="background: var(--gray-900); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 3rem 2rem; max-width: 460px; width: 90%; text-align: center; box-shadow: var(--shadow-xl); position: relative; border-top: 4px solid var(--accent-gold);">
+                      <button id="modal-close-x" style="position: absolute; right: 1.25rem; top: 1.25rem; background: none; border: none; color: var(--text-muted); cursor: pointer; transition: color 0.2s;"><i data-lucide="x" style="width: 20px; height: 20px;"></i></button>
+                      <div style="background: rgba(197, 168, 128, 0.08); width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; border: 1px solid rgba(197, 168, 128, 0.2);">
+                          <i data-lucide="hourglass" style="width: 32px; height: 32px; color: var(--accent-gold);"></i>
+                      </div>
+                      <h3 class="font-serif" style="font-size: 1.65rem; color: #ffffff; margin-bottom: 0.75rem; font-weight: 500;">Feature Coming Soon</h3>
+                      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; padding: 0 0.5rem;">
+                          Our signature <strong style="color: var(--accent-gold); font-weight: 600;">${category}</strong> selections are currently in preparation by our kitchen brigade. Expect flame-grilled excellence soon.
+                      </p>
+                      <button id="modal-btn-dismiss" class="btn-primary" style="width: 100%; padding: 0.85rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; border-radius: var(--radius-sm); border: none; background: var(--accent-gold); color: #000000; transition: background var(--transition-normal);">
+                          Acknowledge & Return
+                      </button>
+                  </div>
+              `;
+
+              document.body.appendChild(modal);
+
+              // Setup Lucide icons inside modal
+              if (window.lucide) {
+                  window.lucide.createIcons();
+              }
+
+              // Bind event triggers
+              const closeX = document.getElementById('modal-close-x');
+              const closeBtn = document.getElementById('modal-btn-dismiss');
+
+              const performDismiss = () => {
+                  modal.style.opacity = '0';
+                  modal.style.transition = 'opacity 0.2s ease-out';
+                  setTimeout(() => {
+                      modal.remove();
+                  }, 200);
+              };
+
+              closeX.addEventListener('click', performDismiss);
+              closeBtn.addEventListener('click', performDismiss);
+              modal.addEventListener('click', (ev) => {
+                  if (ev.target === modal) performDismiss();
+              });
+          }
+
+          function renderFilteredGrid(items, category) {
+              // STRICTOR RULE: The products/dishes must show ONLY when the "All Manifest" tab is active.
+              if (category !== 'ALL') {
+                  gridItems.innerHTML = `
+                      <div class="empty-slate text-center" style="grid-column: 1 / -1; padding: 5rem 1.5rem; border: 1px dashed var(--gray-800); border-radius: var(--radius-md); background: rgba(0,0,0,0.15);">
+                          <i data-lucide="utensils-crosses" class="text-accent" style="width: 36px; height: 36px; margin:0 auto 1.25rem; opacity: 0.5; stroke: var(--accent-gold);"></i>
+                          <h3 class="font-serif" style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.5rem;">Category Sealed</h3>
+                          <p style="color:var(--text-secondary); max-width: 440px; margin: 0 auto; line-height: 1.5; font-size: 0.9rem;">
+                              Select the <strong style="color:var(--accent-gold);">"All Manifest"</strong> tab to browse and orchestrate your active gourmand order.
+                          </p>
+                      </div>
+                  `;
+                  if (window.lucide) window.lucide.createIcons();
+                  return;
+              }
+
+              if (items.length === 0) {
+                  gridItems.innerHTML = `
+                      <div class="empty-slate text-center" style="grid-column: 1 / -1; padding: 4rem 1.5rem;">
+                          <p class="text-muted">No dishes listed in this category today.</p>
+                      </div>
+                  `;
+                  return;
+              }
+
+              // Filter on pages! Slicing 6 items per page.
+              const startIndex = (currentPage - 1) * itemsPerPage;
+              const endIndex = startIndex + itemsPerPage;
+              const paginatedItems = items.slice(startIndex, endIndex);
+
+              let gridHTML = '';
+              paginatedItems.forEach(item => {
+                  const tagClass = `tag-${item.category.toLowerCase().replace(/\s+/g, '-')}`;
+                  const chefLabel = item.isPopular ? `
+                      <span class="grid-signature-badge">
+                          <i data-lucide="award" style="width: 12px; height: 12px;"></i> Chef's Choice
+                      </span>
+                  ` : '';
+
+                  const vegLabel = item.isVegetarian ? `
+                      <span class="grid-vegetarian-badge" title="Vegetarian Selection">VG</span>
+                  ` : '';
+
+                  const imageSrc = item.imageUrl || '';
+                  const fallbackSrc = item.alternateUrl || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80';
+
+                  gridHTML += `
+                      <div class="card catalog-card">
+                          <div class="card-thumbnail-container">
+                              <img src="${imageSrc}" onerror="this.onerror=null; this.src='${fallbackSrc}';" class="card-image" alt="${item.name}">
+                              <span class="category-label ${tagClass}">${item.category}</span>
+                              ${chefLabel}
+                              ${vegLabel}
+                          </div>
+                          
+                          <div class="card-body">
+                              <div class="flex justify-between align-center mb-2">
+                                  <h3 class="card-item-title font-serif">${item.name}</h3>
+                                  <span class="card-item-rating flex-items">
+                                      <i data-lucide="star" style="width:12px; height:12px; fill: var(--accent-gold); stroke: var(--accent-gold);"></i>
+                                      <span class="text-xs text-white text-semibold ml-1">${item.rating}</span>
+                                  </span>
+                              </div>
+                              <p class="card-text text-xs text-secondary mb-4">${item.description}</p>
+                              
+                              <div class="flex justify-between align-center pt-3 border-t border-gray-800/40">
+                                  <span class="card-price font-mono text-semibold">R ${item.price.toFixed(2)}</span>
+                                  <a href="product-details.html?id=${item.id}" class="btn-grid-details">
+                                      View Masterpiece <i data-lucide="chevron-right" style="width:14px; height:14px;"></i>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+              });
+
+              gridItems.innerHTML = gridHTML;
+              if (window.lucide) window.lucide.createIcons();
+          }
+      });
+    </script>
+  </body>
+</html>

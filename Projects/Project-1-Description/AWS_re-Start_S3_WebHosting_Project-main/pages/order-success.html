@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Confirmed — L'Aura Bistro</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS - One CSS file per page rule, which imports main.css -->
+    <link rel="stylesheet" href="../styles/order-success.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">L'AURA</span>
+          <span class="logo-sub">BISTRO</span>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="menu.html" class="nav-item">Culinary Menu</a>
+          <a href="orders-history.html" class="nav-item">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="orders.html" class="cart-anchor" title="View Gourmet Selection">
+            <i data-lucide="shopping-cart" class="cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+          </a>
+          <div id="navbar-auth-container" class="auth-box">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONFIRMATION MAIN CONTENT -->
+    <main class="max-width-container flex justify-center" style="padding-top:5rem; padding-bottom:8rem;">
+      
+      <div class="success-layout-card text-center" id="success-splash-card">
+        
+        <!-- Animated visual feedback node -->
+        <div class="success-ring flex align-center justify-center">
+          <i data-lucide="check-circle" class="success-check-icon animate-success-zoom"></i>
+        </div>
+
+        <span class="label-mono mt-3">SECURE ORDER TRANSMITTED</span>
+        <h1 class="success-title font-serif mt-2">Order successfully placed!</h1>
+        <p class="success-subtitle max-w-paragraph">
+          Our Executive Chef and culinary brigade have received your ticket and are preparing your courses with strict gourmet discipline.
+        </p>
+
+        <!-- Invoice detail block -->
+        <div class="success-receipt-invoice section mt-6 border border-gray-800/80 rounded-md bg-black/20 p-6 flex flex-column gap-4 text-left">
+          
+          <div class="flex justify-between border-b border-gray-800/60 pb-3 flex-wrap gap-2">
+            <div>
+              <span class="invoice-tag text-xs text-secondary mt-1 block">Booking Reference Code</span>
+              <span id="success-order-id" class="invoice-value font-mono text-bold text-white text-base">LAB-000000</span>
+            </div>
+            <div class="text-right sm-text-left">
+              <span class="invoice-tag text-xs text-secondary mt-1 block">Logistics Status</span>
+              <span id="success-order-type" class="badge">Sourcing Status...</span>
+            </div>
+          </div>
+
+          <!-- Items list summary -->
+          <div class="receipt-items-block py-1">
+            <span class="text-xs text-secondary block mb-2 font-mono uppercase">Ordered Selected Courses</span>
+            <div id="success-order-items-summary" class="item-summary-wrapper flex-column gap-2">
+              <!-- Dynamically populated rows from orders.js -->
+            </div>
+          </div>
+
+          <div class="flex justify-between border-t border-gray-800/60 pt-3.5 flex-items">
+            <span class="text-xs font-serif text-secondary text-normal" style="font-size:0.92rem;">Total amount settled:</span>
+            <span id="success-order-amount" class="invoice-total font-mono text-bold text-accent text-lg">R 0.00</span>
+          </div>
+          
+        </div>
+
+        <!-- Dynamic logistic estimate ETA badge -->
+        <div id="success-order-eta" class="success-eta-box flex-items gap-2.5 justify-center mt-4">
+          <!-- Populated from orders.js -->
+        </div>
+
+        <!-- Action triggers -->
+        <div class="success-actions flex gap-4 mt-6 justify-center flex-wrap">
+          <button type="button" class="btn-primary flex-items align-center gap-1.5" id="btn-download-success-receipt" style="padding: 0.85rem 1.75rem;">
+            <i data-lucide="download" style="width:16px; height:16px;"></i> Download Receipt (.txt)
+          </button>
+          <a href="menu.html" class="btn-secondary flex-items align-center gap-1.5" style="padding: 0.85rem 1.75rem;">
+            <i data-lucide="package" style="width:16px; height:16px;"></i> Return to Menu
+          </a>
+          <a href="orders-history.html" class="btn-secondary flex-items align-center gap-1.5" style="padding: 0.85rem 1.75rem;">
+            <i data-lucide="clipboard" style="width:16px; height:16px;"></i> My Past Bookings
+          </a>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Core Loader Scripts (Vanilla JS) -->
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/orders.js"></script>
+  </body>
+</html>

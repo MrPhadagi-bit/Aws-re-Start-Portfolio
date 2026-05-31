@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zani's Eatery — Gourmet Street Food & Grills</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Icon Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Core Style (Linked from root) -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    
+    <!-- HEADER NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="logo">
+          <span class="logo-text">ZANI'S</span>
+          <span class="logo-sub">EATERY</span>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="index.html" class="nav-item active">Home</a>
+          <a href="pages/menu.html" class="nav-item">Culinary Menu</a>
+          <a href="pages/orders-history.html" class="nav-item">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="pages/orders.html" class="cart-anchor" title="View Gourmet Selection">
+            <i data-lucide="shopping-cart" class="cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+          </a>
+          <div id="navbar-auth-container" class="auth-box">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO MASTER DISPLAY SECTION -->
+    <section class="hero-section">
+      <div class="hero-backdrop"></div>
+      <div class="hero-content">
+        <span class="hero-tag">EST. 2026</span>
+        <h1 class="hero-title">Orchestrating<br>Culinary Masterpieces</h1>
+        <p class="hero-subtitle">
+          Experience Zani's Eatery, where premium street-inspired recipes converge with absolute culinary vision. Savor our flame-grilled dishes designed with handpicked ingredients.
+        </p>
+        <div class="hero-actions">
+          <a href="pages/menu.html" class="btn-primary flex-items align-center gap-2">
+            Explore Menu Collection <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+          </a>
+          <a href="pages/orders-history.html" class="btn-secondary">
+            Dining History
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE INTRO GRID -->
+    <section class="intro-section">
+      <div class="section-header">
+        <span class="section-tag">THE CELLAR & KITCHEN</span>
+        <h2 class="section-title">Chef's Gastronomic Principles</h2>
+        <div class="header-divider"></div>
+      </div>
+
+      <div class="usp-grid">
+        <div class="usp-card card">
+          <div class="usp-icon-box">
+            <i data-lucide="sparkles" class="usp-icon"></i>
+          </div>
+          <h3>Modern Artistry</h3>
+          <p>
+            Each course is curated with precision of weights, cooking logs, and visual presentation, translating ancient recipes into post-modern gourmet masterpieces.
+          </p>
+        </div>
+
+        <div class="usp-card card animate-up-delay">
+          <div class="usp-icon-box">
+            <i data-lucide="leaf" class="usp-icon"></i>
+          </div>
+          <h3>Ethical Sourcing</h3>
+          <p>
+            We sustain organic micro-farms across South Africa, from artisanal cheeses of Cape Winelands to biodynamic herbs of West Coast.
+          </p>
+        </div>
+
+        <div class="usp-card card animate-up-delay-2">
+          <div class="usp-icon-box">
+            <i data-lucide="award" class="usp-icon"></i>
+          </div>
+          <h3>Gourmet Standard</h3>
+          <p>
+            Honored with prestigious awards, ensuring that every patron receives an outstanding, multi-sensory fine dining exploration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about-us" class="intro-section" style="background-color: var(--gray-950); border-top: 1px solid var(--border-color); padding-top: 4rem; padding-bottom: 4rem;">
+      <div class="section-header">
+        <span class="section-tag">OUR HERITAGE</span>
+        <h2 class="section-title" style="font-family: var(--font-serif); font-size: 2rem;">The Story of Zani’s Eatery</h2>
+        <div class="header-divider"></div>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 1.5rem;">
+        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1rem; margin-bottom: 2rem;">
+          Established in 2026, Zani’s Eatery represents the summit of gourmet street food and flame-grilled excellence on the Waterfront. We merge authentic local marinades with premium, meticulously sourced cuts of Wagyu beef and organic free-range poultry. Our kitchen operates under a strict code of discipline to ensure every signature burger, platter, and shake is presented with outstanding culinary poise.
+        </p>
+        <p style="color: var(--accent-gold); font-family: var(--font-serif); font-size: 1.25rem; font-style: italic;">
+          "Simple street-inspired culinary work, crafted with absolute fine-dining precision."
+        </p>
+      </div>
+    </section>
+
+    <!-- CUSTOMER'S FAVOURITES SECTION -->
+    <section id="customers-favourites" class="intro-section" style="background-color: var(--gray-900); border-top: 1px solid var(--border-color); padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="section-header">
+        <span class="section-tag">POPULAR NOMINATIONS</span>
+        <h2 class="section-title" style="font-family: var(--font-serif); font-size: 2.25rem;">Customer's Favourites</h2>
+        <p style="color: var(--text-secondary); max-width: 550px; margin: 0.5rem auto 0; font-size: 0.925rem;">
+          Our patrons' absolute highest recommended culinary selections, crafted with fire, passion and premium flair.
+        </p>
+        <div class="header-divider"></div>
+      </div>
+
+      <div id="favourites-display-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+         <!-- RENDERED DYNAMICALLY VIA JAVASCRIPT -->
+      </div>
+      
+      <div class="text-center" style="margin-top: 3.5rem;">
+         <a href="pages/menu.html" class="btn-primary" style="display: inline-block; padding: 0.85rem 2rem; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-radius: var(--radius-sm);">View Complete Menu</a>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacts" class="intro-section" style="border-top: 1px solid var(--border-color); padding-top: 4rem; padding-bottom: 4rem;">
+      <div class="section-header">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2 class="section-title" style="font-family: var(--font-serif); font-size: 2rem;">Contact & Location Coordinates</h2>
+        <div class="header-divider"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="card p-6 text-center" style="background-color: var(--gray-900); border: 1px solid var(--border-color); padding: 2rem;">
+          <i data-lucide="map-pin" class="text-accent mb-3" style="width:28px; height:28px; margin:0 auto 1rem; stroke: var(--accent-gold);"></i>
+          <h4 class="font-serif text-white font-semibold mb-2" style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent-gold);">Our Placement</h4>
+          <p class="text-xs text-secondary leading-relaxed" style="color: var(--text-secondary);">Pier 14, V&A Waterfront,<br>Cape Town, 8001</p>
+        </div>
+        <div class="card p-6 text-center" style="background-color: var(--gray-900); border: 1px solid var(--border-color); padding: 2rem;">
+          <i data-lucide="phone" class="text-accent mb-3" style="width:28px; height:28px; margin:0 auto 1rem; stroke: var(--accent-gold);"></i>
+          <h4 class="font-serif text-white font-semibold mb-2" style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent-gold);">General Enquiries</h4>
+          <p class="text-xs text-secondary leading-relaxed" style="color: var(--text-secondary);">Phone: +27 (0) 21 445 9011<br>Email: hello@zaniseatery.co.za</p>
+        </div>
+        <div class="card p-6 text-center" style="background-color: var(--gray-900); border: 1px solid var(--border-color); padding: 2rem;">
+          <i data-lucide="clock" class="text-accent mb-3" style="width:28px; height:28px; margin:0 auto 1rem; stroke: var(--accent-gold);"></i>
+          <h4 class="font-serif text-white font-semibold mb-2" style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent-gold);">Service Hours</h4>
+          <p class="text-xs text-secondary leading-relaxed" style="color: var(--text-secondary);">Mon - Sun: 11:30 AM - 10:30 PM<br>Delivery & Collect open daily</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Core App Module script -->
+    <script src="scripts/app.js"></script>
+
+    <!-- Dynamic Favourites Renderer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const favGrid = document.getElementById('favourites-display-grid');
+          if (!favGrid) return;
+          
+          // Get the catalog from app.js (window.ZANI_MENU_ITEMS has all the latest detailed items)
+          const catalog = window.ZANI_MENU_ITEMS || [];
+          
+          // Take exactly 6 popular or first dishes
+          const favorites = catalog.slice(0, 6);
+          
+          let gridHTML = '';
+          favorites.forEach(item => {
+              const tagClass = `tag-${item.category.toLowerCase().replace(/\s+/g, '-')}`;
+              const imageSrc = item.imageUrl || '';
+              const fallbackSrc = item.alternateUrl || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80';
+              
+              gridHTML += `
+                  <div class="card catalog-card" style="display: flex; flex-direction: column; height: 100%; cursor: pointer;" onclick="window.location.href='pages/product-details.html?id=${item.id}'">
+                      <div class="card-thumbnail-container" style="position: relative; overflow: hidden; height: 240px; border-radius: var(--radius-sm) var(--radius-sm) 0 0;">
+                          <img src="${imageSrc}" onerror="this.onerror=null; this.src='${fallbackSrc}';" class="card-image" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow);">
+                          <span class="category-label ${tagClass}" style="position: absolute; top: 1rem; left: 1rem; font-size: 0.725rem; font-weight: 600; text-transform: uppercase;">${item.category}</span>
+                      </div>
+                      
+                      <div class="card-body" style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: var(--gray-950);">
+                          <div>
+                              <div class="flex justify-between align-center mb-2" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                  <h3 class="card-item-title font-serif" style="font-size: 1.2rem; color: #ffffff; font-weight: 600; text-transform: none;">${item.name}</h3>
+                                  <span class="card-item-rating flex-items" style="display: flex; align-items: center; gap: 0.25rem;">
+                                      <i data-lucide="star" style="width:12px; height:12px; fill: var(--accent-gold); stroke: var(--accent-gold);"></i>
+                                      <span class="text-xs text-semibold" style="font-size: 0.75rem; color: #ffffff;">${item.rating}</span>
+                                  </span>
+                              </div>
+                              <p class="card-text text-secondary" style="font-size: 0.825rem; line-height: 1.5; color: var(--text-secondary); margin-bottom: 1.5rem;">${item.description}</p>
+                          </div>
+                          
+                          <div style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 500; display: flex; align-items: center; gap: 0.25rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: auto;">
+                              View Masterpiece & Reserve <i data-lucide="arrow-right" style="width:14px; height:14px;"></i>
+                          </div>
+                      </div>
+                  </div>
+              `;
+          });
+          
+          favGrid.innerHTML = gridHTML;
+          if (window.lucide) window.lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>

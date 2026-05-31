@@ -1,0 +1,226 @@
+/*
+  L'Aura Bistro - Patron Access/Login Stylesheet (Vanilla CSS)
+*/
+
+@import url("./main.css");
+
+/* Centered authentication bounding slate */
+.auth-bounding-card {
+  max-width: 450px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.auth-brand-logo {
+  margin-bottom: 2rem;
+}
+
+.brand-crest {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-gold);
+  background: radial-gradient(circle, rgba(197, 168, 128, 0.25) 0%, rgba(0, 0, 0, 0.4) 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(197,168,128,0.2);
+}
+
+.brand-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Custom form fields with inline prefix icons */
+.position-relative {
+  position: relative;
+}
+
+.input-icon-frame {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.prefix-input-icon {
+  position: absolute;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.input-field-with-icon {
+  background-color: var(--gray-950) !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem 0.75rem 2.6rem; /* Left padded to make way for icon */
+  border: 1px solid var(--gray-800) !important;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  width: 100%;
+}
+
+.input-field-with-icon:focus {
+  outline: none;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 10px rgba(197, 168, 128, 0.15) !important;
+}
+
+.input-field-with-icon:focus + .prefix-input-icon {
+  color: var(--accent-gold);
+}
+
+.btn-auth-trigger {
+  height: 48px;
+  max-width: 280px;
+  width: 100% !important;
+  margin: 1.5rem auto 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-navigation-footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+.footer-navigation-link {
+  display: block;
+  margin-top: 0.35rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-navigation-link:hover .inline-arrow {
+  transform: translateX(3px);
+}
+
+/* Luxury Legacy Split-Screen Visual System */
+.auth-split-wrapper {
+  display: flex;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 980px;
+  width: 100%;
+  box-shadow: 0 25px 55px rgba(0,0,0,0.5);
+  margin: 1rem auto;
+}
+
+.auth-left-panel {
+  background: linear-gradient(135deg, #7c5e43 0%, #5c422c 100%);
+  color: #ffffff;
+  padding: 4rem 3rem;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.auth-right-panel {
+  padding: 4rem 3.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+}
+
+/* Luxury overlapping labels form styles */
+.luxury-form-group {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.luxury-field-label {
+  position: absolute;
+  left: 14px;
+  top: -8px;
+  background-color: var(--bg-secondary);
+  padding: 0 6px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.luxury-input-frame {
+  position: relative;
+  width: 100%;
+}
+
+.luxury-input-field {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem 0.85rem 2.6rem; /* space for icon */
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+  width: 100%;
+  outline: none;
+}
+
+.luxury-input-field:focus {
+  outline: none;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 10px rgba(197, 168, 128, 0.15) !important;
+}
+
+.luxury-form-group:focus-within .luxury-field-label {
+  color: var(--accent-gold) !important;
+}
+
+.luxury-input-field:focus + .prefix-input-icon {
+  color: var(--accent-gold) !important;
+}
+
+@media (max-width: 860px) {
+  .auth-split-wrapper {
+    flex-direction: column !important;
+    max-width: 480px;
+    margin: 1.5rem auto;
+  }
+  .auth-left-panel {
+    width: 100% !important;
+    padding: 3rem 2rem !important;
+    gap: 2rem;
+  }
+  .auth-right-panel {
+    padding: 3rem 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-bounding-card {
+    padding: 2rem 1.5rem;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+}
+

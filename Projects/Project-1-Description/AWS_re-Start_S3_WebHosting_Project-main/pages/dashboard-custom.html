@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executive command — Zani's Eatery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Library Pinpoint -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <!-- Will be dynamically populated by app.js syncNavbar() -->
+      </div>
+    </header>
+
+    <main class="max-width-container" style="padding-top: 4rem; padding-bottom: 8rem;">
+      
+      <!-- CEO GREETING & GENERAL OVERVIEW -->
+      <div class="dashboard-hero">
+        <span class="tag-mono" style="color: var(--accent-gold); letter-spacing: 0.15em; font-size: 0.72rem; text-transform: uppercase;">Zani's Eatery Registry Access</span>
+        <h1 class="font-serif mt-1" style="font-size: 2.5rem; font-weight: 500; color: #ffffff; line-height: 1.1;">
+          Executive Command Desk
+        </h1>
+        <p class="text-sm text-secondary mt-2" style="max-width: 600px; line-height: 1.6;">
+          Welcome, Command Officer. Orchestrate real-time performance indices, track waitron and driver dispatches, analyze client transactions by merchant banks, and examine regional performance trends throughout the Republic.
+        </p>
+        
+        <!-- Live summary stats -->
+        <div class="hero-stats-strip">
+          <div class="mini-stat-card">
+            <div class="stat-icon-wrapper">
+              <i data-lucide="trending-up" style="width:20px; height:20px;"></i>
+            </div>
+            <div>
+              <span class="text-xs text-secondary mt-1 block">Monthly Revenue</span>
+              <strong class="font-mono text-white text-lg block">R 1,482,900</strong>
+            </div>
+          </div>
+          
+          <div class="mini-stat-card">
+            <div class="stat-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green);">
+              <i data-lucide="shopping-bag" style="width:20px; height:20px;"></i>
+            </div>
+            <div>
+              <span class="text-xs text-secondary mt-1 block">Fulfillment Rate</span>
+              <strong class="font-mono text-white text-lg block">99.8%</strong>
+            </div>
+          </div>
+          
+          <div class="mini-stat-card">
+            <div class="stat-icon-wrapper" style="background: rgba(253, 164, 175, 0.1); color: var(--accent-rose);">
+              <i data-lucide="users" style="width:20px; height:20px;"></i>
+            </div>
+            <div>
+              <span class="text-xs text-secondary mt-1 block">Active Patrons</span>
+              <strong class="font-mono text-white text-lg block">14,395</strong>
+            </div>
+          </div>
+
+          <div class="mini-stat-card">
+            <div class="stat-icon-wrapper">
+              <i data-lucide="utensils" style="width:20px; height:20px;"></i>
+            </div>
+            <div>
+              <span class="text-xs text-secondary mt-1 block">Total Bookings</span>
+              <strong class="font-mono text-white text-lg block">1,842</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABS CONTROL PANEL -->
+      <nav class="dashboard-navigation">
+        <button class="tab-trigger active" data-tab="sales">
+          <i data-lucide="dollar-sign" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Sales Report
+        </button>
+        <button class="tab-trigger" data-tab="employees">
+          <i data-lucide="users" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Employee Performance
+        </button>
+        <button class="tab-trigger" data-tab="location">
+          <i data-lucide="map-pin" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Regional Hubs
+        </button>
+        <button class="tab-trigger" data-tab="customers">
+          <i data-lucide="credit-card" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Patron Demographics
+        </button>
+        <button class="tab-trigger" data-tab="creative">
+          <i data-lucide="sparkles" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i> Menu Analytics
+        </button>
+      </nav>
+
+      <!-- TAB 1: SALES REPORT PANEL -->
+      <div id="tab-sales" class="tab-content">
+        <div class="dashboard-grid">
+          
+          <!-- Column chart block -->
+          <div class="grid-card colspan-8">
+            <h3 class="card-title font-serif">
+              <i data-lucide="bar-chart-3" class="text-accent" style="width:18px; height:18px;"></i> Weekly Sales Distribution Report
+            </h3>
+            <p class="text-xs text-secondary mb-6" style="margin-top:-0.5rem;">Gross revenue computed over peak weekday dining operations.</p>
+            
+            <div class="chart-illustration" style="height: 280px; display: flex; align-items: flex-end; justify-content: space-between; padding-top: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; position: relative;">
+              <!-- Grid lines -->
+              <div style="position: absolute; width:100%; height:1px; border-top:1px dashed rgba(255,255,255,0.05); bottom: 25%;"></div>
+              <div style="position: absolute; width:100%; height:1px; border-top:1px dashed rgba(255,255,255,0.05); bottom: 50%;"></div>
+              <div style="position: absolute; width:100%; height:1px; border-top:1px dashed rgba(255,255,255,0.05); bottom: 75%;"></div>
+              
+              <!-- Monday -->
+              <div style="flex: 1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; gap:0.5rem;">
+                <span style="font-size:11px; color:var(--accent-gold); font-family:var(--font-mono); font-weight:600;">R64k</span>
+                <div style="width: 36px; height: 65%; background: linear-gradient(to top, var(--gray-950) 0%, var(--accent-gold) 100%); border-radius: var(--radius-sm); border:1px solid rgba(212,175,55,0.3); transition:all 0.3s;" class="hover-grow-scale" title="Monday Gross: R64,200"></div>
+                <span style="font-size:11px; color:var(--text-secondary); margin-top:2px;">Mon</span>
+              </div>
+              
+              <!-- Tuesday -->
+              <div style="flex: 1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; gap:0.5rem;">
+                <span style="font-size:11px; color:var(--accent-gold); font-family:var(--font-mono); font-weight:600;">R59k</span>
+                <div style="width: 36px; height: 59%; background: linear-gradient(to top, var(--gray-950) 0%, var(--accent-gold) 100%); border-radius: var(--radius-sm); border:1px solid rgba(212,175,55,0.3); transition:all 0.3s;" class="hover-grow-scale" title="Tuesday Gross: R59,100"></div>
+                <span style="font-size:11px; color:var(--text-secondary); margin-top:2px;">Tue</span>
+              </div>
+              
+              <!-- Wednesday -->
+              <div style="flex: 1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; gap:0.5rem;">
+                <span style="font-size:11px; color:var(--accent-gold); font-family:var(--font-mono); font-weight:600;">R72k</span>
+                <div style="width: 36px; height: 72%; background: linear-gradient(to top, var(--gray-950) 0%, var(--accent-gold) 100%); border-radius: var(--radius-sm); border:1px solid rgba(212,175,55,0.3); transition:all 0.3s;" class="hover-grow-scale" title="Wednesday Gross: R72,500"></div>
+                <span style="font-size:11px; color:var(--text-secondary); margin-top:2px;">Wed</span>
+              </div>
+              
+              <!-- Thursday -->
+              <div style="flex: 1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; gap:0.5rem;">
+                <span style="font-size:11px; color:var(--accent-gold); font-family:var(--font-mono); font-weight:600;">R81k</span>
+                <div style="width: 36px; height: 81%; background: linear-gradient(to top, var(--gray-950) 0%, var(--accent-gold) 100%); border-radius: var(--radius-sm); border:1px solid rgba(212,175,55,0.3); transition:all 0.3s;" class="hover-grow-scale" title="Thursday Gross: R81,000"></div>
+                <span style="font-size:11px; color:var(--text-secondary); margin-top:2px;">Thu</span>
+              </div>
+
+              <!-- Friday -->
+              <div style="flex: 1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; gap:0.5rem;">
+                <span style="font-size:11px; color:var(--accent-gold); font-family:var(--font-mono); font-weight:600;">R115k</span>
+                <div style="width: 36px; height: 95%; background: linear-gradient(to top, var(--gray-950) 0%, var(--accent-gold) 100%); border-radius: var(--radius-sm); border:1px solid var(--accent-gold); box-shadow:0 0 10px rgba(212,175,55,0.15); transition:all 0.3s;" class="hover-grow-scale" title="Friday Gross Peak: R115,000"></div>
+                <span style="font-size:11px; color:var(--text-secondary); margin-top:2px;" class="font-semibold text-white">Fri</span>
+              </div>
+            </div>
+            <div class="flex justify-between text-xs text-muted mt-3 font-mono">
+              <span>* Data updated on 10 minutes interval frequency</span>
+              <span class="text-accent" style="color:var(--accent-gold);">Total Week Sales sum: R 391,800</span>
+            </div>
+          </div>
+
+          <!-- Top Products ranking -->
+          <div class="grid-card colspan-4">
+            <h3 class="card-title font-serif">
+              <i data-lucide="star" class="text-accent" style="width:18px; height:18px;"></i> Top Five Products
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Best sellers ordered by gross yield volume.</p>
+            
+            <div class="flex-column gap-3">
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Monster Double Burger <span style="font-family:var(--font-mono); color:var(--accent-gold);">x482</span></span>
+                  <span class="font-mono text-secondary">R 79,530</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 95%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Signature Feast Platter <span style="font-family:var(--font-mono); color:var(--accent-gold);">x320</span></span>
+                  <span class="font-mono text-secondary">R 62,400</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 80%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Gourmet Ribs & Burger Combo <span style="font-family:var(--font-mono); color:var(--accent-gold);">x210</span></span>
+                  <span class="font-mono text-secondary">R 46,200</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 60%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Bistro Gourmet Wrap <span style="font-family:var(--font-mono); color:var(--accent-gold);">x195</span></span>
+                  <span class="font-mono text-secondary">R 28,275</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 45%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Flame-Grilled Wings <span style="font-family:var(--font-mono); color:var(--accent-gold);">x180</span></span>
+                  <span class="font-mono text-secondary">R 20,700</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 35%;"></div></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Key Metrics lists -->
+          <div class="grid-card colspan-12">
+            <h3 class="card-title font-serif">
+              <i data-lucide="receipt" class="text-accent" style="width:18px; height:18px;"></i> Recent Analytical Ledger entries
+            </h3>
+            <table class="executive-table">
+              <thead>
+                <tr>
+                  <th>Fulfillment Hub</th>
+                  <th>Execution ID</th>
+                  <th>Customer Group</th>
+                  <th>Payment Merchant</th>
+                  <th>Dining Mode</th>
+                  <th>Gross Allocation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Waterfront (Western Cape)</td>
+                  <td class="font-mono text-accent">#ZAN-9824</td>
+                  <td>Sipho Khumalo</td>
+                  <td>Capitec Bank Business</td>
+                  <td>Dine-In placement</td>
+                  <td class="font-mono text-semibold text-white">R 1,220.00</td>
+                </tr>
+                <tr>
+                  <td>Sandton Flagship (Gauteng)</td>
+                  <td class="font-mono text-accent">#ZAN-8742</td>
+                  <td>Zola Mbeki</td>
+                  <td>FNB Private Wealth</td>
+                  <td>Gourmet Delivery</td>
+                  <td class="font-mono text-semibold text-white">R 890.00</td>
+                </tr>
+                <tr>
+                  <td>Soweto Lounge (Gauteng)</td>
+                  <td class="font-mono text-accent">#ZAN-7703</td>
+                  <td>Lerato Moloi</td>
+                  <td>Standard Bank Club</td>
+                  <td>Dine-in booking</td>
+                  <td class="font-mono text-semibold text-white">R 1,510.00</td>
+                </tr>
+                <tr>
+                  <td>Camps Bay (Western Cape)</td>
+                  <td class="font-mono text-accent">#ZAN-1205</td>
+                  <td>Charlize Smith</td>
+                  <td>Nedbank Signature</td>
+                  <td>Dine-In placement</td>
+                  <td class="font-mono text-semibold text-white">R 2,450.00</td>
+                </tr>
+                <tr>
+                  <td>Umhlanga Arch (KwaZulu-Natal)</td>
+                  <td class="font-mono text-accent">#ZAN-4412</td>
+                  <td>Vikesh Naidoo</td>
+                  <td>Absa Premium Card</td>
+                  <td>Gourmet Pickup</td>
+                  <td class="font-mono text-semibold text-white">R 610.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2: EMPLOYEES PANEL -->
+      <div id="tab-employees" class="tab-content" style="display:none;">
+        <div class="dashboard-grid">
+          
+          <!-- Chef and waitron ledger -->
+          <div class="grid-card colspan-7">
+            <h3 class="card-title font-serif">
+              <i data-lucide="chef-hat" class="text-accent" style="width:18px; height:18px;"></i> Culinary Brigade & Waitstaff Registry
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Productivity tracking, hours logged, and passenger-client satisfaction indexing.</p>
+            
+            <table class="executive-table">
+              <thead>
+                <tr>
+                  <th>Brigade Member</th>
+                  <th>Position</th>
+                  <th>Hours Logged</th>
+                  <th>Compliance Rate</th>
+                  <th>Happiness Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="flex-items align-center gap-2">
+                      <div style="background:var(--accent-gold); color:#000000; font-weight:700; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px;">Z</div>
+                      <span class="text-semibold text-white">Chef Zani Moloi</span>
+                    </div>
+                  </td>
+                  <td>Command Chef</td>
+                  <td class="font-mono">160 hrs</td>
+                  <td class="text-accent" style="color:var(--accent-green); font-semibold">99.8%</td>
+                  <td class="font-mono">4.98 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex-items align-center gap-2">
+                      <div style="background:rgba(255,255,255,0.1); color:#ffffff; font-weight:700; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px;">S</div>
+                      <span class="text-semibold">Sous Chef Sipho</span>
+                    </div>
+                  </td>
+                  <td>Sous Chef</td>
+                  <td class="font-mono">152 hrs</td>
+                  <td style="color:var(--accent-green)">99.2%</td>
+                  <td class="font-mono">4.92 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex-items align-center gap-2">
+                      <div style="background:rgba(255,255,255,0.1); color:#ffffff; font-weight:700; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px;">L</div>
+                      <span class="text-semibold">Lerato Khuzwayo</span>
+                    </div>
+                  </td>
+                  <td>Lead Waitron</td>
+                  <td class="font-mono">132 hrs</td>
+                  <td style="color:var(--accent-green)">98.5%</td>
+                  <td class="font-mono">4.95 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex-items align-center gap-2">
+                      <div style="background:rgba(255,255,255,0.1); color:#ffffff; font-weight:700; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px;">T</div>
+                      <span class="text-semibold">Thabo Dlamini</span>
+                    </div>
+                  </td>
+                  <td>Master Mixologist</td>
+                  <td class="font-mono">140 hrs</td>
+                  <td style="color:var(--accent-green)">99.0%</td>
+                  <td class="font-mono">4.91 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex-items align-center gap-2">
+                      <div style="background:rgba(255,255,255,0.1); color:#ffffff; font-weight:700; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:10px;">N</div>
+                      <span class="text-semibold">Naledi Pillay</span>
+                    </div>
+                  </td>
+                  <td>Guest Sommelier</td>
+                  <td class="font-mono">110 hrs</td>
+                  <td style="color:var(--accent-gold)">97.2%</td>
+                  <td class="font-mono">4.88 ★</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Driver dispatch partner metrics -->
+          <div class="grid-card colspan-5">
+            <h3 class="card-title font-serif">
+              <i data-lucide="truck" class="text-accent" style="width:18px; height:18px;"></i> Logistics & Delivery Dispatch Partners
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Partner fulfillments, shipping speed averages, and ratings.</p>
+            
+            <div class="flex-column gap-4">
+              
+              <!-- Uber Eats -->
+              <div style="background: rgba(255,255,255,0.02); padding:1rem; border:1px solid var(--border-color); border-radius:var(--radius-sm)">
+                <div class="flex justify-between align-center mb-2">
+                  <div class="flex-items align-center gap-2">
+                    <span style="font-size: 11px; background:#000000; color:#59db59; font-weight:bold; padding:2px 6px; border-radius:2px; font-family:var(--font-mono)">UBER EATS</span>
+                    <strong class="text-xs text-white">Uber Premium Dispatch</strong>
+                  </div>
+                  <span class="font-mono text-xs text-accent">R 114,800 total</span>
+                </div>
+                <!-- Mini stats -->
+                <div class="flex justify-between text-xs text-secondary font-mono">
+                  <span>Deliveries: <strong>682</strong></span>
+                  <span>Avg Speed: <strong>28 mins</strong></span>
+                  <span style="color:var(--accent-green);">★ 4.90</span>
+                </div>
+                <div class="progress-rail mt-2" style="height:4px;"><div class="progress-fill" style="width: 90%; background: #59db59;"></div></div>
+              </div>
+
+              <!-- Mr D -->
+              <div style="background: rgba(255,255,255,0.02); padding:1rem; border:1px solid var(--border-color); border-radius:var(--radius-sm)">
+                <div class="flex justify-between align-center mb-2">
+                  <div class="flex-items align-center gap-2">
+                    <span style="font-size: 11px; background:#e63946; color:#ffffff; font-weight:bold; padding:2px 6px; border-radius:2px; font-family:var(--font-mono)">MR D FOOD</span>
+                    <strong class="text-xs text-white">Takealot Heavy Dispatch</strong>
+                  </div>
+                  <span class="font-mono text-xs text-accent">R 94,150 total</span>
+                </div>
+                <!-- Mini stats -->
+                <div class="flex justify-between text-xs text-secondary font-mono">
+                  <span>Deliveries: <strong>552</strong></span>
+                  <span>Avg Speed: <strong>32 mins</strong></span>
+                  <span style="color:var(--accent-green);">★ 4.82</span>
+                </div>
+                <div class="progress-rail mt-2" style="height:4px;"><div class="progress-fill" style="width: 75%; background: #e63946;"></div></div>
+              </div>
+
+              <!-- Custom / Self Employed -->
+              <div style="background: rgba(255,255,255,0.02); padding:1rem; border:1px solid var(--border-color); border-radius:var(--radius-sm)">
+                <div class="flex justify-between align-center mb-2">
+                  <div class="flex-items align-center gap-2">
+                    <span style="font-size: 11px; background:var(--accent-gold); color:#000000; font-weight:bold; padding:2px 6px; border-radius:2px; font-family:var(--font-mono)">BISTRO BIKE</span>
+                    <strong class="text-xs text-white">Zani's In-House Fleet</strong>
+                  </div>
+                  <span class="font-mono text-xs text-accent">R 128,400 total</span>
+                </div>
+                <!-- Mini stats -->
+                <div class="flex justify-between text-xs text-secondary font-mono">
+                  <span>Deliveries: <strong>720</strong></span>
+                  <span>Avg Speed: <strong>19 mins</strong></span>
+                  <span style="color:var(--accent-green);">★ 4.98</span>
+                </div>
+                <div class="progress-rail mt-2" style="height:4px;"><div class="progress-fill" style="width: 95%;"></div></div>
+              </div>
+
+              <!-- Bolt Food -->
+              <div style="background: rgba(255,255,255,0.02); padding:1rem; border:1px solid var(--border-color); border-radius:var(--radius-sm)">
+                <div class="flex justify-between align-center mb-2">
+                  <div class="flex-items align-center gap-2">
+                    <span style="font-size: 11px; background:#34d399; color:#000000; font-weight:bold; padding:2px 6px; border-radius:2px; font-family:var(--font-mono)">BOLT FOOD</span>
+                    <strong class="text-xs text-white">Bolt Dispatch</strong>
+                  </div>
+                  <span class="font-mono text-xs text-accent">R 45,900 total</span>
+                </div>
+                <!-- Mini stats -->
+                <div class="flex justify-between text-xs text-secondary font-mono">
+                  <span>Deliveries: <strong>265</strong></span>
+                  <span>Avg Speed: <strong>35 mins</strong></span>
+                  <span style="color:var(--accent-green);">★ 4.70</span>
+                </div>
+                <div class="progress-rail mt-2" style="height:4px;"><div class="progress-fill" style="width: 50%; background: #34d399;"></div></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 3: REGIONAL HUBS (LOCATION) -->
+      <div id="tab-location" class="tab-content" style="display:none;">
+        <div class="dashboard-grid">
+          
+          <!-- Locations Breakdown -->
+          <div class="grid-card colspan-6">
+            <h3 class="card-title font-serif">
+              <i data-lucide="map" class="text-accent" style="width:18px; height:18px;"></i> Regional Branch Performance Ranking
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Branch operations grouped and ranked according to South Africa branch locations.</p>
+            
+            <div class="flex-column gap-4" id="location-list-nodes">
+              <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius:var(--radius-sm); padding:1.25rem;">
+                <div class="flex justify-between align-center mb-1">
+                  <span style="color:#ffffff; font-weight:600;"><i data-lucide="map-pin" style="width:12px; height:12px; display:inline-block; margin-right:4px; color:var(--accent-gold);"></i> Waterfront (Main Hub)</span>
+                  <span class="font-mono text-accent font-semibold">R 482,900</span>
+                </div>
+                <span class="text-xs text-secondary block mb-2">Western Cape, Cape Town</span>
+                <div class="progress-rail"><div class="progress-fill" style="width: 100%;"></div></div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius:var(--radius-sm); padding:1.25rem;">
+                <div class="flex justify-between align-center mb-1">
+                  <span style="color:#ffffff; font-weight:600;"><i data-lucide="map-pin" style="width:12px; height:12px; display:inline-block; margin-right:4px; color:var(--accent-gold);"></i> Sandton High Council</span>
+                  <span class="font-mono text-accent font-semibold">R 382,100</span>
+                </div>
+                <span class="text-xs text-secondary block mb-2">Gauteng, Johannesburg</span>
+                <div class="progress-rail"><div class="progress-fill" style="width: 80%;"></div></div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius:var(--radius-sm); padding:1.25rem;">
+                <div class="flex justify-between align-center mb-1">
+                  <span style="color:#ffffff; font-weight:600;"><i data-lucide="map-pin" style="width:12px; height:12px; display:inline-block; margin-right:4px; color:var(--accent-gold);"></i> Soweto Shisanyama Lounge</span>
+                  <span class="font-mono text-accent font-semibold">R 310,400</span>
+                </div>
+                <span class="text-xs text-secondary block mb-2">Gauteng, Soweto Kasi</span>
+                <div class="progress-rail"><div class="progress-fill" style="width: 65%;"></div></div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius:var(--radius-sm); padding:1.25rem;">
+                <div class="flex justify-between align-center mb-1">
+                  <span style="color:#ffffff; font-weight:600;"><i data-lucide="map-pin" style="width:12px; height:12px; display:inline-block; margin-right:4px; color:var(--accent-gold);"></i> Camps Bay Horizon</span>
+                  <span class="font-mono text-accent font-semibold">R 192,500</span>
+                </div>
+                <span class="text-xs text-secondary block mb-2">Western Cape, Atlantic Seaboard</span>
+                <div class="progress-rail"><div class="progress-fill" style="width: 40%;"></div></div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius:var(--radius-sm); padding:1.25rem;">
+                <div class="flex justify-between align-center mb-1">
+                  <span style="color:#ffffff; font-weight:600;"><i data-lucide="map-pin" style="width:12px; height:12px; display:inline-block; margin-right:4px; color:var(--accent-gold);"></i> Umhlanga Arch Vista</span>
+                  <span class="font-mono text-accent font-semibold">R 115,000</span>
+                </div>
+                <span class="text-xs text-secondary block mb-2">KwaZulu-Natal, Durban</span>
+                <div class="progress-rail"><div class="progress-fill" style="width: 25%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table placement reservations ranking -->
+          <div class="grid-card colspan-6">
+            <h3 class="card-title font-serif">
+              <i data-lucide="calendar-check" class="text-accent" style="width:18px; height:18px;"></i> Table Reservations Ranking
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Most reserved seating options ranked by total allocations descending.</p>
+            
+            <div class="flex-column gap-3.5">
+              <div style="background: rgba(0,0,0,0.15); border-left:3px solid var(--accent-gold); padding:0.85rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                <div class="flex justify-between text-xs mb-1">
+                  <strong class="text-white text-sm font-serif">Waterfront Edge Terrace Table</strong>
+                  <span class="text-accent font-mono font-semibold" style="color:var(--accent-gold)">482 Bookings</span>
+                </div>
+                <span class="text-xs text-secondary flex-items align-center gap-1">
+                  <i data-lucide="eye" style="width:12px; height:12px;"></i> Panoramic harbor view • Premium levy: R 250.00
+                </span>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.15); border-left:3px solid var(--accent-gold); padding:0.85rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                <div class="flex justify-between text-xs mb-1">
+                  <strong class="text-white text-sm font-serif">Elite Private Cellar Chamber</strong>
+                  <span class="text-accent font-mono font-semibold" style="color:var(--accent-gold)">310 Bookings</span>
+                </div>
+                <span class="text-xs text-secondary flex-items align-center gap-1">
+                  <i data-lucide="eye" style="width:12px; height:12px;"></i> Vaulted brick walls & wine tasting • Premium levy: R 500.00
+                </span>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.15); border-left:3px solid var(--accent-gold); padding:0.85rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                <div class="flex justify-between text-xs mb-1">
+                  <strong class="text-white text-sm font-serif">Presidential VIP Lounge Sofa</strong>
+                  <span class="text-accent font-mono font-semibold" style="color:var(--accent-gold)">215 Bookings</span>
+                </div>
+                <span class="text-xs text-secondary flex-items align-center gap-1">
+                  <i data-lucide="eye" style="width:12px; height:12px;"></i> Private butler & deep seating • Premium levy: R 350.00
+                </span>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.15); border-left:3px solid var(--accent-gold); padding:0.85rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                <div class="flex justify-between text-xs mb-1">
+                  <strong class="text-white text-sm font-serif">Courtyard Pergola Table</strong>
+                  <span class="text-accent font-mono font-semibold" style="color:var(--accent-gold)">165 Bookings</span>
+                </div>
+                <span class="text-xs text-secondary flex-items align-center gap-1">
+                  <i data-lucide="eye" style="width:12px; height:12px;"></i> Open air canopy & mood lanterns • Premium levy: R 150.00
+                </span>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.15); border-left:3px solid var(--accent-gold); padding:0.85rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+                <div class="flex justify-between text-xs mb-1">
+                  <strong class="text-white text-sm font-serif">Bespoke fireside Alcove</strong>
+                  <span class="text-accent font-mono font-semibold" style="color:var(--accent-gold)">110 Bookings</span>
+                </div>
+                <span class="text-xs text-secondary flex-items align-center gap-1">
+                  <i data-lucide="eye" style="width:12px; height:12px;"></i> Ambient crackling warmth • Premium levy: R 350.00
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 4: CUSTOMERS & BANKS -->
+      <div id="tab-customers" class="tab-content" style="display:none;">
+        <div class="dashboard-grid">
+          
+          <!-- Customers by Bank Share -->
+          <div class="grid-card colspan-6">
+            <h3 class="card-title font-serif">
+              <i data-lucide="credit-card" class="text-accent" style="width:18px; height:18px;"></i> Patron settlement by SA Merchant Banks
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Distribution metrics of card payments parsed across South Africa's banking grid.</p>
+            
+            <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; flex-wrap: wrap; margin-top:1.5rem;">
+              <!-- Beautiful Custom Donut Chart SVG -->
+              <svg width="180" height="180" viewBox="0 0 42 42" class="donut" style="transform: rotate(-90deg);">
+                <!-- Capitec Bank 35% -->
+                <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="rgba(255,255,255,0.05)" stroke-width="4.5"></circle>
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#2a9d8f" stroke-width="4.5" stroke-dasharray="35 65" stroke-dashoffset="0" title="Capitec Bank: 35%"></circle>
+                <!-- FNB 25% -->
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--accent-gold)" stroke-width="4.5" stroke-dasharray="25 75" stroke-dashoffset="-35" title="First National Bank: 25%"></circle>
+                <!-- Standard Bank 18% -->
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#457b9d" stroke-width="4.5" stroke-dasharray="18 82" stroke-dashoffset="-60" title="Standard Bank: 18%"></circle>
+                <!-- Absa 12% -->
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#e63946" stroke-width="4.5" stroke-dasharray="12 88" stroke-dashoffset="-78" title="Absa: 12%"></circle>
+                <!-- Nedbank 10% -->
+                <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#a2d2ff" stroke-width="4.5" stroke-dasharray="10 90" stroke-dashoffset="-90" title="Nedbank: 10%"></circle>
+              </svg>
+
+              <!-- Legend -->
+              <div class="pie-chart-legend" style="flex:1; min-width: 160px;">
+                <div class="legend-item">
+                  <div class="legend-dot-label">
+                    <span class="legend-color-dot" style="background: #2a9d8f;"></span>
+                    <span>Capitec Bank</span>
+                  </div>
+                  <strong class="font-mono text-white">35%</strong>
+                </div>
+
+                <div class="legend-item">
+                  <div class="legend-dot-label">
+                    <span class="legend-color-dot" style="background: var(--accent-gold);"></span>
+                    <span>First National Bank (FNB)</span>
+                  </div>
+                  <strong class="font-mono text-white">25%</strong>
+                </div>
+
+                <div class="legend-item">
+                  <div class="legend-dot-label">
+                    <span class="legend-color-dot" style="background: #457b9d;"></span>
+                    <span>Standard Bank</span>
+                  </div>
+                  <strong class="font-mono text-white">18%</strong>
+                </div>
+
+                <div class="legend-item">
+                  <div class="legend-dot-label">
+                    <span class="legend-color-dot" style="background: #e63946;"></span>
+                    <span>ABSA Group</span>
+                  </div>
+                  <strong class="font-mono text-white">12%</strong>
+                </div>
+
+                <div class="legend-item">
+                  <div class="legend-dot-label">
+                    <span class="legend-color-dot" style="background: #a2d2ff;"></span>
+                    <span>Nedbank</span>
+                  </div>
+                  <strong class="font-mono text-white">10%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Age Demographics -->
+          <div class="grid-card colspan-6">
+            <h3 class="card-title font-serif">
+              <i data-lucide="compass" class="text-accent" style="width:18px; height:18px;"></i> Patron Audience Age Cohorts
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Analytical age groupings mapped from digitized memberships & credit registers.</p>
+            
+            <div class="flex-column gap-4" style="margin-top:1rem;">
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Millennials (Age 26-40) — Digital Gourmands</span>
+                  <span class="font-mono text-secondary">42% (6,045 active)</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 42%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Generation Z (Age 21-25) — Social Foodies</span>
+                  <span class="font-mono text-secondary">28% (4,030 active)</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 28%; background:var(--accent-gold);"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Generation X (Age 41-55) — Elite Diners</span>
+                  <span class="font-mono text-secondary">20% (2,879 active)</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 20%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Vintage Patrons (Age 56+) — Legacy Connoisseurs</span>
+                  <span class="font-mono text-secondary">10% (1,439 active)</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 10%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 5: MENU ANALYTICS (CREATIVE) -->
+      <div id="tab-creative" class="tab-content" style="display:none;">
+        <div class="dashboard-grid">
+          
+          <!-- Category yield distributions -->
+          <div class="grid-card colspan-6">
+            <h3 class="card-title font-serif">
+              <i data-lucide="file-bar-chart" class="text-accent" style="width:18px; height:18px;"></i> Dining Course Category Share
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">Proportion of orders accrued per gourmet branch segment.</p>
+            
+            <div class="flex-column gap-4" style="margin-top:1rem;">
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Mains (Wagyu burger combos, feast platters)</span>
+                  <span class="font-mono text-secondary">65% share</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 65%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Beverages (Craft thickshakes, mocktails)</span>
+                  <span class="font-mono text-secondary">20% share</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 20%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Desserts (Waffle cone trays, ice creams)</span>
+                  <span class="font-mono text-secondary">10% share</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 10%;"></div></div>
+              </div>
+
+              <div class="progress-meter-container">
+                <div class="progress-label-wrap text-xs">
+                  <span style="color:#ffffff; font-weight:500;">Appetizers (Truffle bites, spring starters)</span>
+                  <span class="font-mono text-secondary">5% share</span>
+                </div>
+                <div class="progress-rail"><div class="progress-fill" style="width: 5%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- General manager supply tracker card -->
+          <div class="grid-card colspan-6">
+            <h3 class="card-title font-serif">
+              <i data-lucide="shield-alert" class="text-accent" style="width:18px; height:18px;"></i> Chef's Supply & Wastage Controller
+            </h3>
+            <p class="text-xs text-secondary mb-4" style="margin-top:-0.5rem;">General kitchen wastage registers, stock level thresholds, and shelf health indicators.</p>
+            
+            <div class="flex-column gap-3.5" style="font-size: 0.82rem;">
+              <div class="flex justify-between align-center py-2 border-b border-gray-800/40">
+                <span class="text-secondary">Premium Wagyu Beef Patties</span>
+                <span style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green); padding: 2px 8px; border-radius: 2px; font-family: var(--font-mono); font-size:11px;">Optimal (82%)</span>
+              </div>
+              
+              <div class="flex justify-between align-center py-2 border-b border-gray-800/40">
+                <span class="text-secondary">Brioche Buns (Freshly Baked)</span>
+                <span style="background: rgba(253, 164, 175, 0.15); color: var(--accent-rose); padding: 2px 8px; border-radius: 2px; font-family: var(--font-mono); font-size:11px;">Restock critical (12%)</span>
+              </div>
+
+              <div class="flex justify-between align-center py-2 border-b border-gray-800/40">
+                <span class="text-secondary">Organic Passion Fruits & Lemon Nectars</span>
+                <span style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green); padding: 2px 8px; border-radius: 2px; font-family: var(--font-mono); font-size:11px;">Optimal (74%)</span>
+              </div>
+
+              <div class="flex justify-between align-center py-2 border-b border-gray-800/40">
+                <span class="text-secondary">Pork Ribs & Quarter Spiced Chicken stock</span>
+                <span style="background: rgba(212, 175, 55, 0.15); color: var(--accent-gold); padding: 2px 8px; border-radius: 2px; font-family: var(--font-mono); font-size:11px;">Moderate (38%)</span>
+              </div>
+
+              <div class="flex justify-between align-center py-2">
+                <span class="text-secondary">General Kitchen wastage metrics</span>
+                <span style="color:#ffffff; font-weight:600;"><i data-lucide="arrow-down-right" style="width:12px; height:12px; display:inline-block; color:var(--accent-green);"></i> -4.8% (This Week)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Core dynamic layout scripts -->
+    <script src="../scripts/app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // 1. Force safety auth verification (must be logged in to view dashboard)
+          const checkUser = () => {
+              const userStr = localStorage.getItem('user');
+              if (!userStr) return false;
+              try {
+                  const user = JSON.parse(userStr);
+                  return user && user.loggedIn === true;
+              } catch(e) {
+                  return false;
+              }
+          };
+
+          if (!checkUser()) {
+              sessionStorage.setItem('redirect_after_login', window.location.href);
+              alert('Security checkpoint: Authentication required. Redirecting to access panel.', () => {
+                  window.location.href = 'login.html';
+              });
+              return;
+          }
+
+          // 2. Tab selection toggle logic
+          const triggers = document.querySelectorAll('.tab-trigger');
+          const contents = document.querySelectorAll('.tab-content');
+
+          triggers.forEach(btn => {
+              btn.addEventListener('click', () => {
+                  const targetTab = btn.getAttribute('data-tab');
+
+                  // Reset triggers
+                  triggers.forEach(t => t.classList.remove('active'));
+                  btn.classList.add('active');
+
+                  // Hide other contents
+                  contents.forEach(el => el.style.display = 'none');
+
+                  // Display matching content block
+                  const targetNode = document.getElementById(`tab-${targetTab}`);
+                  if (targetNode) {
+                      targetNode.style.display = 'block';
+                      targetNode.classList.add('custom-modal-fade-in');
+                  }
+              });
+          });
+
+          // 3. Populate standard navbar
+          if (window.syncNavbar) {
+              window.syncNavbar();
+          }
+      });
+    </script>
+  </body>
+</html>

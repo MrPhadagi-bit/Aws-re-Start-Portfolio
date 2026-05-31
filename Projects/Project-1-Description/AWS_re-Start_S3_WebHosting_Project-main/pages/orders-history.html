@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookings & History — Zani's Eatery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS - One CSS file per page rule, which imports main.css -->
+    <link rel="stylesheet" href="../styles/orders-history.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">L'AURA</span>
+          <span class="logo-sub">BISTRO</span>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="menu.html" class="nav-item">Culinary Menu</a>
+          <a href="orders-history.html" class="nav-item active">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="orders.html" class="cart-anchor" title="View Gourmet Selection">
+            <i data-lucide="shopping-cart" class="cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+          </a>
+          <div id="navbar-auth-container" class="auth-box">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN HISTORY BODY CONTENT -->
+    <main class="max-width-container" style="padding-top:4rem; padding-bottom:8rem;">
+      
+      <div class="history-page-header flex justify-between align-center mb-6 flex-wrap gap-3">
+        <div>
+          <h1 class="page-title font-serif">Your Dining History</h1>
+          <p class="page-subtitle text-sm text-secondary mt-1">Review past orders, download print receipts, or track current gourmet progress.</p>
+        </div>
+        <a href="menu.html" class="btn-secondary flex-items align-center gap-1.5" style="padding: 0.6rem 1.25rem; font-size: 0.88rem;">
+          <i data-lucide="plus" style="width:14px; height:14px;"></i> Place New Selection
+        </a>
+      </div>
+
+      <!-- Luxury Interactive Search Bar for Orders -->
+      <div class="search-wrap animate-fade-in" style="max-width: 520px; margin: -0.5rem auto 2.5rem; position: relative; z-index: 10;">
+        <i data-lucide="search" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--accent-gold); pointer-events: none;"></i>
+        <input type="text" id="order-search-input" placeholder="Search orders by ID, items, status, or date..." style="width: 100%; padding: 0.9rem 1.25rem 0.9rem 3rem; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 40px; color: #ffffff; font-size: 0.9rem; outline: none; transition: all var(--transition-normal); box-shadow: 0 4px 12px rgba(0,0,0,0.25);" />
+        <button id="order-search-clear" style="position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; display: none; padding: 4px;"><i data-lucide="x" style="width: 16px; height: 16px;"></i></button>
+      </div>
+
+      <!-- Accordion Grid list of past orders -->
+      <div id="history-list-container" class="history-grid-stack flex-column gap-4">
+        
+        <!-- Loading slot -->
+        <div class="history-loading card-no-hover text-center py-6">
+          <i data-lucide="loader" class="animate-spin text-accent mb-2" style="width: 24px; height: 24px; margin: 0 auto 0.5rem;"></i>
+          <p class="text-sm text-muted">Retrieving order ledger cards...</p>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Core App Module Scripts (Vanilla JS) -->
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/orders.js"></script>
+  </body>
+</html>

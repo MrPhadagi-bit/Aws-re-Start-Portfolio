@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patron Profile — L'Aura Bistro</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS - One CSS file per page rule, which imports main.css -->
+    <link rel="stylesheet" href="../styles/profile.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">L'AURA</span>
+          <span class="logo-sub">BISTRO</span>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="menu.html" class="nav-item">Culinary Menu</a>
+          <a href="orders-history.html" class="nav-item">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="orders.html" class="cart-anchor" title="View Gourmet Selection">
+            <i data-lucide="shopping-cart" class="cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+          </a>
+          <div id="navbar-auth-container" class="auth-box">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN PROFILE CANVAS -->
+    <main class="max-width-container flex justify-center" style="padding-top:4rem; padding-bottom:8rem;">
+      
+      <div class="profile-card card-no-hover" style="max-width:550px; width:100%; padding: 3rem 2.5rem; text-align:center;">
+        
+        <div class="profile-avatar-frame mb-4" style="width: 80px; height: 80px; background-color: var(--accent-glow); border: 1px solid var(--accent-gold); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--accent-gold);">
+          <i data-lucide="user" style="width: 40px; height: 40px;"></i>
+        </div>
+
+        <span class="tag-mono" style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;">Patron Settings Profile</span>
+        <h1 class="profile-main-title font-serif mt-1" id="profile-display-name">Patron Account</h1>
+        <p class="text-xs text-secondary font-mono mb-6" id="profile-display-email">patron@domain.co.za</p>
+
+        <!-- Updatable Name option Form -->
+        <form id="profile-edit-name-form" class="text-left flex-column gap-4 border-t border-gray-800/80 pt-5">
+          <h3 class="font-serif text-accent text-sm mb-2" style="font-weight:400;">Modify Member Credentials</h3>
+          
+          <div class="form-group flex-column">
+            <label for="profile-name-input" class="field-label text-xs text-secondary">Aesthetic Display Name</label>
+            <input type="text" id="profile-name-input" class="input-field" placeholder="Full name preferrable" required>
+          </div>
+
+          <button type="submit" class="btn-primary w-full flex-items justify-center gap-2 mt-2">
+            <i data-lucide="save" style="width:16px; height:16px;"></i> Update Member Record
+          </button>
+        </form>
+
+        <hr class="card-divider border-gray-800/80 my-5">
+
+        <!-- Short cuts layout -->
+        <div class="shortcuts flex justify-center gap-4 flex-wrap">
+          <a href="orders-history.html" class="btn-secondary text-xs flex-items gap-1.5" style="padding: 0.6rem 1.25rem;">
+            <i data-lucide="clipboard" style="width:14px; height:14px;"></i> Order History
+          </a>
+          <button type="button" class="btn-secondary text-xs text-rose flex-items gap-1.5" id="profile-logout-direct" style="padding: 0.6rem 1.25rem; border-color: rgba(253, 164, 175, 0.2); color: var(--accent-rose);">
+            <i data-lucide="log-out" style="width:14px; height:14px;"></i> Log Out Account
+          </button>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Load App Logic (Vanilla JS) -->
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // Guard route immediately
+          if (window.guardProtectedRoute) {
+              const access = window.guardProtectedRoute(window.location.href);
+              if (!access) return;
+          }
+
+          const user = window.getCurrentUser ? window.getCurrentUser() : { loggedIn: false, name: "", email: "" };
+          
+          const profileNameDisp = document.getElementById('profile-display-name');
+          const profileEmailDisp = document.getElementById('profile-display-email');
+          const nameInput = document.getElementById('profile-name-input');
+          const editForm = document.getElementById('profile-edit-name-form');
+
+          if (profileNameDisp) profileNameDisp.textContent = user.name;
+          if (profileEmailDisp) profileEmailDisp.textContent = user.email || 'society-patron@laurabistro.co.za';
+          if (nameInput) nameInput.value = user.name;
+
+          if (editForm) {
+              editForm.addEventListener('submit', (e) => {
+                  e.preventDefault();
+                  const updatedNameValue = nameInput.value.trim();
+                  if (!updatedNameValue) return;
+
+                  // Get active session and save
+                  const updatedUser = {
+                      loggedIn: true,
+                      name: updatedNameValue,
+                      email: user.email || 'society-patron@laurabistro.co.za'
+                  };
+
+                  localStorage.setItem('user', JSON.stringify(updatedUser));
+                  
+                  // Update current user list registry so passwords, etc are saved correctly if matched
+                  const registeredList = JSON.parse(localStorage.getItem('registered_users') || '[]');
+                  const matchIndex = registeredList.findIndex(u => u.email === updatedUser.email);
+                  if (matchIndex !== -1) {
+                      registeredList[matchIndex].name = updatedNameValue;
+                      localStorage.setItem('registered_users', JSON.stringify(registeredList));
+                  }
+
+                  alert('Member record synchronized successfully! Refreshing view chambers...', () => {
+                      window.location.reload();
+                  });
+              });
+          }
+
+          const logoutBtn = document.getElementById('profile-logout-direct');
+          if (logoutBtn) {
+              logoutBtn.addEventListener('click', () => {
+                  if (window.logoutUser) window.logoutUser();
+              });
+          }
+      });
+    </script>
+  </body>
+</html>

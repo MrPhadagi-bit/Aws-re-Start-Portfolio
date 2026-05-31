@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Detail — Zani's Eatery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CSS - One CSS file per page rule, which imports main.css -->
+    <link rel="stylesheet" href="../styles/product-details.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="../index.html" class="logo">
+          <span class="logo-text">L'AURA</span>
+          <span class="logo-sub">BISTRO</span>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="menu.html" class="nav-item active">Culinary Menu</a>
+          <a href="orders-history.html" class="nav-item">My Bookings</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="orders.html" class="cart-anchor" title="View Gourmet Selection">
+            <i data-lucide="shopping-cart" class="cart-icon"></i>
+            <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+          </a>
+          <div id="navbar-auth-container" class="auth-box">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT DISPLAY BODY -->
+    <main class="max-width-container" style="padding-top:4rem; padding-bottom:6rem;">
+      
+      <!-- Back links -->
+      <div class="navigation-trail mb-4">
+        <a href="menu.html" class="back-link flex-items align-center gap-1.5 text-xs text-secondary hover-text-accent">
+          <i data-lucide="arrow-left" style="width:14px; height:14px;"></i> Return to Culinary Menu
+        </a>
+      </div>
+
+      <!-- Detail Layout Container -->
+      <div id="product-details-container">
+        <div class="product-structure-grid">
+          
+          <!-- Image frame -->
+          <div class="product-image-frame card-no-hover">
+            <div class="image-sub-wrapper">
+              <img id="product-image" src="" alt="Sourcing Gourmet Product..." class="gourmet-image-render">
+              <div class="gold-edge-decoration"></div>
+            </div>
+          </div>
+
+          <!-- Description and actions -->
+          <div class="product-info-segment flex-column justify-between gap-6">
+            
+            <div class="info-header-block">
+              <!-- Category and style Tags -->
+              <div class="flex flex-items gap-2 flex-wrap mb-3.5">
+                <span id="product-category" class="category-tag">CATEGORY</span>
+                <span id="product-popularity" class="badge">SIGNATURE STATUS</span>
+              </div>
+
+              <!-- Title -->
+              <h1 id="product-name" class="product-title font-serif">Loading Product Masterpiece...</h1>
+              
+              <!-- Stars Rating -->
+              <div id="product-rating" class="rating-holder mt-2">
+                <!-- Star rows -->
+              </div>
+            </div>
+
+            <!-- Descriptive paragraph -->
+            <div class="info-body-block">
+              <h3 class="font-serif text-accent" style="font-weight:400; font-size:1.15rem; margin-bottom:0.75rem;">Gastronomic Profile</h3>
+              <p id="product-description" class="product-description">
+                Sourcing formulation specifications from culinary records databases...
+              </p>
+            </div>
+
+            <!-- Cart inputs & subtotal outputs -->
+            <div class="purchase-panel-card card-no-hover">
+              <div class="price-row flex justify-between align-center mb-4">
+                <span class="price-label text-sm text-secondary">Price Value (ZAR)</span>
+                <span id="product-price" class="gourmet-price text-accent font-mono text-bold">R 0.00</span>
+              </div>
+
+              <div class="checkout-actions-row flex align-center gap-4 flex-wrap">
+                <!-- Quantity modifier -->
+                <div class="quantity-picker-box flex align-center">
+                  <button type="button" class="qty-btn" id="btn-qty-minus" aria-label="Decrease quantity">
+                    <i data-lucide="minus" style="width: 14px; height: 14px;"></i>
+                  </button>
+                  <span id="quantity-multiplier" class="qty-count font-mono font-semibold">1</span>
+                  <button type="button" class="qty-btn" id="btn-qty-plus" aria-label="Increase quantity">
+                    <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+                  </button>
+                </div>
+
+                <!-- Main trigger button -->
+                <button type="button" class="btn-primary flex-1 btn-purchase flex-items gap-2 justify-center" id="btn-add-to-cart">
+                  <i data-lucide="shopping-cart" style="width:18px; height:18px;"></i>
+                  Add to Dining Selection
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Core Logic Imports (Vanilla JS) -->
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/cart.js"></script>
+  </body>
+</html>

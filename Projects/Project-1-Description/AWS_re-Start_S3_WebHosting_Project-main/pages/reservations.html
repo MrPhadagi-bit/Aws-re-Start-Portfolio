@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve a Table — Zani's Eatery</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Page Specific Stylesheet. Links EXACTLY to one CSS file per page rule, which imports main.css -->
+    <link rel="stylesheet" href="../styles/reservations.css" />
+  </head>
+  <body>
+
+    <!-- NAVBAR HEADER (dynamically hydrated by app.js syncNavbar) -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <!-- hydrator loading skeleton -->
+        <a href="../index.html" class="logo">
+          <span class="logo-text"><span style="color:#ffffff;">ZANI'S</span> <span style="color:var(--accent-gold);">EATERY</span></span>
+        </a>
+      </div>
+    </header>
+
+    <!-- HEADER BLOCK -->
+    <div class="reservation-cover">
+      <div class="cover-overlay"></div>
+      <div class="cover-content text-center">
+        <span class="tag-mono">TABLE BOOKINGS</span>
+        <h1 class="page-title font-serif">Reserve a Fine Placement</h1>
+        <p class="page-subtitle">Guarantee your Waterfront table. Let us curate your ultimate dine-in evening.</p>
+      </div>
+    </div>
+
+    <!-- MAIN FORM BODY -->
+    <main class="max-width-container" style="padding-top:4rem; padding-bottom:6rem;">
+      <div class="reservation-grid">
+        
+        <!-- Form container card -->
+        <div class="card reservation-card card-no-hover">
+          <h2 class="form-title font-serif text-accent mb-6 flex-items align-center gap-2">
+            <i data-lucide="calendar-check" class="text-accent" style="width:24px; height:24px;"></i> Table Placement Parameters
+          </h2>
+          
+          <form id="reservation-form" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              
+              <!-- Date pick -->
+              <div class="form-group">
+                <label for="res-date" class="form-label text-xs uppercase tracking-wider text-semibold text-secondary block mb-2">Preferred Date</label>
+                <div class="input-icon-wrapper relative">
+                  <i data-lucide="calendar" class="input-icon text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"></i>
+                  <input type="date" id="res-date" class="form-input" required style="padding-left: 2.5rem; width: 100%;" />
+                </div>
+              </div>
+
+              <!-- Time selection -->
+              <div class="form-group">
+                <label for="res-time" class="form-label text-xs uppercase tracking-wider text-semibold text-secondary block mb-2">Preferred Est. Arrival Time</label>
+                <div class="input-icon-wrapper relative">
+                  <i data-lucide="clock" class="input-icon text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"></i>
+                  <select id="res-time" class="form-input" required style="padding-left: 2.5rem; width: 100%;">
+                    <option value="" disabled selected>Select time arrival</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="01:30 PM">01:30 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="05:30 PM">05:30 PM</option>
+                    <option value="06:00 PM">06:00 PM</option>
+                    <option value="06:30 PM">06:30 PM</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                    <option value="07:30 PM">07:30 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                    <option value="08:30 PM">08:30 PM</option>
+                    <option value="09:00 PM">09:00 PM</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              
+              <!-- Duration selection -->
+              <div class="form-group">
+                <label for="res-duration" class="form-label text-xs uppercase tracking-wider text-semibold text-secondary block mb-2">Estimated Time of Stay</label>
+                <div class="input-icon-wrapper relative">
+                  <i data-lucide="timer" class="input-icon text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"></i>
+                  <select id="res-duration" class="form-input" required style="padding-left: 2.5rem; width: 100%;">
+                    <option value="1.0 hour">1 hour stay</option>
+                    <option value="1.5 hours" selected>1.5 hours stay</option>
+                    <option value="2.0 hours">2 hours stay</option>
+                    <option value="2.5 hours">2.5 hours stay</option>
+                    <option value="3.0 hours">3 hours stay</option>
+                    <option value="Indefinite / Banquet">Indefinite (Banquet placement)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Guest counts -->
+              <div class="form-group">
+                <label for="res-guests" class="form-label text-xs uppercase tracking-wider text-semibold text-secondary block mb-2">Number of Appointed Patrons</label>
+                <div class="input-icon-wrapper relative">
+                  <i data-lucide="users" class="input-icon text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"></i>
+                  <select id="res-guests" class="form-input" required style="padding-left: 2.5rem; width: 100%;">
+                    <option value="1 Patron">1 Diner</option>
+                    <option value="2 Patrons" selected>2 Diners (Couple Selection)</option>
+                    <option value="4 Patrons">4 Diners (Family Selection)</option>
+                    <option value="6 Patrons">6 Diners (Gourmet Guild)</option>
+                    <option value="8 Patrons">8 Diners (Grand Banquet)</option>
+                    <option value="10+ Patrons">10+ Diners (Event Deck)</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Table choice -->
+            <div class="form-group">
+              <label for="res-table" class="form-label text-xs uppercase tracking-wider text-semibold text-secondary block mb-2">Appointed Ambient Table Selection</label>
+              <div class="input-icon-wrapper relative">
+                <i data-lucide="armchair" class="input-icon text-muted" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px;"></i>
+                <select id="res-table" class="form-input" required style="padding-left: 2.5rem; width: 100%;">
+                  <option value="Waterfront Edge Terrace Table">Waterfront Edge Terrace Table (Stellar yacht view)</option>
+                  <option value="VIP Cozy Fireplace Booth">VIP Cozy Fireplace Booth (Plush velvet, warm crackle fire)</option>
+                  <option value="Grand central Vault Pergola">Grand Central Vault Pergola (Spectacular ambient light dome)</option>
+                  <option value="Executive private wine Cellar Alcove">Executive Private Wine Cellar Alcove (Encircled by legendary vintages)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-group">
+              <label for="res-requests" class="form-label text-xs uppercase tracking-wider text-semibold text-secondary block mb-2">Special Commendations & Dietary Concerns (Optional)</label>
+              <textarea id="res-requests" class="form-input" rows="4" placeholder="Mention allergies, birthdays, strict vegan needs, or specific champagne pre-chilled arrangements..." style="width:100%; border-radius:var(--radius-sm); resize:none; padding:12px;"></textarea>
+            </div>
+
+            <!-- Dynamic Cost Breakdown invoice-like block -->
+            <div id="reservation-cost-block" class="p-4 rounded mb-4" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 13px;">
+              <h3 class="font-serif text-accent mb-3" style="font-size: 1rem; font-weight: 500; font-family: var(--font-serif); color: var(--accent-gold);">Reservation Cost Breakdown</h3>
+              <div class="flex justify-between mb-1" style="display:flex; justify-content:space-between; margin-bottom: 0.25rem;">
+                <span style="color:var(--text-secondary);">Table Placement Premium:</span>
+                <span id="breakdown-table" style="color:rgba(255,255,255,0.9); font-weight:500;">R 0.00</span>
+              </div>
+              <div class="flex justify-between mb-1" style="display:flex; justify-content:space-between; margin-bottom: 0.25rem;">
+                <span style="color:var(--text-secondary);">Estimated Stay Levy:</span>
+                <span id="breakdown-duration" style="color:rgba(255,255,255,0.9); font-weight:500;">R 0.00</span>
+              </div>
+              <div class="flex justify-between mb-2" style="display:flex; justify-content:space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <span style="color:var(--text-secondary);">Patrons Cover Charge:</span>
+                <span id="breakdown-guests" style="color:rgba(255,255,255,0.9); font-weight:500;">R 0.00</span>
+              </div>
+              <div class="flex justify-between font-bold" style="display:flex; justify-content:space-between; font-weight:600; font-size: 14px;">
+                <span style="color:var(--accent-gold);">Total Reservation Fee:</span>
+                <span id="breakdown-total" style="color:var(--accent-gold);">R 0.00</span>
+              </div>
+            </div>
+
+            <!-- Booking Terms Banner -->
+            <div class="booking-notice flex-items gap-3 bg-accent-glow p-4 rounded mb-2 border border-gray-800/40" style="font-size: 13px;">
+              <i data-lucide="shield-check" class="text-accent" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+              <p style="color: var(--text-secondary); line-height: 1.45;">
+                <strong style="color:var(--accent-gold);">Commitment Guarantee:</strong> Tables are held for a grace period of 15 minutes. Once booking is secured for checkout, completing the payment completes registration.
+              </p>
+            </div>
+
+            <!-- Action submits -->
+            <button type="submit" class="btn-primary w-full flex-items align-center gap-2 justify-center" style="padding: 1rem; font-size: 0.95rem;">
+              <i data-lucide="check-square" style="width: 18px; height: 18px;"></i> Complete My Placement Reservation
+            </button>
+          </form>
+        </div>
+
+        <!-- Lateral info panel -->
+        <div class="flex-column gap-5">
+          <div class="card info-card card-no-hover">
+            <h3 class="font-serif text-accent text-normal mb-3">Chef’s Promise</h3>
+            <p class="text-xs text-secondary leading-relaxed mb-4">
+              At Zani’s Eatery, we configure table layouts carefully to capture ventilation, sound boundaries, and sight lanes. Every reservation is hosted personally by our General Manager.
+            </p>
+            <div class="contact-bullets space-y-2 text-xs">
+              <div class="flex-items gap-2"><i data-lucide="phone" class="text-accent" style="width:14px; height:14px;"></i> +27 (0) 21 445 9011</div>
+              <div class="flex-items gap-2"><i data-lucide="mail" class="text-accent" style="width:14px; height:14px;"></i> bookings@zaniseatery.co.za</div>
+              <div class="flex-items gap-2"><i data-lucide="map-pin" class="text-accent" style="width:14px; height:14px;"></i> Pier 14, V&A Waterfront, Cape Town</div>
+            </div>
+          </div>
+          
+          <div class="card hours-card card-no-hover text-center" style="background: radial-gradient(circle at top right, var(--gray-900), black);">
+            <i data-lucide="utensils" class="text-accent mb-2" style="width: 24px; height: 24px; margin: 0 auto;"></i>
+            <h4 class="font-serif text-white text-semibold mb-1">Serving Hours</h4>
+            <p class="text-xs text-secondary font-mono mb-1">MON — SUN: 11:30 AM — 10:30 PM</p>
+            <p class="text-xs text-muted">Kitchen closes 45 mins prior to lockdown</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- FOOTER HERE -->
+
+    <!-- Core Loader scripts -->
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/auth.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          // 1. Guard check - redirect if not authenticated
+          if (window.guardProtectedRoute) {
+              const authed = window.guardProtectedRoute(window.location.href);
+              if (!authed) return;
+          }
+
+          // 2. Bound elements
+          const form = document.getElementById('reservation-form');
+          const durationSelect = document.getElementById('res-duration');
+          const guestsSelect = document.getElementById('res-guests');
+          const tableSelect = document.getElementById('res-table');
+          
+          // Set min date of reservation picker to today to prevent backward booking
+          const dateInput = document.getElementById('res-date');
+          if (dateInput) {
+              const todayStr = new Date().toISOString().split('T')[0];
+              dateInput.min = todayStr;
+              dateInput.value = todayStr;
+          }
+
+          // 3. Dynamic Cost Calculator
+          function updateReservationCost() {
+              if (!durationSelect || !guestsSelect || !tableSelect) return 0;
+
+              const durationVal = durationSelect.value;
+              const guestsVal = guestsSelect.value;
+              const tableVal = tableSelect.value;
+
+              // Table premium mapping
+              let tableCost = 0;
+              if (tableVal.includes('Terrace')) {
+                  tableCost = 250.00;
+              } else if (tableVal.includes('VIP') || tableVal.includes('Fireplace')) {
+                  tableCost = 350.00;
+              } else if (tableVal.includes('Pergola')) {
+                  tableCost = 150.00;
+              } else if (tableVal.includes('Cellar') || tableVal.includes('Alcove')) {
+                  tableCost = 500.00;
+              }
+
+              // Stay duration levy mapping
+              let durationCost = 0;
+              if (durationVal.includes('1.0')) {
+                  durationCost = 100.00;
+              } else if (durationVal.includes('1.5')) {
+                  durationCost = 150.00;
+              } else if (durationVal.includes('2.0')) {
+                  durationCost = 200.00;
+              } else if (durationVal.includes('2.5')) {
+                  durationCost = 250.00;
+              } else if (durationVal.includes('3.0')) {
+                  durationCost = 300.00;
+              } else if (durationVal.includes('Indefinite')) {
+                  durationCost = 500.00;
+              }
+
+              // Patrons cover charge mapping
+              let guestsCost = 0;
+              if (guestsVal.includes('1 Patron') || guestsVal.includes('1 Diner')) {
+                  guestsCost = 50.00;
+              } else if (guestsVal.includes('2')) {
+                  guestsCost = 100.00;
+              } else if (guestsVal.includes('4')) {
+                  guestsCost = 200.00;
+              } else if (guestsVal.includes('6')) {
+                  guestsCost = 300.00;
+              } else if (guestsVal.includes('8')) {
+                  guestsCost = 400.00;
+              } else if (guestsVal.includes('10+')) {
+                  guestsCost = 600.00;
+              }
+
+              const totalCost = tableCost + durationCost + guestsCost;
+
+              // Display live details in DOM
+              const tblEl = document.getElementById('breakdown-table');
+              const durEl = document.getElementById('breakdown-duration');
+              const gstEl = document.getElementById('breakdown-guests');
+              const ttlEl = document.getElementById('breakdown-total');
+
+              if (tblEl) tblEl.textContent = `R ${tableCost.toFixed(2)}`;
+              if (durEl) durEl.textContent = `R ${durationCost.toFixed(2)}`;
+              if (gstEl) gstEl.textContent = `R ${guestsCost.toFixed(2)}`;
+              if (ttlEl) ttlEl.textContent = `R ${totalCost.toFixed(2)}`;
+
+              return totalCost;
+          }
+
+          // Trigger live updates on changes
+          if (durationSelect) durationSelect.addEventListener('change', updateReservationCost);
+          if (guestsSelect) guestsSelect.addEventListener('change', updateReservationCost);
+          if (tableSelect) tableSelect.addEventListener('change', updateReservationCost);
+
+          // Initial load call
+          updateReservationCost();
+
+          if (form) {
+              form.addEventListener('submit', (e) => {
+                  e.preventDefault();
+
+                  const resDate = document.getElementById('res-date').value;
+                  const resTime = document.getElementById('res-time').value;
+                  const resDuration = document.getElementById('res-duration').value;
+                  const resGuests = document.getElementById('res-guests').value;
+                  const resTable = document.getElementById('res-table').value;
+                  const resRequests = document.getElementById('res-requests').value.trim();
+
+                  if (!resDate || !resTime || !resDuration || !resGuests || !resTable) {
+                      alert('Please select all booking characteristics.');
+                      return;
+                  }
+
+                  const totalCost = updateReservationCost();
+                  const user = window.getCurrentUser ? window.getCurrentUser() : { name: "Guest Diner", email: "" };
+                  const resId = `RES-${Math.floor(100000 + Math.random() * 900000)}`;
+
+                  // Add reservation to the active shopping cart so it goes into checkout
+                  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                  
+                  // Filter out any previous table reservation booking first to keep the cart tidy
+                  const filteredCart = cart.filter(item => !item.id.startsWith('res-tbl-'));
+
+                  const resCartItem = {
+                      id: `res-tbl-${Math.floor(100 + Math.random() * 900)}`,
+                      name: `Table Placement: ${resGuests} on ${resTable} (${resDuration} stay)`,
+                      price: totalCost,
+                      quantity: 1,
+                      category: "Reservation",
+                      imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=150&q=80",
+                      reservationDetails: {
+                          bookingDate: resDate,
+                          bookingTime: resTime,
+                          guestCount: resGuests,
+                          tableSelection: resTable,
+                          specialRequests: resRequests,
+                          resId: resId,
+                          userName: user.name
+                      }
+                  };
+
+                  filteredCart.push(resCartItem);
+                  localStorage.setItem('cart', JSON.stringify(filteredCart));
+
+                  // Alert user and redirect them to checkout
+                  alert(`Table Placement Booking Captured!\n\nReference: ${resId}\nTable: ${resTable}\nTotal Cost: R ${totalCost.toFixed(2)}\n\nThis reservation booking has been added to your checkout basket. Proceed to Checkout to confirm and complete your payment.`, () => {
+                      window.location.href = 'orders.html';
+                  });
+              });
+          }
+      });
+    </script>
+  </body>
+</html>
