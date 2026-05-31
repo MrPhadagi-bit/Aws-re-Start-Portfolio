@@ -1,37 +1,10 @@
-# 🌐 Static Website Hosting on AWS S3 — Management Console Guide
+#  Static Website Hosting on AWS S3 Guide
 
 > A complete, step-by-step guide for hosting static websites on Amazon S3 using only the **AWS Management Console** (web interface). No command line required.
-
-[![AWS](https://img.shields.io/badge/AWS-S3-FF9900?style=flat&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/s3/)
-[![Console](https://img.shields.io/badge/Method-Management%20Console-232F3E?style=flat&logo=amazon-aws&logoColor=white)](https://console.aws.amazon.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-
+> 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Prerequisites](#prerequisites)
-- [Step 1: Sign In to AWS Management Console](#step-1-sign-in-to-aws-management-console)
-- [Step 2: Create Your S3 Bucket](#step-2-create-your-s3-bucket)
-- [Step 3: Configure Bucket for Static Website Hosting](#step-3-configure-bucket-for-static-website-hosting)
-- [Step 4: Upload Your Website Files](#step-4-upload-your-website-files)
-- [Step 5: Set Bucket Permissions (Public Access)](#step-5-set-bucket-permissions-public-access)
-- [Step 6: Test Your Website](#step-6-test-your-website)
-- [Step 7: Set Up CloudFront CDN (HTTPS + Custom Domain)](#step-7-set-up-cloudfront-cdn-https--custom-domain)
-- [Step 8: Configure Route 53 Custom Domain](#step-8-configure-route-53-custom-domain)
-- [Step 9: Enable HTTPS with AWS Certificate Manager](#step-9-enable-https-with-aws-certificate-manager)
-- [Security Best Practices](#security-best-practices)
-- [Monitoring via Console](#monitoring-via-console)
-- [Cost Management](#cost-management)
-- [Troubleshooting Console Issues](#troubleshooting-console-issues)
-- [Cleanup via Console](#cleanup-via-console)
-- [References](#references)
-
----
-
-## 🎯 Overview
+##  Overview
 
 This guide walks you through hosting a **static website** on **Amazon S3** using exclusively the **AWS Management Console** — AWS's web-based graphical interface. Perfect for beginners, visual learners, or anyone who prefers point-and-click configuration over command-line tools.
 
@@ -39,22 +12,14 @@ This guide walks you through hosting a **static website** on **Amazon S3** using
 
 | Component | AWS Service | Purpose |
 |-----------|-------------|---------|
-| 🗂️ **Storage** | Amazon S3 | Hosts HTML, CSS, JS, images |
-| 🌍 **CDN** | CloudFront | Global edge caching + HTTPS |
-| 🔗 **DNS** | Route 53 | Custom domain routing |
-| 🔒 **SSL/TLS** | AWS Certificate Manager | Free HTTPS certificates |
-
-### Why Use the Management Console?
-
-- ✅ **Visual** — See your resources, configurations, and status at a glance
-- ✅ **Guided** — Built-in wizards and help panels prevent misconfiguration
-- ✅ **No code required** — Complete setup without CLI or infrastructure-as-code
-- ✅ **Immediate feedback** — Real-time validation and error messages
-- ✅ **Integrated** — Seamlessly switch between S3, CloudFront, Route 53, and ACM
+|  **Storage** | Amazon S3 | Hosts HTML, CSS, JS, images |
+|  **CDN** | CloudFront | Global edge caching + HTTPS |
+|  **DNS** | Route 53 | Custom domain routing |
+|  **SSL/TLS** | AWS Certificate Manager | Free HTTPS certificates |
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────┐
@@ -87,7 +52,7 @@ This guide walks you through hosting a **static website** on **Amazon S3** using
 
 ---
 
-## 📦 Prerequisites
+##  Prerequisites
 
 Before starting, ensure you have:
 
@@ -113,7 +78,7 @@ Before starting, ensure you have:
 
 ---
 
-## 🔐 Step 1: Sign In to AWS Management Console
+##  Step 1: Sign In to AWS Management Console
 
 ### 1.1 Navigate to the Console
 
@@ -144,7 +109,7 @@ After signing in, you'll see the **AWS Console Home** dashboard:
 │                                                             │
 │  Recently visited: S3, CloudFront, Route 53                   │
 │                                                             │
-│  Search services: [________________________] 🔍              │
+│  Search services: [________________________]               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -152,7 +117,7 @@ After signing in, you'll see the **AWS Console Home** dashboard:
 
 ---
 
-## 🗂️ Step 2: Create Your S3 Bucket
+##  Step 2: Create Your S3 Bucket
 
 ### 2.1 Open the S3 Console
 
@@ -177,22 +142,22 @@ In the **Create bucket** wizard, fill in the following:
 | **AWS Region** | Choose closest to your audience | `Africa (Cape Town) af-south-1` |
 | **Bucket name** | Globally unique name (lowercase, no spaces) | `your-domain-com-static-website` |
 
-> ⚠️ **Important:** Bucket names must be **globally unique** across all AWS accounts worldwide. If `your-domain-com-static-website` is taken, try `your-domain-com-static-site-2024` or add your initials.
+>  **Important:** Bucket names must be **globally unique** across all AWS accounts worldwide. If `your-domain-com-static-website` is taken, try `your-domain-com-static-site-2024` or add your initials.
 
 #### Section: Object Ownership
 
 | Setting | Recommended Value | Why |
 |---------|-------------------|-----|
-| **ACLs enabled** | ✅ **Enable** | Required for public read access |
+| **ACLs enabled** |  **Enable** | Required for public read access |
 
 #### Section: Block Public Access settings for this bucket
 
 | Setting | Value | Why |
 |---------|-------|-----|
 | **Block all public access** | ☐ **Uncheck** | Static websites must be publicly readable |
-| Acknowledge warning | ✅ **Check the box** | Confirms you understand the risk |
+| Acknowledge warning |  **Check the box** | Confirms you understand the risk |
 
-> ⚠️ **Security Note:** Only uncheck this for the specific bucket hosting your public website. Keep other buckets private.
+>  **Security Note:** Only uncheck this for the specific bucket hosting your public website. Keep other buckets private.
 
 #### Section: Bucket Versioning
 
@@ -232,7 +197,7 @@ Your new bucket appears in the S3 bucket list:
 
 ---
 
-## ⚙️ Step 3: Configure Bucket for Static Website Hosting
+##  Step 3: Configure Bucket for Static Website Hosting
 
 ### 3.1 Open Your Bucket
 
@@ -280,11 +245,11 @@ http://your-domain-com-static-website.s3-website-af-south-1.amazonaws.com
 ─────────────────────────────────────────
 ```
 
-> 📋 **Copy this URL** — you'll test it later. Note it uses **HTTP**, not HTTPS yet.
+>  **Copy this URL** — you'll test it later. Note it uses **HTTP**, not HTTPS yet.
 
 ---
 
-## 📤 Step 4: Upload Your Website Files
+##  Step 4: Upload Your Website Files
 
 ### 4.1 Go to the Objects Tab
 
@@ -348,7 +313,7 @@ Your **Objects** tab now shows:
 
 ---
 
-## 🔓 Step 5: Set Bucket Permissions (Public Access)
+##  Step 5: Set Bucket Permissions (Public Access)
 
 ### 5.1 Navigate to Permissions Tab
 
@@ -380,7 +345,7 @@ Copy and paste this policy into the **Policy** text box:
 }
 ```
 
-> ⚠️ **Replace `your-domain-com-static-website`** with your actual bucket name in the `Resource` line.
+>  **Replace `your-domain-com-static-website`** with your actual bucket name in the `Resource` line.
 
 #### 5.2.3 Save Policy
 
@@ -405,7 +370,7 @@ If any are checked, click **Edit** and uncheck them, then save.
 
 ---
 
-## 🧪 Step 6: Test Your Website
+##  Step 6: Test Your Website
 
 ### 6.1 Copy the Website Endpoint
 
@@ -425,11 +390,11 @@ If any are checked, click **Edit** and uncheck them, then save.
 ### 6.3 What You Should See
 
 ```
-✅ Your index.html page loads correctly
-✅ CSS styles are applied (colors, fonts, layout)
-✅ JavaScript functions work (buttons, forms)
-✅ Images display properly
-✅ Clicking a non-existent page shows your error.html (if configured)
+ Your index.html page loads correctly
+ CSS styles are applied (colors, fonts, layout)
+ JavaScript functions work (buttons, forms)
+ Images display properly
+ Clicking a non-existent page shows your error.html (if configured)
 ```
 
 ### 6.4 Common Issues at This Stage
@@ -443,7 +408,7 @@ If any are checked, click **Edit** and uncheck them, then save.
 
 ---
 
-## 🌍 Step 7: Set Up CloudFront CDN (HTTPS + Custom Domain)
+##  Step 7: Set Up CloudFront CDN (HTTPS + Custom Domain)
 
 CloudFront makes your website faster and adds HTTPS. We'll configure it entirely through the console.
 
@@ -465,7 +430,7 @@ CloudFront makes your website faster and adds HTTPS. We'll configure it entirely
 |-------|-------|-------------|
 | **Origin domain** | Your S3 website endpoint | Click in the field, select your bucket from the dropdown, **BUT** — see note below |
 
-> ⚠️ **CRITICAL:** The dropdown shows the **S3 REST API endpoint** (e.g., `your-domain-com-static-website.s3.af-south-1.amazonaws.com`). You must change this to the **S3 website endpoint**:
+>  **CRITICAL:** The dropdown shows the **S3 REST API endpoint** (e.g., `your-domain-com-static-website.s3.af-south-1.amazonaws.com`). You must change this to the **S3 website endpoint**:
 >
 > **Correct format:** `your-domain-com-static-website.s3-website-af-south-1.amazonaws.com`
 >
@@ -524,18 +489,18 @@ After creation, your distribution appears in the list:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-> 📋 **Copy the Domain name** (e.g., `d1234abcd5678.cloudfront.net`) — you'll need it for Route 53.
+>  **Copy the Domain name** (e.g., `d1234abcd5678.cloudfront.net`) — you'll need it for Route 53.
 
 ### 7.8 Test CloudFront URL
 
 1. Wait for **Status** to change from **"In Progress"** to **"Deployed"** (refresh the page)
 2. Open a new tab
 3. Go to: `https://d1234abcd5678.cloudfront.net`
-4. Your website loads with HTTPS! 🔒
+4. Your website loads with HTTPS! 
 
 ---
 
-## 🔗 Step 8: Configure Route 53 Custom Domain
+##  Step 8: Configure Route 53 Custom Domain
 
 > **Prerequisite:** You must own a domain name and have it registered (can be with Route 53 or another registrar like GoDaddy, Namecheap, etc.)
 
@@ -565,7 +530,7 @@ If your domain is registered with Route 53, a hosted zone may already exist. If 
 |-------|-------|-------|
 | **Record name** | Leave blank (or `www` for subdomain) | Blank = root domain |
 | **Record type** | **A** — Routes traffic to an IPv4 address and some AWS resources | |
-| **Alias** | ✅ **Turn on** | Required for CloudFront |
+| **Alias** |  **Turn on** | Required for CloudFront |
 | **Route traffic to** | **Alias to CloudFront distribution** | From dropdown |
 | **Choose distribution** | Select your distribution | Should match the domain you entered in CloudFront |
 | **Routing policy** | **Simple routing** | Standard for single endpoint |
@@ -590,7 +555,7 @@ If you bought your domain from GoDaddy, Namecheap, etc.:
 
 ---
 
-## 🔒 Step 9: Enable HTTPS with AWS Certificate Manager
+##  Step 9: Enable HTTPS with AWS Certificate Manager
 
 ### 9.1 Navigate to ACM Console
 
@@ -598,7 +563,7 @@ If you bought your domain from GoDaddy, Namecheap, etc.:
 2. Under **Security, Identity, & Compliance**, click **Certificate Manager**
    - Or search "Certificate Manager"
 
-> ⚠️ **Important:** For CloudFront, certificates **must** be requested in the **US East (N. Virginia)** region (`us-east-1`). Make sure the console region selector (top right) shows **N. Virginia**.
+>  **Important:** For CloudFront, certificates **must** be requested in the **US East (N. Virginia)** region (`us-east-1`). Make sure the console region selector (top right) shows **N. Virginia**.
 
 ### 9.2 Request Certificate
 
@@ -633,7 +598,7 @@ If you bought your domain from GoDaddy, Namecheap, etc.:
 2. In the **Domains** section, click **Create records in Route 53**
 3. ACM automatically adds the validation CNAME record
 4. Wait 5-30 minutes for validation
-5. Status changes to **Issued** ✅
+5. Status changes to **Issued** 
 
 #### If Using External DNS (Manual)
 
@@ -656,7 +621,7 @@ If you bought your domain from GoDaddy, Namecheap, etc.:
 
 | Field | Value |
 |-------|-------|
-| **Custom SSL certificate** | ✅ **Change to** → Select your certificate from dropdown |
+| **Custom SSL certificate** |  **Change to** → Select your certificate from dropdown |
 | **Security policy** | **TLSv1.2_2021** (recommended) |
 
 5. Click **Save changes**
@@ -667,13 +632,13 @@ If you bought your domain from GoDaddy, Namecheap, etc.:
 1. Open browser tab
 2. Go to: `https://your-domain.com`
 3. You should see:
-   - 🔒 **Lock icon** in address bar (secure connection)
+   -  **Lock icon** in address bar (secure connection)
    - Your website content
    - No certificate warnings
 
 ---
 
-## 🛡️ Security Best Practices (Console Configuration)
+##  Security Best Practices (Console Configuration)
 
 ### Enable Default Encryption on S3 Bucket
 
@@ -714,7 +679,7 @@ Instead of making your S3 bucket public, use OAC so only CloudFront can access i
 
 ---
 
-## 📊 Monitoring via Console
+##  Monitoring via Console
 
 ### S3 Metrics
 
@@ -742,7 +707,7 @@ Instead of making your S3 bucket public, use OAC so only CloudFront can access i
 
 ---
 
-## 💰 Cost Management
+##  Cost Management
 
 ### View Costs in Billing Console
 
@@ -775,7 +740,7 @@ Instead of making your S3 bucket public, use OAC so only CloudFront can access i
 
 ---
 
-## 🔧 Troubleshooting Console Issues
+##  Troubleshooting Console Issues
 
 ### Can't Find a Service?
 
@@ -799,7 +764,7 @@ Instead of making your S3 bucket public, use OAC so only CloudFront can access i
 
 | Tip | How |
 |-----|-----|
-| **Pin favorite services** | Click the ☰ icon → click the ⭐ next to services you use often |
+| **Pin favorite services** | Click the ☰ icon → click the  next to services you use often |
 | **Open multiple services** | Right-click service names → "Open in new tab" |
 | **Use the CloudShell** | Click the terminal icon (top right) for a browser-based AWS CLI |
 | **View recent changes** | Many services show "Recent changes" or "Activity" in the sidebar |
@@ -807,7 +772,7 @@ Instead of making your S3 bucket public, use OAC so only CloudFront can access i
 
 ---
 
-## 🧹 Cleanup via Console
+##  Cleanup via Console
 
 To avoid ongoing charges, delete resources in this order:
 
@@ -852,7 +817,7 @@ To avoid ongoing charges, delete resources in this order:
 
 ---
 
-## 📚 References
+##  References
 
 ### AWS Console Documentation
 
@@ -876,23 +841,7 @@ To avoid ongoing charges, delete resources in this order:
 
 ---
 
-## 🤝 Contributing
-
-Found an issue with the console steps? Screenshots changed? Console UI updated?
-
-1. Open an [Issue](https://github.com/yourusername/aws-s3-static-website-console/issues)
-2. Describe the console change and your suggested fix
-3. Include screenshots if possible
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - AWS Management Console team for continuous UI improvements
 - [Zani's Eatery](https://github.com/yourusername/zani-eatery) project for architecture inspiration
@@ -902,7 +851,7 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 <div align="center">
 
-**Built entirely in the ☁️ AWS Management Console**
+**Built entirely in the  AWS Management Console**
 
 [⬆ Back to Top](#-static-website-hosting-on-aws-s3--management-console-guide)
 
