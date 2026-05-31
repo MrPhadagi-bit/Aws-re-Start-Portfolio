@@ -1,57 +1,68 @@
 # Linux Labs
 
-This folder contains Linux command-line labs and notes from the AWS re/Start programme.
+## About This Folder
 
-The main focus of this section is building confidence with Linux systems, remote access, built-in documentation, file system navigation, user management, permissions, processes, and bash scripting practice.
+This folder contains my Linux labs and notes completed as part of the AWS re/Start programme. The labs focus on building practical command-line confidence on Amazon Linux EC2 instances.
 
----
+The work in this section covers connecting to Linux servers, navigating the file system, managing users and permissions, editing files, working with processes and services, reading logs, managing software, and writing basic Bash scripts.
 
-## What This Section Covers
+## Lab Index
 
-| Area | Topics |
+| Lab | Focus Area |
 |---|---|
-| Linux CLI | Basic command-line navigation and terminal usage. |
-| SSH | Remote access to Linux systems using Secure Shell. |
-| Manual Pages | Using `man` pages to learn command syntax, options, and examples. |
-| File System | Directory navigation, files, paths, and permissions. |
-| Administration | Users, processes, package basics, and troubleshooting practice. |
-| Bash | Introductory shell scripting concepts. |
+| [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md) | Connecting to Amazon Linux and using built-in documentation |
+| [Linux Command Line Lab](./Linux-Command-Line-Lab.md) | Basic terminal commands, SSH workflow, and command history |
+| [Working with Commands](./Working_with_Commands.md) | `tee`, `sort`, `cut`, `sed`, and text-processing commands |
+| [Working with the File System](./Working%20with%20the%20File%20System.md) | Creating, copying, moving, organizing, and deleting files and folders |
+| [Working with Files - Linux Backup Lab](./working_with_files_lab.md) | Creating backups with `tar` and moving backup files |
+| [Linux Editing Files Lab](./Linux-Editing-Files-Lab.md) | Editing files with Vim and nano |
+| [Linux Users and Groups Lab](./Linux-Users-and-Groups-Lab.md) | Creating users, groups, memberships, and reviewing account access |
+| [Linux Managing File Permissions](./Linux%20Managing%20File%20Permissions.md) | Managing ownership, file permissions, and access control |
+| [The Bash Shell](./The_Bash_Shell.md) | Aliases, environment variables, and the `PATH` variable |
+| [Bash Shell Scripts](./Bash%20Shell%20Scripts.md) | Writing Bash scripts to automate backups |
+| [Challenge Lab: Bash Shell Scripting Exercise](./Challenge%20Lab%20Bash%20Shell%20Scripting%20Exercise.md) | Creating a Bash script that dynamically generates files |
+| [Managing Processes](./Managing%20Processes.md) | Viewing, monitoring, stopping, and managing Linux processes |
+| [Managing Services - Monitoring](./Managing_Services_Monitoring.md) | Checking services with `systemctl`, using `top`, and monitoring with CloudWatch |
+| [Managing Log Files](./managing-log-files-lab.md) | Reading Linux security logs and reviewing login activity |
+| [Software Management Lab](./software-management-lab.md) | Updating packages, using `yum`, rolling back changes, and installing AWS CLI |
 
----
+## Skills Practised
 
-## Completed Labs
+- Connecting to Amazon Linux EC2 instances with SSH
+- Navigating directories and working with files from the command line
+- Using Linux help tools such as `man`
+- Redirecting and processing command output
+- Editing files with Vim and nano
+- Creating and managing users and groups
+- Applying Linux file permissions and ownership rules
+- Monitoring processes, services, and system activity
+- Reviewing Linux log files for troubleshooting and security awareness
+- Installing and managing software packages
+- Writing Bash scripts for automation
 
-| Lab | Description | Status |
-|---|---|---|
-| [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md) | Connecting to an Amazon Linux EC2 instance and exploring Linux man pages. | Complete |
-| [Linux Command Line Lab](./Linux-Command-Line-Lab.md) | Practicing basic Linux commands, SSH access, bash history, and command-line workflow. | Complete |
-| [Linux Users and Groups Lab](./Linux-Users-and-Groups-Lab.md) | Creating Linux users and groups, assigning memberships, testing permissions, and reviewing security logs. | Complete |
-| [Linux Editing Files Lab](./Linux-Editing-Files-Lab.md) | Creating and editing files with Vim and nano on an Amazon Linux EC2 instance. | Complete |
+## Tools and Commands Covered
 
----
+| Category | Examples |
+|---|---|
+| Navigation | `pwd`, `ls`, `cd`, `tree` |
+| File management | `touch`, `cp`, `mv`, `rm`, `mkdir`, `tar` |
+| Text processing | `cat`, `less`, `grep`, `sort`, `cut`, `sed`, `tee` |
+| Editing | `vim`, `nano` |
+| Users and groups | `useradd`, `passwd`, `groupadd`, `usermod`, `id`, `su`, `sudo` |
+| Permissions | `chmod`, `chown`, `ls -l` |
+| Processes and services | `ps`, `top`, `kill`, `systemctl` |
+| Logs | `/var/log/secure`, `lastlog` |
+| Software | `yum`, `dnf`, AWS CLI |
+| Bash | aliases, variables, scripts, loops |
 
-## Skills Practiced
+## Suggested Learning Path
 
-- Using SSH to connect to Linux-based EC2 instances.
-- Navigating Linux help documentation with the `man` command.
-- Identifying common manual page sections such as `NAME`, `SYNOPSIS`, `DESCRIPTION`, and `OPTIONS`.
-- Practicing command-line learning directly from a Linux terminal.
-- Understanding how Amazon Linux is used as an EC2 operating system.
-- Running basic system information commands such as `whoami`, `hostname`, `uptime`, `who`, `date`, `cal`, and `id`.
-- Using bash history shortcuts such as `history`, `Ctrl + R`, and `!!`.
-- Creating Linux users with `useradd` and setting passwords with `passwd`.
-- Creating groups with `groupadd` and assigning users with `usermod`.
-- Testing permissions with `su`, `touch`, and `sudo`.
-- Reviewing Linux security logs in `/var/log/secure`.
-- Editing files from the terminal with Vim and nano.
-- Using Vim commands such as `i`, `Esc`, `:w`, `:wq`, `:q!`, `dd`, and `u`.
-- Using nano shortcuts such as `Ctrl + O`, `Ctrl + X`, `Ctrl + K`, `Ctrl + U`, and `Ctrl + W`.
+1. Start with [Introduction to Amazon Linux AMI](./Amazon-Linux-AMI.md).
+2. Practise basic commands with [Linux Command Line Lab](./Linux-Command-Line-Lab.md).
+3. Work through file system, file editing, and command-processing labs.
+4. Move into users, groups, permissions, processes, services, and logs.
+5. Finish with Bash scripting and software management labs.
 
----
+## Why This Section Matters
 
-## Next Learning Goals
-
-- Add more labs for Linux file system navigation and text processing.
-- Add deeper notes for users, groups, and permissions.
-- Add process management and package management practice.
-- Add bash scripting exercises.
+Linux is a core skill for cloud, infrastructure, DevOps, and technical support roles. These labs helped me practise the daily tasks used when working with cloud servers, troubleshooting systems, and managing services in AWS environments.
