@@ -2,28 +2,8 @@
 
 > **AWS Academy Lab** | SQL Fundamentals | MySQL | ~45 minutes
 
-[![License](https://img.shields.io/badge/License-Educational-blue.svg)](LICENSE)
 [![Database](https://img.shields.io/badge/Database-MySQL-orange.svg)](https://www.mysql.com/)
 [![AWS](https://img.shields.io/badge/Cloud-AWS-yellow.svg)](https://aws.amazon.com/)
-
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Learning Objectives](#learning-objectives)
-- [Prerequisites](#prerequisites)
-- [Lab Architecture](#lab-architecture)
-- [Lab Tasks](#lab-tasks)
-  - [Task 1: Connect to the Command Host](#task-1-connect-to-the-command-host)
-  - [Task 2: Create a Database and Table](#task-2-create-a-database-and-table)
-  - [Task 3: Delete a Database and Tables](#task-3-delete-a-database-and-tables)
-- [SQL Commands Reference](#sql-commands-reference)
-- [Challenges](#challenges)
-- [Troubleshooting](#troubleshooting)
-- [Sample Data Attribution](#sample-data-attribution)
-- [Cleanup](#cleanup)
-- [License](#license)
 
 ---
 
@@ -43,10 +23,10 @@ After completing this lab, you will be able to:
 
 | Objective | SQL Statement | Description |
 |-----------|---------------|-------------|
-| ✅ Create databases and tables | `CREATE` | Build new database objects with defined schemas |
-| ✅ View available databases and tables | `SHOW` | Inspect existing database objects and their structures |
-| ✅ Modify table structure | `ALTER` | Rename columns or change schema properties |
-| ✅ Delete databases and tables | `DROP` | Permanently remove database objects |
+|  Create databases and tables | `CREATE` | Build new database objects with defined schemas |
+|  View available databases and tables | `SHOW` | Inspect existing database objects and their structures |
+|  Modify table structure | `ALTER` | Rename columns or change schema properties |
+|  Delete databases and tables | `DROP` | Permanently remove database objects |
 
 ---
 
@@ -56,9 +36,9 @@ After completing this lab, you will be able to:
 
 The following resources are **pre-provisioned** for you when the lab starts:
 
-- ☁️ **AWS EC2 Instance** (Command Host) with MySQL client installed
-- 🔐 **MySQL Database Server** accessible from the Command Host
-- 🛡️ **AWS Systems Manager Session Manager** configured for secure access
+-  **AWS EC2 Instance** (Command Host) with MySQL client installed
+-  **MySQL Database Server** accessible from the Command Host
+-  **AWS Systems Manager Session Manager** configured for secure access
 
 ### Required Knowledge
 
@@ -111,9 +91,9 @@ Establish a secure connection to the EC2 instance and configure the MySQL client
 5. Select the checkbox next to it → Click **Connect**
 6. Choose the **Session Manager** tab → Click **Connect**
 
-> ⚠️ **Note:** If the Command Host is not visible, the lab may still be provisioning. Wait 2-3 minutes and refresh.
+>  **Note:** If the Command Host is not visible, the lab may still be provisioning. Wait 2-3 minutes and refresh.
 
-> 💡 **Tip:** If the Connect button is unavailable, wait a few minutes and retry.
+>  **Tip:** If the Connect button is unavailable, wait a few minutes and retry.
 
 #### Step 2: Configure the Terminal Environment
 
@@ -142,7 +122,7 @@ mysql -u root --password='re:St@rt!9'
 | `-u` | `--user` | MySQL username (root) |
 | `-p` | `--password` | MySQL password (provided in quotes) |
 
-> 💡 **Reconnection Tip:** If the Session Manager becomes unresponsive:
+>  **Reconnection Tip:** If the Session Manager becomes unresponsive:
 > 1. Close the Session Manager window
 > 2. Reconnect using the steps above
 > 3. Re-run: `sudo su`, `cd /home/ec2-user/`, `mysql -u root --password='re:St@rt!9'`
@@ -173,7 +153,7 @@ SHOW DATABASES;
 +--------------------+
 ```
 
-> 🎯 **Purpose:** Verify you're connected to the correct database instance and understand the existing environment.
+>  **Purpose:** Verify you're connected to the correct database instance and understand the existing environment.
 
 #### Step 2.2: Create the `world` Database
 
@@ -270,7 +250,7 @@ SHOW TABLES;
 SHOW COLUMNS FROM world.country;
 ```
 
-> 🔍 **Observation:** Notice that the `Continent` column is misspelled as `Conitinent`.
+>  **Observation:** Notice that the `Continent` column is misspelled as `Conitinent`.
 
 #### Step 2.7: Fix the Column Name
 
@@ -281,7 +261,7 @@ ALTER TABLE world.country
 RENAME COLUMN Conitinent TO Continent;
 ```
 
-> 📝 **Syntax Note:** `RENAME COLUMN` is available in MySQL 8.0+. For older versions, use `CHANGE COLUMN`.
+>  **Syntax Note:** `RENAME COLUMN` is available in MySQL 8.0+. For older versions, use `CHANGE COLUMN`.
 
 #### Step 2.8: Verify the Fix
 
@@ -313,7 +293,7 @@ Safely remove the created database objects using `DROP` commands.
 DROP TABLE world.city;
 ```
 
-> ⚠️ **Warning:** `DROP TABLE` permanently deletes the table and all its data. This action **cannot be undone** without a backup.
+>  **Warning:** `DROP TABLE` permanently deletes the table and all its data. This action **cannot be undone** without a backup.
 
 #### Step 3.2: Drop the `country` Table
 
@@ -338,7 +318,7 @@ Empty set (0.00 sec)
 DROP DATABASE world;
 ```
 
-> ⚠️ **Warning:** `DROP DATABASE` removes the entire database, all tables, and all data permanently.
+>  **Warning:** `DROP DATABASE` removes the entire database, all tables, and all data permanently.
 
 #### Step 3.5: Verify Database Deletion
 
@@ -395,7 +375,7 @@ SHOW DATABASES;
 **Task:** Create a table named `city` with two columns: `Name` and `Region`, both using `CHAR` data type.
 
 <details>
-<summary>💡 Click to reveal solution</summary>
+<summary> Click to reveal solution</summary>
 
 ```sql
 CREATE TABLE world.city (
@@ -418,7 +398,7 @@ CREATE TABLE world.city (
 **Task:** Write the SQL command to delete the `country` table.
 
 <details>
-<summary>💡 Click to reveal solution</summary>
+<summary> Click to reveal solution</summary>
 
 ```sql
 DROP TABLE world.country;
@@ -473,19 +453,11 @@ Sample data used in this course is taken from:
 
 To ensure no resources are left behind and to avoid unexpected charges:
 
-1. ✅ Drop all tables created during the lab (`DROP TABLE`)
-2. ✅ Drop the `world` database (`DROP DATABASE world;`)
-3. ✅ Exit MySQL client: `EXIT;` or `QUIT;`
-4. ✅ Close the Session Manager terminal
-5. ✅ End the lab session in the AWS Academy console (if applicable)
-
----
-
-## License
-
-This lab material is provided for **educational purposes** as part of the AWS Academy curriculum. 
-
-> ⚠️ **Important:** Do not use production credentials or store sensitive data in lab environments. The passwords provided are for educational use only and should never be used in production systems.
+1.  Drop all tables created during the lab (`DROP TABLE`)
+2.  Drop the `world` database (`DROP DATABASE world;`)
+3.  Exit MySQL client: `EXIT;` or `QUIT;`
+4.  Close the Session Manager terminal
+5.  End the lab session in the AWS Academy console (if applicable)
 
 ---
 
@@ -500,6 +472,6 @@ This lab material is provided for **educational purposes** as part of the AWS Ac
 ---
 
 <p align="center">
-  <strong>Happy Learning! 🚀</strong><br>
+  <strong>Happy Learning! </strong><br>
   <em>Database Operations Team | AWS Academy</em>
 </p>
