@@ -1,40 +1,23 @@
-# 🗄️ SQL Data Manipulation Lab: Insert, Update, and Delete Data
+#  SQL Data Manipulation Lab: Insert, Update, and Delete Data
 
 > **Scenario**: The database operations team has created a relational database called `world` containing three tables: `city`, `country`, and `countrylanguage`. You have to validate the configuration of the database by running **INSERT**, **UPDATE**, and **DELETE** statements on the `country` table.
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Architecture](#architecture)
-- [Lab Duration](#lab-duration)
-- [Task 1: Connect to the Database](#task-1-connect-to-the-database)
-- [Task 2: Insert Data into a Table](#task-2-insert-data-into-a-table)
-- [Task 3: Update Rows in a Table](#task-3-update-rows-in-a-table)
-- [Task 4: Delete Rows from a Table](#task-4-delete-rows-from-a-table)
-- [Task 5: Import Data Using an SQL File](#task-5-import-data-using-an-sql-file)
-- [Conclusion](#conclusion)
-- [Troubleshooting](#troubleshooting)
-- [Sample Data Source](#sample-data-source)
-
----
-
-## 📖 Overview
+##  Overview
 
 This lab demonstrates how to **insert**, **update**, **delete**, and **import** rows of data using Structured Query Language (SQL). You will use a MySQL database instance on AWS EC2 to perform these operations.
 
-### 🎯 Lab Objectives
+###  Lab Objectives
 
 After completing this lab, you will be able to:
 
-- ✅ Insert rows into a table
-- ✅ Update rows in a table
-- ✅ Delete rows from a table
-- ✅ Import rows from a database backup file
+-  Insert rows into a table
+-  Update rows in a table
+-  Delete rows from a table
+-  Import rows from a database backup file
 
-### 🛠️ Pre-Provisioned Resources
+###  Pre-Provisioned Resources
 
 When you start this lab, the following resources are already created for you:
 
@@ -43,7 +26,7 @@ When you start this lab, the following resources are already created for you:
 
 ---
 
-## 🔧 Prerequisites
+##  Prerequisites
 
 - AWS Management Console access
 - Basic familiarity with SQL syntax
@@ -51,7 +34,7 @@ When you start this lab, the following resources are already created for you:
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -75,13 +58,13 @@ When you start this lab, the following resources are already created for you:
 
 ---
 
-## ⏱️ Lab Duration
+##  Lab Duration
 
 This lab requires approximately **45 minutes** to complete.
 
 ---
 
-## 🚀 Task 1: Connect to a Database
+##  Task 1: Connect to a Database
 
 In this task, you connect to an instance containing a database client (referred to as the **Command Host**).
 
@@ -92,14 +75,14 @@ In this task, you connect to an instance containing a database client (referred 
 3. In the left navigation pane, choose **Instances**.
 4. Next to the instance labelled **Command Host**, select the check box ✅ and then choose **Connect**.
 
-> ⚠️ **Note**: If you do not see the Command Host, the lab is possibly still being provisioned, or you may be using another Region.
+>  **Note**: If you do not see the Command Host, the lab is possibly still being provisioned, or you may be using another Region.
 
 ### Step 2: Connect via Session Manager
 
 1. For **Connect to instance**, choose the **Session Manager** tab.
 2. Choose **Connect** to open a terminal window.
 
-> ⚠️ **Note**: If the Connect button is not available, wait for a few minutes and try again.
+>  **Note**: If the Connect button is not available, wait for a few minutes and try again.
 
 ### Step 3: Configure the Terminal
 
@@ -110,7 +93,7 @@ sudo su
 cd /home/ec2-user/
 ```
 
-💡 **Tips**:
+ **Tips**:
 - Copy and paste the command into the Session Manager terminal window.
 - If you are using a Windows system, press `Shift+Ctrl+V` to paste the command.
 
@@ -139,7 +122,7 @@ SHOW DATABASES;
 
 Make a note of the currently available databases.
 
-> 💡 **Tip**: At any stage of the lab, if the Session Manager window is not responsive or if you need to reconnect:
+>  **Tip**: At any stage of the lab, if the Session Manager window is not responsive or if you need to reconnect:
 > 1. Close the Session Manager window and try to reconnect using the previous steps.
 > 2. Run these commands in the terminal:
 > ```bash
@@ -150,7 +133,7 @@ Make a note of the currently available databases.
 
 ---
 
-## ➕ Task 2: Insert Data into a Table
+##  Task 2: Insert Data into a Table
 
 In this task, you insert sample data into the `country` table.
 
@@ -162,7 +145,7 @@ Run the following command to verify the `country` table exists:
 SELECT * FROM world.country;
 ```
 
-> 📌 The `SELECT *` statement identifies all columns to include in the result set. The `FROM` clause specifies the database (`world`) and table (`country`) being queried.
+>  The `SELECT *` statement identifies all columns to include in the result set. The `FROM` clause specifies the database (`world`) and table (`country`) being queried.
 
 ### Step 2: Insert Rows
 
@@ -204,7 +187,7 @@ SELECT * FROM world.country WHERE Code IN ('IRL', 'AUS');
 
 ---
 
-## 🔄 Task 3: Update Rows in a Table
+##  Task 3: Update Rows in a Table
 
 In this task, you update both rows in the `country` table using `UPDATE` statements.
 
@@ -216,7 +199,7 @@ Run the following `UPDATE` statement to set the `Population` column to `0` for *
 UPDATE world.country SET Population = 0;
 ```
 
-> ⚠️ **Warning**: All rows are updated because the `UPDATE` statement does **not** include a `WHERE` condition. A `WHERE` clause uses conditions to filter rows. (The next lab introduces the `WHERE` clause in detail.)
+>  **Warning**: All rows are updated because the `UPDATE` statement does **not** include a `WHERE` condition. A `WHERE` clause uses conditions to filter rows. (The next lab introduces the `WHERE` clause in detail.)
 
 ### Step 2: Verify the Update
 
@@ -240,11 +223,11 @@ SELECT * FROM world.country;
 
 ---
 
-## 🗑️ Task 4: Delete Rows from a Table
+##  Task 4: Delete Rows from a Table
 
 In this task, you delete rows in the `country` table using a `DELETE` statement.
 
-> ⚠️ **Exercise caution** when using data manipulation statements such as `UPDATE` and `DELETE` because these changes may not be reversible.
+>  **Exercise caution** when using data manipulation statements such as `UPDATE` and `DELETE` because these changes may not be reversible.
 
 ### Step 1: Disable Foreign Key Checks
 
@@ -262,7 +245,7 @@ Run the following command to delete **ALL** rows from the `country` table:
 DELETE FROM world.country;
 ```
 
-> ⚠️ **Warning**: Because the `DELETE` statement does not include a `WHERE` condition, **all rows are deleted**.
+>  **Warning**: Because the `DELETE` statement does not include a `WHERE` condition, **all rows are deleted**.
 
 ### Step 3: Verify Deletion
 
@@ -274,7 +257,7 @@ You should see an empty result set (no rows returned).
 
 ---
 
-## 📥 Task 5: Import Data Using an SQL File
+##  Task 5: Import Data Using an SQL File
 
 In this task, you import sample data into the `country` table using an SQL backup file.
 
@@ -300,7 +283,7 @@ Run the following command to load rows into the `country` table:
 mysql -u root --password='re:St@rt!9' < /home/ec2-user/world.sql
 ```
 
-> 📌 This database file adds two additional tables and inserts data into all three tables.
+>  This database file adds two additional tables and inserts data into all three tables.
 
 ### Step 4: Reconnect to MySQL
 
@@ -339,18 +322,18 @@ SELECT * FROM countrylanguage LIMIT 5;
 
 ---
 
-## ✅ Conclusion
+##  Conclusion
 
-Congratulations! 🎉 You have successfully:
+Congratulations!  You have successfully:
 
-- ✅ Inserted rows into a table
-- ✅ Updated rows in a table
-- ✅ Deleted rows from a table
-- ✅ Imported rows from a database backup file
+-  Inserted rows into a table
+-  Updated rows in a table
+-  Deleted rows from a table
+-  Imported rows from a database backup file
 
 ---
 
-## 🔍 Troubleshooting
+##  Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -362,18 +345,13 @@ Congratulations! 🎉 You have successfully:
 
 ---
 
-## 📚 Sample Data Source
+##  Sample Data Source
 
 Sample data in this course is taken from **Statistics Finland**, general regional statistics, February 4, 2022.
 
----
-
-## 📄 License
-
-This lab documentation is provided for educational purposes.
 
 ---
 
-**Lab Complete** 🏁
+**Lab Complete** 
 
-> 💡 **Pro Tip**: Always use `WHERE` clauses with `UPDATE` and `DELETE` statements in production environments to avoid unintended data loss!
+>  **Pro Tip**: Always use `WHERE` clauses with `UPDATE` and `DELETE` statements in production environments to avoid unintended data loss!
