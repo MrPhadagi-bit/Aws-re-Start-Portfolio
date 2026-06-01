@@ -73,7 +73,7 @@ In this task, you connect to an instance containing a database client (referred 
 1. In the **AWS Management Console**, choose the **Services** menu.
 2. Under **Compute**, choose **EC2**.
 3. In the left navigation pane, choose **Instances**.
-4. Next to the instance labelled **Command Host**, select the check box ✅ and then choose **Connect**.
+4. Next to the instance labelled **Command Host**, select the check box  and then choose **Connect**.
 
 >  **Note**: If you do not see the Command Host, the lab is possibly still being provisioned, or you may be using another Region.
 
