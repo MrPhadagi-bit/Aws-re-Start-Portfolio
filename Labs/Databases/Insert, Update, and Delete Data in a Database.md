@@ -6,22 +6,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Lab Overview](#lab-overview)
-- [Objectives](#objectives)
-- [Architecture](#architecture)
-- [Prerequisites](#prerequisites)
-- [Task 1: Connect to the Database](#task-1-connect-to-the-database)
-- [Task 2: Insert Data into a Table](#task-2-insert-data-into-a-table)
-- [Task 3: Update Rows in a Table](#task-3-update-rows-in-a-table)
-- [Task 4: Delete Rows from a Table](#task-4-delete-rows-from-a-table)
-- [Task 5: Import Data Using an SQL File](#task-5-import-data-using-an-sql-file)
-- [Conclusion](#conclusion)
-- [Sample Data Attribution](#sample-data-attribution)
-- [Troubleshooting](#troubleshooting)
-
----
 
 ## Lab Overview
 
@@ -35,10 +19,10 @@ This hands-on lab demonstrates fundamental **Data Manipulation Language (DML)** 
 
 After completing this lab, you will be able to:
 
-- ✅ **Insert** rows into a table
-- ✅ **Update** rows in a table  
-- ✅ **Delete** rows from a table
-- ✅ **Import** rows from a database backup file
+-  **Insert** rows into a table
+-  **Update** rows in a table  
+-  **Delete** rows from a table
+-  **Import** rows from a database backup file
 
 ---
 
@@ -69,10 +53,10 @@ After completing all tasks, you will have successfully manipulated data in the `
 │   Lab User      │         │      world Database         │
 │  (You)          │────────▶│                             │
 │                 │         │  ┌─────────┐ ┌──────────┐  │
-│  INSERT ✅      │         │  │  city   │ │ country  │◀─┼── Data inserted
-│  UPDATE ✅      │         │  │(populated)│ │(populated)│  │   & updated
-│  DELETE ✅      │         │  └─────────┘ └──────────┘  │
-│  IMPORT ✅      │         │  ┌──────────────────────┐  │
+│  INSERT         │         │  │  city   │ │ country  │◀─┼── Data inserted
+│  UPDATE         │         │  │(populated)│ │(populated)│  │   & updated
+│  DELETE         │         │  └─────────┘ └──────────┘  │
+│  IMPORT         │         │  ┌──────────────────────┐  │
 │                 │         │  │  countrylanguage   │  │
 └─────────────────┘         │  │    (populated)       │  │
                             │  └──────────────────────┘  │
@@ -90,7 +74,7 @@ Before starting this lab, ensure you have:
 - [ ] Basic familiarity with Linux terminal commands
 - [ ] A text editor or clipboard manager for copying/pasting commands
 
-> ⚠️ **Important:** If you do not see the Command Host instance, the lab may still be provisioning, or you may be using an incorrect AWS Region.
+>  **Important:** If you do not see the Command Host instance, the lab may still be provisioning, or you may be using an incorrect AWS Region.
 
 ---
 
@@ -105,7 +89,7 @@ Before starting this lab, ensure you have:
 5. For **Connect to instance**, choose the **Session Manager** tab.
 6. Choose **Connect** to open a terminal window.
 
-> 💡 **Tip:** If the **Connect** button is not available, wait a few minutes for the instance to finish initializing and try again.
+>  **Tip:** If the **Connect** button is not available, wait a few minutes for the instance to finish initializing and try again.
 
 ### Step 1.2: Configure the Terminal Environment
 
@@ -116,7 +100,7 @@ sudo su
 cd /home/ec2-user/
 ```
 
-> 💡 **Paste Tips:**
+>  **Paste Tips:**
 > - **Linux/Mac:** `Ctrl+Shift+V` or right-click → Paste
 > - **Windows:** `Shift+Ctrl+V`
 
@@ -156,7 +140,7 @@ SHOW DATABASES;
 +--------------------+
 ```
 
-> 📝 **Make a note** of the currently available databases for reference.
+>  **Make a note** of the currently available databases for reference.
 
 ---
 
@@ -226,7 +210,7 @@ SELECT * FROM world.country WHERE Code IN ('IRL', 'AUS');
 
 ## Task 3: Update Rows in a Table
 
-> ⚠️ **Warning:** UPDATE and DELETE statements without a `WHERE` clause affect **ALL** rows in the table. Always double-check your queries before executing.
+>  **Warning:** UPDATE and DELETE statements without a `WHERE` clause affect **ALL** rows in the table. Always double-check your queries before executing.
 
 ### Step 3.1: Update All Rows (No WHERE Clause)
 
@@ -266,7 +250,7 @@ SELECT * FROM world.country;
 
 ## Task 4: Delete Rows from a Table
 
-> ⚠️ **Critical Warning:** Exercise extreme caution when using `UPDATE` and `DELETE`. These operations may be **irreversible** if you do not have a backup.
+>  **Critical Warning:** Exercise extreme caution when using `UPDATE` and `DELETE`. These operations may be **irreversible** if you do not have a backup.
 
 ### Step 4.1: Disable Foreign Key Checks (Optional but Recommended)
 
@@ -389,7 +373,7 @@ SELECT * FROM countrylanguage LIMIT 5;
 
 ## Conclusion
 
-Congratulations! 🎉 You have successfully completed this lab and demonstrated the following skills:
+Congratulations!  You have successfully completed this lab and demonstrated the following skills:
 
 | Task | Operation | SQL Command | Scope |
 |------|-----------|-------------|-------|
@@ -459,11 +443,6 @@ QUIT;                                    -- Exit MySQL
 mysql -u root --password='re:St@rt!9' < /home/ec2-user/world.sql
 ```
 
----
-
-## License
-
-This lab content is provided for educational purposes. Sample data is attributed to Statistics Finland.
 
 ---
 
