@@ -1,87 +1,47 @@
-# AWS Certified Cloud Practitioner
+# AWS Skill Builder Badges
 
-This folder documents my preparation for the **AWS Certified Cloud Practitioner (CLF-C02)** certification.
+## About This Folder
 
-The AWS Certified Cloud Practitioner certification validates foundational knowledge of AWS Cloud concepts, core AWS services, security, pricing, billing, and cloud support options.
+This folder contains AWS Skill Builder learning evidence, lab guides, badge-related files, and supporting documents completed during my AWS re/Start learning journey.
 
----
+The purpose of this section is to keep track of practical AWS training activities completed through AWS Skill Builder and related AWS learning resources.
 
-## Certification Goal
+## Folder Contents
 
-My goal is to use this section to track my study progress, organize useful resources, and collect preparation notes as I work toward earning the AWS Certified Cloud Practitioner certification.
-
----
-
-## Exam Focus Areas
-
-| Domain | What I Am Studying |
+| File | Description |
 |---|---|
-| Cloud Concepts | Benefits of cloud computing, AWS value proposition, cloud adoption, and migration basics. |
-| Security and Compliance | AWS Shared Responsibility Model, IAM basics, security best practices, and compliance concepts. |
-| Cloud Technology and Services | Core AWS services for compute, storage, networking, databases, monitoring, and deployment. |
-| Billing, Pricing, and Support | AWS pricing models, billing tools, cost management, support plans, and AWS Marketplace. |
+| [AWS SimuLearn File Systems Lab Guide](./AWS_SimuLearn_File_Systems_Lab_Guide.md) | Notes and guide content for the AWS SimuLearn file systems lab |
+| [AWS SimuLearn File Systems Certificate](./AWS_SimuLearn_File_Systems_ce.pdf) | Evidence related to the AWS SimuLearn file systems activity |
+| [Networking Concepts Lab](./Networking_Concepts_Lab%20(2).pdf) | Supporting lab material for networking concepts |
 
----
+## Learning Areas
 
-## Study Resources
-
-- [AWS Certified Cloud Practitioner Exam Guide](https://aws.amazon.com/certification/certified-cloud-practitioner/)
-- [AWS Skill Builder](https://skillbuilder.aws/)
-- [AWS Cloud Practitioner Essentials](https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/)
-- [AWS Documentation](https://docs.aws.amazon.com/)
-- [AWS Pricing Calculator](https://calculator.aws/)
-- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
-
----
-
-## Preparation Checklist
-
-- [ ] Review the official exam guide.
-- [ ] Complete AWS Cloud Practitioner Essentials.
-- [ ] Study AWS global infrastructure.
-- [ ] Review IAM and the Shared Responsibility Model.
-- [ ] Review EC2, S3, RDS, VPC, Lambda, CloudWatch, and CloudFormation basics.
-- [ ] Study billing, pricing, budgets, and cost management tools.
-- [ ] Complete practice questions.
-- [ ] Review weak areas before scheduling the exam.
-- [ ] Add certification evidence after passing.
-
----
-
-## Key Services to Review
-
-| Category | AWS Services |
+| Area | What This Supports |
 |---|---|
-| Compute | Amazon EC2, AWS Lambda, AWS Elastic Beanstalk |
-| Storage | Amazon S3, Amazon EBS, Amazon EFS, Amazon Glacier |
-| Databases | Amazon RDS, Amazon DynamoDB, Amazon Redshift |
-| Networking | Amazon VPC, Route 53, Elastic Load Balancing, CloudFront |
-| Security | AWS IAM, AWS Shield, AWS WAF, AWS KMS |
-| Monitoring | Amazon CloudWatch, AWS CloudTrail, AWS Config |
-| Cost Management | AWS Budgets, Cost Explorer, AWS Pricing Calculator |
+| AWS Fundamentals | Building foundational knowledge of AWS services and cloud concepts |
+| Storage | Understanding file systems, storage options, and related AWS services |
+| Networking | Practising basic networking concepts used in cloud environments |
+| Labs and Simulations | Completing guided exercises through AWS Skill Builder and AWS learning platforms |
+| Portfolio Evidence | Saving proof of completed training and hands-on learning activities |
 
----
+## Skills Practised
 
-## Notes and Evidence
+- Working through AWS Skill Builder training content
+- Understanding cloud storage and file system concepts
+- Reviewing networking fundamentals
+- Following structured AWS lab instructions
+- Documenting completed learning activities
+- Organizing evidence for a cloud portfolio
 
-This folder can be used for:
+## Why This Section Matters
 
-- Exam preparation notes.
-- Practice test reflections.
-- Screenshots or proof of completed training.
-- Certification badge evidence after passing the exam.
-- Personal revision summaries.
-
----
+AWS Skill Builder provides guided learning that supports cloud fundamentals, hands-on practice, and certification preparation. Keeping these files in one place helps show my progress and provides evidence of the AWS learning activities I have completed.
 
 ## Status
 
 | Item | Status |
 |---|---|
-| Certification | In progress |
-| Exam | Not yet scheduled |
-| Badge Evidence | To be added |
-
----
-
-*Prepared as part of my AWS re/Start cloud learning journey.*
+| AWS Skill Builder learning evidence | In progress |
+| File systems lab material | Added |
+| Networking concepts material | Added |
+| Additional badge evidence | To be added |
