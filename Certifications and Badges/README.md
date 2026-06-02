@@ -4,6 +4,6 @@ This folder will store certification notes, AWS re/Start completion evidence, an
 
 ## Sections
 
-- `aws-certified-cloud-practitioner/` - AWS Certified Cloud Practitioner preparation notes and badge evidence.
+- `aws skill builder badges/` - AWS Skill Builder badges, training notes, and related evidence.
 - `aws-restart-certificate/` - AWS re/Start certificate or completion records.
 - `digital-badges/` - Digital badges and related achievement records.
