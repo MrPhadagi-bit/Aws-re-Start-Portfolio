@@ -4,20 +4,7 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Objectives](#objectives)
-- [Scenario](#scenario)
-- [Task 1: Investigate the Customer's Environment](#task-1-investigate-the-customers-environment)
-- [Task 2: Connect to the EC2 Instance via SSH](#task-2-connect-to-the-ec2-instance-via-ssh)
-- [Task 3: Send the Response to the Customer](#task-3-send-the-response-to-the-customer)
-- [Key Concepts](#key-concepts)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [FAQ](#faq)
-
----
-
-## 🎯 Objectives
+##  Objectives
 
 In this lab, you will:
 
@@ -30,7 +17,7 @@ In this lab, you will:
 
 ---
 
-## 📨 Scenario
+##  Scenario
 
 ### Customer Ticket
 
@@ -58,7 +45,7 @@ In this lab, you will:
 │  │  │  Public Subnet                                  │  │  │
 │  │  │  ┌─────────────┐      ┌─────────────┐          │  │  │
 │  │  │  │ Instance A  │      │ Instance B  │          │  │  │
-│  │  │  │ ❌ No Internet│      │ ✅ Internet  │          │  │  │
+│  │  │  │  No Internet│      │  Internet  │          │  │  │
 │  │  │  └─────────────┘      └─────────────┘          │  │  │
 │  │  └─────────────────────────────────────────────────┘  │  │
 │  │                      │                                  │  │
@@ -73,7 +60,7 @@ In this lab, you will:
 
 ---
 
-## 🔍 Task 1: Investigate the Customer's Environment
+##  Task 1: Investigate the Customer's Environment
 
 ### Step 1: Access the AWS Management Console
 
@@ -106,7 +93,7 @@ In this lab, you will:
 
 ### Step 4: Analyze the Differences
 
-> **💡 Hint:** Pay close attention to the **Public IPv4 Address** field. Does one instance have it while the other doesn't?
+> ** Hint:** Pay close attention to the **Public IPv4 Address** field. Does one instance have it while the other doesn't?
 
 ### Troubleshooting Methodology: OSI Model Mapping
 
@@ -124,7 +111,7 @@ In this lab, you will:
 
 ---
 
-## 🔐 Task 2: Connect to the EC2 Instance via SSH
+##  Task 2: Connect to the EC2 Instance via SSH
 
 ### Prerequisites
 
@@ -167,7 +154,7 @@ curl -I https://aws.amazon.com
 
 ---
 
-## ✉️ Task 3: Send the Response to the Customer (Group Activity)
+##  Task 3: Send the Response to the Customer (Group Activity)
 
 > **Duration:** 5–10 minutes  
 > **Format:** Pair activity (or individual presentation if working solo)
@@ -242,7 +229,7 @@ will likely cause issues.
 | `172.16.0.0/12` | ~1 million | Medium-sized networks |
 | `192.168.0.0/16` | ~65,000 | Small networks |
 
-Your current VPC using `10.0.0.0/16` follows best practices. ✅
+Your current VPC using `10.0.0.0/16` follows best practices. 
 
 Please let me know if you need assistance implementing any of these changes.
 
@@ -252,7 +239,7 @@ AWS Cloud Support Engineer
 
 ---
 
-## 📚 Key Concepts
+##  Key Concepts
 
 ### Public vs. Private IP Addresses
 
@@ -274,11 +261,11 @@ These ranges are reserved for private networks and should be used for VPC CIDRs:
 192.168.0.0/16  → 192.168.0.0  – 192.168.255.255
 ```
 
-> ⚠️ **Never use public IP ranges** (e.g., `1.0.0.0/8`, `12.0.0.0/8`, etc.) for your VPC CIDR.
+>  **Never use public IP ranges** (e.g., `1.0.0.0/8`, `12.0.0.0/8`, etc.) for your VPC CIDR.
 
 ---
 
-## 🛠️ Troubleshooting Guide
+##  Troubleshooting Guide
 
 ### Instance Cannot Reach the Internet
 
@@ -301,7 +288,7 @@ aws ec2 associate-address --instance-id i-xxxxxxxxxxxxxxxxx --allocation-id eipa
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
 **Q: Can two instances in the same subnet have different internet access?**
 > **A:** Yes. Even in the same subnet, only instances with a public IP (auto-assigned or Elastic IP) can reach the internet through the IGW.
@@ -317,7 +304,7 @@ aws ec2 associate-address --instance-id i-xxxxxxxxxxxxxxxxx --allocation-id eipa
 
 ---
 
-## ✅ Lab Complete
+##  Lab Complete
 
 Congratulations! You have successfully:
 
@@ -328,7 +315,7 @@ Congratulations! You have successfully:
 
 ---
 
-## 📎 Additional Resources
+##  Additional Resources
 
 - [AWS Docs: VPC and Subnet Basics](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
 - [AWS Docs: Elastic IP Addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
