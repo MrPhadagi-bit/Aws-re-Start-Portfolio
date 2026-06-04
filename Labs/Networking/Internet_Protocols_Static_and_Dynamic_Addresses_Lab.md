@@ -8,27 +8,6 @@
 
 ---
 
-## Table of Contents
-
-- [Customer Ticket](#customer-ticket)
-- [Architecture Overview](#architecture-overview)
-- [Objectives](#objectives)
-- [Prerequisites](#prerequisites)
-- [Background: Static vs. Dynamic IP Addresses](#background-static-vs-dynamic-ip-addresses)
-- [Task 1: Investigate the Customer's Environment](#task-1-investigate-the-customers-environment)
-  - [Step 1: Launch a Test EC2 Instance](#step-1-launch-a-test-ec2-instance)
-  - [Step 2: Observe Dynamic IP Behavior](#step-2-observe-dynamic-ip-behavior)
-  - [Step 3: Allocate an Elastic IP (EIP)](#step-3-allocate-an-elastic-ip-eip)
-  - [Step 4: Associate the EIP with the Instance](#step-4-associate-the-eip-with-the-instance)
-  - [Step 5: Verify the Solution](#step-5-verify-the-solution)
-- [Task 2: Customer Response (Group Activity)](#task-2-customer-response-group-activity)
-- [Findings Summary](#findings-summary)
-- [Key Takeaways](#key-takeaways)
-- [Cleanup](#cleanup)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## Customer Ticket
 
 > **From:** Bob, Cloud Admin
@@ -85,10 +64,10 @@ Bob, Cloud Admin
 
 In this lab, you will:
 
-1. ✅ **Summarize the customer scenario** — Understand Bob's issue with his EC2 instance
-2. ✅ **Analyze the difference** between statically and dynamically assigned IP addresses using EC2 instances
-3. ✅ **Assign a persistent (static) IP** to an EC2 instance using AWS Elastic IP (EIP)
-4. ✅ **Develop a solution** to the customer's issue and summarize your findings
+1.  **Summarize the customer scenario** — Understand Bob's issue with his EC2 instance
+2.  **Analyze the difference** between statically and dynamically assigned IP addresses using EC2 instances
+3.  **Assign a persistent (static) IP** to an EC2 instance using AWS Elastic IP (EIP)
+4.  **Develop a solution** to the customer's issue and summarize your findings
 
 ---
 
@@ -114,7 +93,7 @@ A **dynamic IP address** is assigned automatically by AWS when an EC2 instance i
 | **Use Case** | Temporary, non-critical workloads |
 | **Behavior** | Released back to AWS pool when instance stops; new IP assigned on start |
 
-> ⚠️ **Important:** When you **stop** an EC2 instance, AWS releases its public IP back into the pool. When you **start** it again, AWS assigns a **new** public IP from the available pool. This is the root cause of Bob's issue.
+>  **Important:** When you **stop** an EC2 instance, AWS releases its public IP back into the pool. When you **start** it again, AWS assigns a **new** public IP from the available pool. This is the root cause of Bob's issue.
 
 ### What is a Static IP Address?
 
@@ -132,11 +111,11 @@ A **static IP address** (in AWS, called an **Elastic IP** or **EIP**) is a persi
 
 | Feature | Dynamic Public IP | Elastic IP (Static) |
 |---------|-------------------|---------------------|
-| Changes on stop/start? | ✅ Yes | ❌ No |
+| Changes on stop/start? |  Yes |  No |
 | Additional cost? | No | Free if in use; ~$0.005/hr if idle |
-| Can be moved between instances? | No | ✅ Yes |
-| DNS-friendly? | ❌ No | ✅ Yes |
-| Best for production? | ❌ No | ✅ Yes |
+| Can be moved between instances? | No |  Yes |
+| DNS-friendly? |  No |  Yes |
+| Best for production? |  No |  Yes |
 
 ---
 
@@ -150,7 +129,7 @@ We will replicate Bob's environment by launching an EC2 instance with **Auto-ass
 
 1. Log in to the **AWS Management Console**
 2. In the search bar (top-left), type `EC2` and select **EC2** from the list
-   > 💡 *Tip: You can also find EC2 under **Services → Compute***
+   >  *Tip: You can also find EC2 under **Services → Compute***
 
 #### 1.2 Launch a New Instance
 
@@ -185,7 +164,7 @@ Follow these steps to configure your test instance:
 1. In the pop-up dialog:
    - **First dropdown:** Keep **Choose an existing key pair**
    - **Second dropdown:** Select **vockey \| RSA**
-   - ✅ Check the acknowledgment box
+   -  Check the acknowledgment box
    - Click **Launch Instances**
 
 2. You will return to the EC2 dashboard. Wait until the **Instance state** shows **Running** and **Status checks** shows **2/2 checks passed**.
@@ -233,7 +212,7 @@ Now we will demonstrate the problem Bob is experiencing.
 └────────────────────────────────────────┘
 ```
 
-> 📝 **Observation:** The Public IPv4 address is released when the instance stops.
+>  **Observation:** The Public IPv4 address is released when the instance stops.
 
 #### 2.4 Start the Instance Again
 
@@ -249,7 +228,7 @@ Now we will demonstrate the problem Bob is experiencing.
 ┌────────────────────────────────────────┐
 │  AFTER RESTART (Instance Running)     │
 ├────────────────────────────────────────┤
-│  Public IPv4 address:  ________________│  ← 🔄 CHANGED!
+│  Public IPv4 address:  ________________│  ←  CHANGED!
 │  Private IPv4 address: ________________│  ← Usually same
 └────────────────────────────────────────┘
 ```
@@ -266,7 +245,7 @@ Answer the following in your notes:
 | Is the Private IP **static** or **dynamic**? | |
 | Have we replicated Bob's issue? | |
 
-> ✅ **Conclusion:** The Public IPv4 address assigned by "Auto-assign Public IP" is **dynamic** — it changes every time the instance stops and starts. This is exactly what Bob is experiencing!
+>  **Conclusion:** The Public IPv4 address assigned by "Auto-assign Public IP" is **dynamic** — it changes every time the instance stops and starts. This is exactly what Bob is experiencing!
 
 ---
 
@@ -296,7 +275,7 @@ AWS provides **Elastic IPs (EIPs)** as the solution for persistent public IP add
 └────────────────────────────────────────┘
 ```
 
-> 💡 **Note:** This IP is now reserved in your AWS account and will not change.
+>  **Note:** This IP is now reserved in your AWS account and will not change.
 
 ---
 
@@ -367,9 +346,9 @@ Let's prove that the EIP stays persistent through a stop/start cycle.
 
 ```
 ┌────────────────────────────────────────┐
-│  AFTER RESTART (With EIP)             │
+│  AFTER RESTART (With EIP)              │
 ├────────────────────────────────────────┤
-│  Public IPv4 address:  ________________│  ← 🎯 SAME EIP!
+│  Public IPv4 address:  ________________│  ←  SAME EIP!
 │  Private IPv4 address: ________________│
 └────────────────────────────────────────┘
 ```
@@ -378,9 +357,9 @@ Let's prove that the EIP stays persistent through a stop/start cycle.
 
 | Question | Your Answer |
 |----------|-------------|
-| Did the **Public IPv4 address** change after stop/start? | ❌ No — it stayed the same! |
-| Is the EIP **static** or **dynamic**? | ✅ **Static** |
-| Did we solve Bob's issue? | ✅ **Yes!** |
+| Did the **Public IPv4 address** change after stop/start? |  No — it stayed the same! |
+| Is the EIP **static** or **dynamic**? |  **Static** |
+| Did we solve Bob's issue? |  **Yes!** |
 | Why? | The Elastic IP persists through stop/start cycles |
 
 ---
@@ -485,7 +464,7 @@ Bob's EC2 instance is using the default **dynamic public IP** assignment. AWS au
 │   │  IP: 9.8.7.6│  ← NEW IP!   │  IP: 5.6.7.8│  ← SAME IP!        │
 │   └─────────────┘               └─────────────┘                     │
 │                                                                      │
-│   ❌ Breaks dependencies          ✅ Stable for DNS, firewalls, etc. │
+│    Breaks dependencies           Stable for DNS, firewalls, etc. │
 │                                                                      │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -496,8 +475,8 @@ Bob's EC2 instance is using the default **dynamic public IP** assignment. AWS au
 |------|---------------------|-------------------|
 | Stop instance | IP released | IP reserved |
 | Start instance | New IP assigned | Same IP retained |
-| DNS reliability | ❌ Poor | ✅ Excellent |
-| Production suitability | ❌ Not recommended | ✅ Recommended |
+| DNS reliability |  Poor |  Excellent |
+| Production suitability |  Not recommended |  Recommended |
 
 ---
 
@@ -521,7 +500,7 @@ Bob's EC2 instance is using the default **dynamic public IP** assignment. AWS au
 
 ## Cleanup
 
-> ⚠️ **Important:** To avoid unnecessary charges, clean up resources after the lab.
+>  **Important:** To avoid unnecessary charges, clean up resources after the lab.
 
 1. **Disassociate the EIP:**
    - EC2 → Elastic IPs → Select your EIP → Actions → **Disassociate Elastic IP address**
@@ -558,6 +537,6 @@ Bob's EC2 instance is using the default **dynamic public IP** assignment. AWS au
 
 ---
 
-*Lab completed successfully!* ✅
+*Lab completed successfully!* 
 
 > **Status:** Bob's issue has been diagnosed and resolved. The "Public Instance" now has a persistent public IP address using an Elastic IP.
