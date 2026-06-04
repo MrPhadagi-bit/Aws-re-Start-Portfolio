@@ -24,7 +24,7 @@ After completing this lab, you should be able to:
 
 ## Duration
 
-⏱️ **Estimated Time:** Approximately 1 hour
+ **Estimated Time:** Approximately 1 hour
 
 ---
 
