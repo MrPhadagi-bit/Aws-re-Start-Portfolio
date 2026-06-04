@@ -1,23 +1,5 @@
 # Create Subnets and Allocate IP Addresses in an Amazon Virtual Private Cloud (Amazon VPC)
 
-## Table of Contents
-- [Objectives](#objectives)
-- [Duration](#duration)
-- [Scenario](#scenario)
-- [Prerequisites](#prerequisites)
-- [Key Concepts](#key-concepts)
-- [Task 1: Investigate the Customer's Needs and Build the VPC](#task-1-investigate-the-customers-needs-and-build-the-vpc)
-  - [Step 1: Analyze the Requirements](#step-1-analyze-the-requirements)
-  - [Step 2: Determine the CIDR Blocks](#step-2-determine-the-cidr-blocks)
-  - [Step 3: Access the AWS Management Console](#step-3-access-the-aws-management-console)
-  - [Step 4: Launch the VPC Wizard](#step-4-launch-the-vpc-wizard)
-  - [Step 5: Configure the VPC](#step-5-configure-the-vpc)
-  - [Step 6: Verify the VPC Creation](#step-6-verify-the-vpc-creation)
-- [Task 2: Summarize and Describe Your Findings (Group Activity)](#task-2-summarize-and-describe-your-findings-group-activity)
-- [Summary](#summary)
-- [Additional Resources](#additional-resources)
-- [Cleanup](#cleanup)
-
 ---
 
 ## Objectives
@@ -286,12 +268,12 @@ In groups of two, complete the following role-play exercise:
 
 In this lab, you successfully:
 
-✅ Analyzed a customer scenario and identified networking requirements  
-✅ Determined appropriate CIDR blocks using subnetting principles  
-✅ Created a VPC (`192.168.0.0/18`) with 16,384 private IP addresses  
-✅ Created a public subnet (`192.168.1.0/26`) with 64 IP addresses  
-✅ Verified the VPC and subnet creation in the AWS Management Console  
-✅ Understood the difference between public and private subnets  
+ Analyzed a customer scenario and identified networking requirements  
+ Determined appropriate CIDR blocks using subnetting principles  
+ Created a VPC (`192.168.0.0/18`) with 16,384 private IP addresses  
+ Created a public subnet (`192.168.1.0/26`) with 64 IP addresses  
+ Verified the VPC and subnet creation in the AWS Management Console  
+ Understood the difference between public and private subnets  
 
 ### Key Takeaways
 
@@ -317,7 +299,7 @@ In this lab, you successfully:
 
 ## Cleanup
 
-> **⚠️ Important:** To avoid incurring unnecessary charges, delete the resources created in this lab if they are no longer needed.
+> ** Important:** To avoid incurring unnecessary charges, delete the resources created in this lab if they are no longer needed.
 
 ### Steps to Clean Up:
 
