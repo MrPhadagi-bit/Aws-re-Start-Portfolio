@@ -6,30 +6,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Scenario](#scenario)
-2. [Prerequisites](#prerequisites)
-3. [Concepts Overview](#concepts-overview)
-4. [Task 1: Build a VPC with Internet Connectivity](#task-1-build-a-vpc-with-internet-connectivity)
-   - [Step 1: Create the VPC](#step-1-create-the-vpc)
-   - [Step 2: Create a Public Subnet](#step-2-create-a-public-subnet)
-   - [Step 3: Create a Route Table](#step-3-create-a-route-table)
-   - [Step 4: Create and Attach an Internet Gateway](#step-4-create-and-attach-an-internet-gateway)
-   - [Step 5: Add Route to Route Table & Associate Subnet](#step-5-add-route-to-route-table--associate-subnet)
-   - [Step 6: Create a Network ACL](#step-6-create-a-network-acl)
-   - [Step 7: Create a Security Group](#step-7-create-a-security-group)
-5. [Task 2: Launch an EC2 Instance and Connect via SSH](#task-2-launch-an-ec2-instance-and-connect-via-ssh)
-   - [Launch the EC2 Instance](#launch-the-ec2-instance)
-   - [Connect via SSH](#connect-via-ssh)
-6. [Task 3: Test Internet Connectivity with Ping](#task-3-test-internet-connectivity-with-ping)
-7. [Architecture Diagram](#architecture-diagram)
-8. [Troubleshooting Guide](#troubleshooting-guide)
-9. [Cleanup](#cleanup)
-10. [Key Takeaways](#key-takeaways)
-
----
-
 ## Scenario
 
 You are a **Cloud Support Engineer** at AWS. During your shift, you receive the following email from a customer:
@@ -398,9 +374,9 @@ rtt min/avg/max/mdev = 1.150/1.186/1.230/0.032 ms
 
 ### Success Criteria
 
-✅ You see **replies** from `google.com`  
-✅ **0% packet loss**  
-✅ This confirms your VPC has full internet connectivity!
+ You see **replies** from `google.com`  
+ **0% packet loss**  
+ This confirms your VPC has full internet connectivity!
 
 ---
 
@@ -438,7 +414,7 @@ rtt min/avg/max/mdev = 1.150/1.186/1.230/0.032 ms
 │  │                                                      │   │
 │  └─────────────────────────────────────────────────────┘   │
 │                                                              │
-│   Internet Gateway (IGW Test VPC) ───→ 🌐 Internet           │
+│   Internet Gateway (IGW Test VPC) ───→  Internet           │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
 ```
