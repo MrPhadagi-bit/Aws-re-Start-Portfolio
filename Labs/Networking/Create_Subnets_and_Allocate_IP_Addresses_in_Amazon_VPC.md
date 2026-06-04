@@ -2,19 +2,6 @@
 
 ---
 
-## Objectives
-
-In this lab, you will:
-
-- Summarize the customer scenario and identify networking requirements
-- Create an Amazon Virtual Private Cloud (Amazon VPC) with appropriate CIDR blocks
-- Understand how to create subnets and allocate IP addresses using CIDR notation
-- Familiarize yourself with the Amazon Web Services (AWS) Management Console
-- Develop a solution to the customer's networking issue
-- Summarize and describe your findings (group activity)
-
----
-
 ## Duration
 
 This lab requires approximately **1 hour** to complete.
