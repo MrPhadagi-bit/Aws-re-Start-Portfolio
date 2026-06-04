@@ -1,24 +1,5 @@
 # Troubleshooting a Network Issue: AWS VPC Connectivity Lab
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Learning Objectives](#learning-objectives)
-3. [Duration](#duration)
-4. [Scenario](#scenario)
-   - [Customer Email](#email-from-the-customer)
-   - [Architecture Diagram](#customer-diagram)
-5. [Prerequisites](#prerequisites)
-6. [Task 1: SSH Connection](#task-1-use-ssh-to-connect-to-an-amazon-linux-ec2-instance)
-   - [Windows Users](#windows-users-using-ssh-to-connect)
-   - [macOS/Linux Users](#macoslinux-users-using-ssh-to-connect)
-7. [Task 2: Install httpd](#task-2-install-httpd)
-8. [Task 3: Investigate VPC Configuration](#task-3-investigate-the-customers-vpc-configuration)
-   - [Checklist](#vpc-troubleshooting-checklist)
-   - [Hints](#hints)
-9. [Expected Resolution](#expected-resolution)
-10. [Recap](#recap)
-11. [Additional Resources](#additional-resources)
-
 ---
 
 ## Overview
@@ -120,7 +101,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using SSH. The in
 
 ### Windows Users: Using SSH to Connect
 
-> ⚠️ **Note:** These instructions are specifically for Windows users. If you are using macOS or Linux, skip to the [next section](#macoslinux-users-using-ssh-to-connect).
+>  **Note:** These instructions are specifically for Windows users. If you are using macOS or Linux, skip to the [next section](#macoslinux-users-using-ssh-to-connect).
 
 #### Step 1: Retrieve Connection Details
 1. Select the **Details** drop-down menu above these instructions
@@ -152,7 +133,7 @@ In this task, you will connect to an Amazon Linux EC2 instance using SSH. The in
 
 ### macOS/Linux Users: Using SSH to Connect
 
-> ⚠️ **Note:** These instructions are for macOS and Linux users. Windows users should follow the [section above](#windows-users-using-ssh-to-connect).
+>  **Note:** These instructions are for macOS and Linux users. Windows users should follow the [section above](#windows-users-using-ssh-to-connect).
 
 #### Step 1: Retrieve Connection Details
 1. Select the **Details** drop-down menu above these instructions
@@ -168,7 +149,7 @@ Open a terminal and run:
 chmod 400 /path/to/labsuser.pem
 ```
 
-> 🔒 **Security Note:** The private key file must have restricted permissions (read-only for owner) to be accepted by SSH.
+>  **Security Note:** The private key file must have restricted permissions (read-only for owner) to be accepted by SSH.
 
 #### Step 3: Connect via SSH
 
@@ -194,7 +175,7 @@ You should see the Amazon Linux welcome message and prompt:
 
 In this task, you will install and start the Apache HTTP Server (`httpd`) on the EC2 instance.
 
-> 💡 **Helpful Hint:** You may need to use `sudo` if you are not logged in as root.
+>  **Helpful Hint:** You may need to use `sudo` if you are not logged in as root.
 
 ### Step 1: Check httpd Service Status
 
@@ -211,7 +192,7 @@ sudo systemctl status httpd.service
    Active: inactive (dead)
 ```
 
-> 📋 **Analysis:** The service is **loaded** (already installed) but currently **inactive** (not running).
+>  **Analysis:** The service is **loaded** (already installed) but currently **inactive** (not running).
 
 ### Step 2: Start the httpd Service
 
@@ -232,7 +213,7 @@ sudo systemctl status httpd.service
    Active: active (running) since Mon 2024-01-15 10:30:00 UTC; 5s ago
 ```
 
-> ✅ **Confirmation:** The Apache HTTP Server is now in **Active** status.
+>  **Confirmation:** The Apache HTTP Server is now in **Active** status.
 
 ### Step 4: Test Apache in Browser
 
@@ -251,7 +232,7 @@ http://203.0.113.45
 **Expected Result:**  
 At this point, the page **will NOT load** — this is the issue we need to troubleshoot in Task 3. You will likely see a timeout or connection refused error.
 
-> 🖼️ **Expected (After Fix):** The Apache test page should display:
+>  **Expected (After Fix):** The Apache test page should display:
 > 
 > ![Apache Test Page](https://httpd.apache.org/images/httpd_logo.png)
 > 
@@ -309,9 +290,9 @@ Use the left navigation pane to verify each component:
 
 ### Hints
 
-> 🧩 **Connectivity Test:** Can you ping websites such as `www.amazon.com` from the EC2 instance? If yes, outbound internet connectivity works (Internet Gateway and route table are functional).
+>  **Connectivity Test:** Can you ping websites such as `www.amazon.com` from the EC2 instance? If yes, outbound internet connectivity works (Internet Gateway and route table are functional).
 
-> 🌐 **Port Awareness:** Apache is a web server that commonly uses:
+>  **Port Awareness:** Apache is a web server that commonly uses:
 > - **HTTP:** Port 80
 > - **HTTPS:** Port 443
 
@@ -327,7 +308,7 @@ http://<PUBLIC-IP-OF-INSTANCE>
 
 The Apache HTTP Server test page should successfully load:
 
-> 🖼️ **Apache Test Page**
+>  **Apache Test Page**
 > 
 > *Figure: The test page of the Apache HTTP server when Apache is successfully installed.*
 
@@ -358,17 +339,17 @@ In this lab scenario, the most common issue is with **Security Group inbound rul
 ### What We Did
 In this lab, you:
 
-1. ✅ **Connected** to an Amazon Linux EC2 instance via SSH
-2. ✅ **Installed and started** the Apache HTTP Server (`httpd`)
-3. ✅ **Systematically troubleshot** the customer's networking issue by examining:
+1.  **Connected** to an Amazon Linux EC2 instance via SSH
+2.  **Installed and started** the Apache HTTP Server (`httpd`)
+3.  **Systematically troubleshot** the customer's networking issue by examining:
    - Subnet associations
    - Route table configurations
    - Internet Gateway attachments
    - Security Group rules
    - Network ACLs
-4. ✅ **Identified** that the customer had an issue with their **security group inbound rules** (missing HTTP port 80 access)
-5. ✅ **Resolved** the issue by adding the appropriate security group rule
-6. ✅ **Verified** the Apache server successfully loads in the browser
+4.  **Identified** that the customer had an issue with their **security group inbound rules** (missing HTTP port 80 access)
+5.  **Resolved** the issue by adding the appropriate security group rule
+6.  **Verified** the Apache server successfully loads in the browser
 
 ### Key Takeaways
 - Security Groups are **stateful** and act as virtual firewalls at the instance level
@@ -391,7 +372,7 @@ In this lab, you:
 
 ---
 
-## Lab Complete! 🎉
+## Lab Complete! 
 
 You have successfully completed the troubleshooting lab. You can now:
 - Document your findings for the customer (Ana)
