@@ -4,25 +4,7 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Objectives](#-objectives)
-- [Lab Overview](#-lab-overview)
-- [Architecture Diagram](#-architecture-diagram)
-- [Prerequisites](#-prerequisites)
-- [Task 1: Create Your VPC](#-task-1-create-your-vpc)
-- [Task 2: Create Additional Subnets](#-task-2-create-additional-subnets)
-- [Task 3: Associate Subnets and Add Routes](#-task-3-associate-subnets-and-add-routes)
-- [Task 4: Create a VPC Security Group](#-task-4-create-a-vpc-security-group)
-- [Task 5: Launch a Web Server Instance](#-task-5-launch-a-web-server-instance)
-- [Verification](#-verification)
-- [Cleanup](#-cleanup)
-- [Troubleshooting](#-troubleshooting)
-- [Additional Resources](#-additional-resources)
-
----
-
-## 🎯 Objectives
+##  Objectives
 
 After completing this lab, you should be able to:
 
@@ -34,7 +16,7 @@ After completing this lab, you should be able to:
 
 ---
 
-## 🏗️ Lab Overview
+##  Lab Overview
 
 ### Scenario
 
@@ -96,7 +78,7 @@ The final architecture will look like this:
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - AWS Management Console access
 - Basic understanding of networking concepts (CIDR, subnets, routing)
@@ -104,7 +86,7 @@ The final architecture will look like this:
 
 ---
 
-## 🔧 Task 1: Create Your VPC
+##  Task 1: Create Your VPC
 
 > **Purpose:** Establish the foundational network infrastructure with the VPC Wizard.
 
@@ -161,11 +143,11 @@ Before creating, update the auto-generated names in the **Preview** pane:
 2. Wait for the **Success** message to appear
 3. Click **View VPC** to verify details
 
-> ✅ **Verification:** The VPC details page should show `Lab VPC` with CIDR `10.0.0.0/16`
+>  **Verification:** The VPC details page should show `Lab VPC` with CIDR `10.0.0.0/16`
 
 ---
 
-## 🔧 Task 2: Create Additional Subnets
+##  Task 2: Create Additional Subnets
 
 > **Purpose:** Add subnets in a second Availability Zone for high availability.
 
@@ -188,7 +170,7 @@ Before creating, update the auto-generated names in the **Preview** pane:
 
 3. Click **Create subnet**
 
-> 📌 **Note:** This subnet will have all IP addresses starting with `10.0.2.x`
+>  **Note:** This subnet will have all IP addresses starting with `10.0.2.x`
 
 ### Step 3: Create Private Subnet 2
 
@@ -204,7 +186,7 @@ Before creating, update the auto-generated names in the **Preview** pane:
 
 3. Click **Create subnet**
 
-> 📌 **Note:** This subnet will have all IP addresses starting with `10.0.3.x`
+>  **Note:** This subnet will have all IP addresses starting with `10.0.3.x`
 
 ### Subnet Summary
 
@@ -217,7 +199,7 @@ Before creating, update the auto-generated names in the **Preview** pane:
 
 ---
 
-## 🔧 Task 3: Associate Subnets and Add Routes
+##  Task 3: Associate Subnets and Add Routes
 
 > **Purpose:** Associate new subnets with the correct route tables to ensure proper traffic flow.
 
@@ -230,7 +212,7 @@ Before creating, update the auto-generated names in the **Preview** pane:
 5. Select the checkbox for **`Public Subnet 2`**
 6. Click **Save associations**
 
-> ✅ **Verification:** Public Subnet 2 should now be listed under *Explicit subnet associations*
+>  **Verification:** Public Subnet 2 should now be listed under *Explicit subnet associations*
 
 ### Part B: Associate Private Subnet 2 with Private Route Table
 
@@ -240,7 +222,7 @@ Before creating, update the auto-generated names in the **Preview** pane:
 4. Select the checkbox for **`Private Subnet 2`**
 5. Click **Save associations**
 
-> ✅ **Verification:** Private Subnet 2 should now be listed under *Explicit subnet associations*
+>  **Verification:** Private Subnet 2 should now be listed under *Explicit subnet associations*
 
 ### Route Table Logic
 
@@ -262,11 +244,11 @@ Before creating, update the auto-generated names in the **Preview** pane:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-> 🎯 **Result:** Your VPC now has public and private subnets configured in **two Availability Zones** for high availability.
+>  **Result:** Your VPC now has public and private subnets configured in **two Availability Zones** for high availability.
 
 ---
 
-## 🔧 Task 4: Create a VPC Security Group
+##  Task 4: Create a VPC Security Group
 
 > **Purpose:** Create a virtual firewall that controls inbound traffic to your web server.
 
@@ -302,11 +284,11 @@ A **security group** acts as a virtual firewall for your EC2 instance. You can a
 
 3. Click **Create security group**
 
-> ✅ **Verification:** The security group `Web Security Group` should appear in the list with the inbound rule visible.
+>  **Verification:** The security group `Web Security Group` should appear in the list with the inbound rule visible.
 
 ---
 
-## 🔧 Task 5: Launch a Web Server Instance
+##  Task 5: Launch a Web Server Instance
 
 > **Purpose:** Launch and configure an EC2 instance to serve as a web server in your VPC.
 
@@ -334,7 +316,7 @@ A **security group** acts as a virtual firewall for your EC2 instance. You can a
 |---------|-------|
 | **Instance type** | `t3.micro` |
 
-> 💡 **Note:** `t3.micro` is eligible for the AWS Free Tier.
+>  **Note:** `t3.micro` is eligible for the AWS Free Tier.
 
 #### Key Pair (Login)
 | Setting | Value |
@@ -375,7 +357,7 @@ chkconfig httpd on
 service httpd start
 ```
 
-> 📖 **What this script does:**
+>  **What this script does:**
 > - Installs Apache (`httpd`), MySQL, and PHP (LAMP stack)
 > - Downloads a sample web application from S3
 > - Extracts the application to `/var/www/html/` (Apache's web root)
@@ -393,11 +375,11 @@ service httpd start
 2. This may take **2-5 minutes**
 3. Click the **refresh** button at the top of the page to update status
 
-> ⏱️ **Tip:** If status checks are taking long, ensure the instance is in a public subnet with an auto-assigned public IP.
+>  **Tip:** If status checks are taking long, ensure the instance is in a public subnet with an auto-assigned public IP.
 
 ---
 
-## ✅ Verification
+##  Verification
 
 ### Step 1: Get Public DNS
 
@@ -415,28 +397,28 @@ service httpd start
 
 If successful, you should see a web page displaying the success message or the lab application interface. This confirms that:
 
-- ✅ The EC2 instance is running
-- ✅ The security group is allowing HTTP traffic (port 80)
-- ✅ The user data script executed successfully
-- ✅ Apache is serving content from `/var/www/html/`
-- ✅ The VPC, subnet, and internet gateway are properly configured
+-  The EC2 instance is running
+-  The security group is allowing HTTP traffic (port 80)
+-  The user data script executed successfully
+-  Apache is serving content from `/var/www/html/`
+-  The VPC, subnet, and internet gateway are properly configured
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    SUCCESS INDICATORS                        │
 ├─────────────────────────────────────────────────────────────┤
-│  🟢 EC2 Instance: Running (2/2 checks passed)               │
-│  🟢 Security Group: HTTP (80) open to 0.0.0.0/0             │
-│  🟢 VPC: Lab VPC with Internet Gateway attached             │
-│  🟢 Subnet: Public Subnet 2 with route to IGW               │
-│  🟢 Web Server: Apache serving content on port 80           │
-│  🟢 Browser: Successfully loads the web page               │
+│   EC2 Instance: Running (2/2 checks passed)               │
+│    Security Group: HTTP (80) open to 0.0.0.0/0             │
+│   VPC: Lab VPC with Internet Gateway attached             │
+│   Subnet: Public Subnet 2 with route to IGW               │
+│   Web Server: Apache serving content on port 80           │
+│   Browser: Successfully loads the web page               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🧹 Cleanup
+##  Cleanup
 
 To avoid incurring unnecessary charges, delete the following resources after completing the lab:
 
@@ -456,11 +438,11 @@ To avoid incurring unnecessary charges, delete the following resources after com
    - NAT gateway
    - Security groups (except default)
 
-> ⚠️ **Warning:** Deleting the VPC will also delete the NAT gateway, which may incur charges if left running. Always clean up resources after lab completion.
+>  **Warning:** Deleting the VPC will also delete the NAT gateway, which may incur charges if left running. Always clean up resources after lab completion.
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 | Issue | Possible Cause | Solution |
 |-------|---------------|----------|
@@ -489,7 +471,7 @@ curl http://localhost
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
 - [VPC Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
@@ -500,7 +482,7 @@ curl http://localhost
 
 ---
 
-## 📝 Lab Summary
+##  Lab Summary
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -512,9 +494,9 @@ curl http://localhost
 │  [x] Task 3: Associated subnets with correct route tables   │
 │  [x] Task 4: Created Web Security Group (HTTP inbound)      │
 │  [x] Task 5: Launched EC2 web server with user data         │
-│  [x] Verified: Web server accessible via public DNS           │
+│  [x] Verified: Web server accessible via public DNS          │
 │                                                             │
-│  🎉 Congratulations! You have successfully built a            │
+│   Congratulations! You have successfully built a            │
 │     fully functional VPC with a running web server!         │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -522,7 +504,7 @@ curl http://localhost
 
 ---
 
-> **Lab Complete** 🎉
+> **Lab Complete** 
 >
 > You have successfully delivered the architecture requested by the Fortune 100 customer: a fully functional VPC with public and private subnets, security groups, route tables, and a running web server.
 
