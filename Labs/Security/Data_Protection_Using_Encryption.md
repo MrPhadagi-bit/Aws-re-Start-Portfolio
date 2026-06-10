@@ -6,22 +6,6 @@
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Objectives](#objectives)
-- [Prerequisites](#prerequisites)
-- [Architecture Diagram](#architecture-diagram)
-- [Task 1: Create an AWS KMS Key](#task-1-create-an-aws-kms-key)
-- [Task 2: Configure the File Server Instance](#task-2-configure-the-file-server-instance)
-- [Task 3: Encrypt and Decrypt Data](#task-3-encrypt-and-decrypt-data)
-- [Cleanup](#cleanup)
-- [Troubleshooting](#troubleshooting)
-- [Key Concepts](#key-concepts)
-- [Additional Resources](#additional-resources)
-
----
-
 ## Overview
 
 This lab demonstrates how to protect sensitive data using **AWS Key Management Service (KMS)** and the **AWS Encryption CLI**. You will create a symmetric encryption key, configure an EC2 instance with the necessary credentials and tools, and perform encryption and decryption operations on mock sensitive data.
@@ -113,7 +97,7 @@ In this task, you will create a **symmetric AWS KMS key** that will be used to e
 | **Key Usage** | Same key for encrypt & decrypt | Public key encrypts, private key decrypts |
 | **Speed** | Fast and efficient | Slower due to complex math |
 | **Use Case** | Bulk data encryption | Key exchange, digital signatures |
-| **AWS KMS Support** | ✅ Yes | ✅ Yes |
+| **AWS KMS Support** |  Yes |  Yes |
 
 For this lab, we use **symmetric encryption** because it is fast and efficient for file-level data protection.
 
@@ -129,7 +113,7 @@ For this lab, we use **symmetric encryption** because it is fast and efficient f
 2. Under **Key type**, select **Symmetric**.
 3. Click **Next**.
 
-> 💡 **Tip:** Symmetric keys use the same key to encrypt and decrypt data, making them ideal for encrypting files.
+>  **Tip:** Symmetric keys use the same key to encrypt and decrypt data, making them ideal for encrypting files.
 
 #### 1.3 Add Labels
 
@@ -145,13 +129,13 @@ Click **Next**.
 #### 1.4 Define Key Administrative Permissions
 
 1. In the **Key administrators** section, search for `voclabs`.
-2. ✅ Select the checkbox next to `voclabs`.
+2.  Select the checkbox next to `voclabs`.
 3. Click **Next**.
 
 #### 1.5 Define Key Usage Permissions
 
 1. In the **This account** section, search for `voclabs`.
-2. ✅ Select the checkbox next to `voclabs`.
+2.  Select the checkbox next to `voclabs`.
 3. Click **Next**.
 
 #### 1.6 Review and Finish
@@ -163,11 +147,11 @@ Click **Next**.
 
 1. Click on the **MyKMSKey** link (the key you just created).
 2. Locate the **ARN** (Amazon Resource Name) field.
-3. 📋 **Copy the ARN value** and paste it into a text editor for later use.
+3.  **Copy the ARN value** and paste it into a text editor for later use.
 
-> ⚠️ **Important:** You will need this ARN in Task 3. Keep it accessible!
+>  **Important:** You will need this ARN in Task 3. Keep it accessible!
 
-### ✅ Task 1 Summary
+###  Task 1 Summary
 
 You created a symmetric AWS KMS key named `MyKMSKey` and granted the `voclabs` IAM role both administrative and usage permissions for the key.
 
@@ -187,12 +171,12 @@ In this task, you will configure the `File Server` EC2 instance by:
 
 1. In the AWS Console search bar, type `EC2` and select **EC2**.
 2. In the **Instances** list, find the **File Server** instance.
-3. ✅ Select the checkbox next to it.
+3.  Select the checkbox next to it.
 4. Click **Connect**.
 5. Choose the **Session Manager** tab.
 6. Click **Connect**.
 
-> 💡 **Note:** Session Manager provides secure shell access without needing SSH keys or bastion hosts.
+>  **Note:** Session Manager provides secure shell access without needing SSH keys or bastion hosts.
 
 #### 2.2 Create AWS Credentials File
 
@@ -212,13 +196,13 @@ When prompted, enter the following:
 | `Default region name` | *Your lab region* | Copy from Vocareum AWS Details |
 | `Default output format` | *(leave blank)* | Press Enter |
 
-> 💡 **Tip:** Use `Ctrl+Shift+V` to paste into the Session Manager terminal.
+>  **Tip:** Use `Ctrl+Shift+V` to paste into the Session Manager terminal.
 
 #### 2.3 Update Credentials with Lab-Specific Values
 
 1. Go to the **Vocareum console** and click **AWS Details**.
 2. Next to **AWS CLI**, click **Show**.
-3. 📋 Copy the code block (starts with `[default]`).
+3.  Copy the code block (starts with `[default]`).
 4. Paste it into a text editor.
 
 #### 2.4 Edit the Credentials File
@@ -263,9 +247,9 @@ pip3 install aws-encryption-sdk-cli
 export PATH=$PATH:/home/ssm-user/.local/bin
 ```
 
-> 💡 **Note:** This PATH update is temporary for the current session. You may need to re-run it if you disconnect.
+>  **Note:** This PATH update is temporary for the current session. You may need to re-run it if you disconnect.
 
-### ✅ Task 2 Summary
+###  Task 2 Summary
 
 You configured AWS credentials on the File Server instance and installed the AWS Encryption CLI, enabling you to run encryption and decryption commands.
 
@@ -324,7 +308,7 @@ keyArn=<KMS ARN>
 keyArn=arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
 ```
 
-> 💡 **Tip:** You can identify a KMS key by its key ID, key ARN, alias name, or alias ARN.
+>  **Tip:** You can identify a KMS key by its key ID, key ARN, alias name, or alias ARN.
 
 #### 3.4 Encrypt the File
 
@@ -340,7 +324,7 @@ aws-encryption-cli --encrypt \
     --output ~/output/.
 ```
 
-### 🔍 Command Breakdown
+###  Command Breakdown
 
 | Parameter | Purpose |
 |-----------|---------|
@@ -352,7 +336,7 @@ aws-encryption-cli --encrypt \
 | `--commitment-policy require-encrypt-require-decrypt` | Enforces key commitment security feature |
 | `--output ~/output/.` | Output directory for the encrypted file |
 
-> ⚠️ **Note:** When the command succeeds, it returns **no output**.
+>  **Note:** When the command succeeds, it returns **no output**.
 
 #### 3.5 Verify Encryption Success
 
@@ -362,8 +346,8 @@ echo $?
 
 | Return Value | Meaning |
 |-------------|---------|
-| `0` | ✅ Success |
-| Non-zero | ❌ Failure |
+| `0` |  Success |
+| Non-zero |  Failure |
 
 #### 3.6 View the Encrypted File
 
@@ -388,7 +372,7 @@ cat secret1.txt.encrypted
 ????ENCRYPTED CONTENT???
 ```
 
-> 🔒 **What happened?** The plaintext was transformed into **ciphertext** — unreadable data that can only be decrypted with the correct key.
+>  **What happened?** The plaintext was transformed into **ciphertext** — unreadable data that can only be decrypted with the correct key.
 
 #### 3.7 Decrypt the File
 
@@ -406,7 +390,7 @@ aws-encryption-cli --decrypt \
     --output .
 ```
 
-### 🔍 Decryption Command Breakdown
+###  Decryption Command Breakdown
 
 | Parameter | Purpose |
 |-----------|---------|
@@ -441,7 +425,7 @@ cat secret1.txt.encrypted.decrypted
 TOP SECRET 1!!!
 ```
 
-> ✅ **Success!** The original plaintext has been fully restored.
+>  **Success!** The original plaintext has been fully restored.
 
 ### Encryption & Decryption Flow
 
@@ -455,7 +439,7 @@ TOP SECRET 1!!!
       │                               │                                  │
 ```
 
-### ✅ Task 3 Summary
+###  Task 3 Summary
 
 You successfully:
 - Created mock sensitive data
@@ -466,8 +450,7 @@ You successfully:
 
 ## Cleanup
 
-> ⚠️ **Important:** To avoid unnecessary charges, clean up resources after completing the lab.
-
+>  **Important:** To avoid unnecessary charges, clean up resources after completing the lab.   
 ### Steps:
 
 1. **Delete the KMS Key:**
