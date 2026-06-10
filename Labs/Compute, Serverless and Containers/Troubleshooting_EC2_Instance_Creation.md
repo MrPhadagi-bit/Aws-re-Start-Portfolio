@@ -65,19 +65,6 @@ This activity will require approximately **45 minutes** to complete.
 
 ---
 
-## Table of Contents
-
-1. [Task 1: Connecting to the CLI Host Instance](#task-1-connecting-to-the-cli-host-instance)
-2. [Task 2: Configuring the AWS CLI](#task-2-configuring-the-aws-cli)
-3. [Task 3: Creating an EC2 Instance by Using the AWS CLI](#task-3-creating-an-ec2-instance-by-using-the-aws-cli)
-   - [Task 3.1: Observe the Script Details](#task-31-observe-the-script-details)
-   - [Task 3.2: Try to Run the Script](#task-32-try-to-run-the-script)
-   - [Task 3.3: Troubleshoot Issues](#task-33-troubleshoot-issues)
-4. [Task 4: Verifying the Functionality of the Website](#task-4-verifying-the-functionality-of-the-website)
-5. [Conclusion](#conclusion)
-
----
-
 ## Task 1: Connecting to the CLI Host Instance
 
 In this task, you use **EC2 Instance Connect** to connect to the CLI Host EC2 instance that was created when the lab was provisioned. You will use this instance to run CLI commands.
