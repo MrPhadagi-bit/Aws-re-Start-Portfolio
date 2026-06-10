@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Lab Overview
+##  Lab Overview
 
 In this challenge lab, you apply what you have learned about **Amazon Elastic Compute Cloud (Amazon EC2)**. You will follow high-level steps to create a web application running on an Amazon Linux EC2 instance.
 
@@ -12,20 +12,20 @@ This is a **hands-on, self-directed challenge** — you are expected to use the 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 After completing this challenge, you should be able to:
 
-- ✅ Configure a virtual network (VPC, subnet, internet gateway, route table)
-- ✅ Launch an Amazon Linux EC2 instance into that virtual network
-- ✅ Install and configure a web server (`httpd`) via user data
-- ✅ Deploy and serve a simple HTML web application
-- ✅ Connect securely using SSH via EC2 Instance Connect
-- ✅ Verify the web server is publicly accessible
+-  Configure a virtual network (VPC, subnet, internet gateway, route table)
+-  Launch an Amazon Linux EC2 instance into that virtual network
+-  Install and configure a web server (`httpd`) via user data
+-  Deploy and serve a simple HTML web application
+-  Connect securely using SSH via EC2 Instance Connect
+-  Verify the web server is publicly accessible
 
 ---
 
-## 🧩 Your Challenge
+##  Your Challenge
 
 Create an Amazon Linux EC2 instance to run a web application. The general steps are outlined below.
 
@@ -33,7 +33,7 @@ Create an Amazon Linux EC2 instance to run a web application. The general steps 
 
 ## Phase 1: Network Setup (VPC)
 
-> ⚠️ **Hint:** You need to create an internet gateway and properly configure the subnet's route table in your VPC **before** you launch your instance.
+>  **Hint:** You need to create an internet gateway and properly configure the subnet's route table in your VPC **before** you launch your instance.
 
 ### Step 1.1 — Create a New VPC
 
@@ -70,7 +70,7 @@ Create an Amazon Linux EC2 instance to run a web application. The general steps 
 3. Save changes
 4. *(Optional but recommended)*: Go to **Subnet associations** → **Edit subnet associations** → Select your subnet → Save.
 
-> 🔍 **Why this matters:** Without the route to `0.0.0.0/0` via the IGW, your instance won't be reachable from the internet.
+>  **Why this matters:** Without the route to `0.0.0.0/0` via the IGW, your instance won't be reachable from the internet.
 
 ---
 
@@ -101,7 +101,7 @@ Create a security group with the following **Inbound Rules**:
 | **SSH** | TCP | 22 | `0.0.0.0/0` or `My IP` | EC2 Instance Connect / SSH access |
 | **HTTP** | TCP | 80 | `0.0.0.0/0` | Web server traffic |
 
-> ⚠️ **Important:** In production, restrict SSH to your specific IP (`My IP`). For this lab, `0.0.0.0/0` is acceptable for learning purposes.
+>  **Important:** In production, restrict SSH to your specific IP (`My IP`). For this lab, `0.0.0.0/0` is acceptable for learning purposes.
 
 ### Step 2.4 — Add User Data (Bootstrap Script)
 
@@ -130,7 +130,7 @@ chmod 777 /var/www/html
 echo "<h1>Apache is running on Amazon Linux</h1>" > /var/www/html/index.html
 ```
 
-> 📌 **What this does:**
+>  **What this does:**
 > - Updates the system packages
 > - Installs `httpd` (Apache Web Server)
 > - Starts and enables the service
@@ -161,9 +161,9 @@ Wait for the instance state to show **Running** and the **Status checks** to sho
    - `Starting httpd:` or `Started The Apache HTTP Server`
    - No critical errors
 
-4. 📸 **Capture a screenshot** of the system log showing that `httpd` was successfully installed.
+4.  **Capture a screenshot** of the system log showing that `httpd` was successfully installed.
 
-> 💡 **Troubleshooting:** If you don't see httpd installation logs, verify:
+>  **Troubleshooting:** If you don't see httpd installation logs, verify:
 > - The user data script was pasted correctly
 > - The instance was launched with the correct AMI (Amazon Linux)
 > - You checked the log after the instance has fully initialized (may take 2-3 minutes)
@@ -174,7 +174,7 @@ Wait for the instance state to show **Running** and the **Status checks** to sho
 
 ### Step 4.1 — Connect via EC2 Instance Connect
 
-> ⚠️ **Hint:** You need to use **EC2 Instance Connect** to connect over SSH using a web browser.
+ **Hint:** You need to use **EC2 Instance Connect** to connect over SSH using a web browser.
 
 1. Select your instance → Click **Connect**
 2. Choose the **EC2 Instance Connect** tab
@@ -208,7 +208,7 @@ cat > projects.html << 'EOF'
 EOF
 ```
 
-> 📝 **Replace `YOUR-NAME` with your actual name** before saving!
+>  **Replace `YOUR-NAME` with your actual name** before saving!
 
 ### Step 4.3 — Verify File Placement
 
@@ -220,7 +220,7 @@ ls -la /var/www/html/
 cat /var/www/html/projects.html
 ```
 
-> 🔍 **Note:** If you encounter permission issues, use `sudo`:
+>  **Note:** If you encounter permission issues, use `sudo`:
 > ```bash
 > sudo nano /var/www/html/projects.html
 > # or
@@ -236,7 +236,7 @@ cat /var/www/html/projects.html
 1. Go back to the **EC2 Dashboard** → Select your instance
 2. Copy the **Public IPv4 address** (e.g., `3.85.123.45`)
 
-> ⚠️ **Hint:** Use the **public IPv4 address** of the instance to access your webpage.
+>  **Hint:** Use the **public IPv4 address** of the instance to access your webpage.
 
 3. Open a web browser and navigate to:
    ```
@@ -251,11 +251,11 @@ You should see a page displaying:
 > # YOUR-NAME's re/Start Project Work
 > EC2 Instance Challenge Lab
 
-📸 **Capture a screenshot** showing that the page was successfully returned and displayed.
+ **Capture a screenshot** showing that the page was successfully returned and displayed.
 
 ---
 
-## ✅ Submission Checklist
+##  Submission Checklist
 
 Submit the following screenshots to your instructor:
 
@@ -266,7 +266,7 @@ Submit the following screenshots to your instructor:
 
 ---
 
-## 🔍 Hints & Troubleshooting
+##  Hints & Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -279,7 +279,7 @@ Submit the following screenshots to your instructor:
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 For additional guidance, refer to the following labs:
 
@@ -296,12 +296,12 @@ For additional guidance, refer to the following labs:
 ## 🏁 Lab Complete
 
 Congratulations! You have successfully:
-- ✅ Created a custom VPC with public internet access
-- ✅ Launched an Amazon Linux EC2 instance with proper networking
-- ✅ Automated web server installation using user data
-- ✅ Connected securely via EC2 Instance Connect
-- ✅ Deployed a custom HTML webpage
-- ✅ Verified public accessibility of your web application
+-  Created a custom VPC with public internet access
+-  Launched an Amazon Linux EC2 instance with proper networking
+-  Automated web server installation using user data
+-  Connected securely via EC2 Instance Connect
+-  Deployed a custom HTML webpage
+-  Verified public accessibility of your web application
 
 ---
 
