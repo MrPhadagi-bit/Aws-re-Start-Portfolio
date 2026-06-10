@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Lab Overview
+##  Lab Overview
 
 AWS provides multiple ways to launch Amazon Elastic Compute Cloud (Amazon EC2) instances. In this lab, you will:
 
@@ -36,11 +36,11 @@ The following diagram illustrates the final architecture:
 └─────────────────────────────────────────────────────────┘
 ```
 
-> 💡 **Optional Challenges**: If you finish early, try the troubleshooting challenges at the end of this lab.
+>  **Optional Challenges**: If you finish early, try the troubleshooting challenges at the end of this lab.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 After completing this lab, you should be able to:
 
@@ -50,7 +50,7 @@ After completing this lab, you should be able to:
 
 ---
 
-## 🛠️ Prerequisites
+##  Prerequisites
 
 - AWS Management Console access
 - Basic familiarity with Linux command line
@@ -76,7 +76,7 @@ Tags help categorize AWS resources by purpose, owner, or environment.
 |---------|-------|
 | **Name** | `Bastion host` |
 
-> ℹ️ When you name an instance, AWS automatically creates a tag with `Key=Name` and `Value=<your input>`.
+>  When you name an instance, AWS automatically creates a tag with `Key=Name` and `Value=<your input>`.
 
 ### Step 1.3: Choose an Amazon Machine Image (AMI)
 
@@ -90,7 +90,7 @@ An AMI is a template that contains:
 | **Quick Start** | `Amazon Linux` |
 | **Description** | Amazon Linux 2 AMI (HVM) |
 
-> ✅ Keep the default selection. This corresponds to **Amazon Linux 2 AMI (HVM)**.
+>  Keep the default selection. This corresponds to **Amazon Linux 2 AMI (HVM)**.
 
 ### Step 1.4: Choose an Instance Type
 
@@ -111,7 +111,7 @@ Instance types determine the hardware resources allocated to your EC2 instance.
 |---------|-------|
 | **Key pair name** | `Proceed without key pair (Not recommended)` |
 
-> ℹ️ In this lab, you use **EC2 Instance Connect** instead of SSH key pairs to log in.
+>  In this lab, you use **EC2 Instance Connect** instead of SSH key pairs to log in.
 
 ### Step 1.6: Configure Network Settings
 
@@ -125,7 +125,7 @@ Click **Edit** to expand network configuration options.
 | **Security group name** | `Bastion security group` | |
 | **Description** | `Permit SSH connections` | |
 
-> 🔒 A **security group** acts as a virtual firewall. Rules can be modified anytime and automatically apply to all associated instances.
+>  A **security group** acts as a virtual firewall. Rules can be modified anytime and automatically apply to all associated instances.
 
 ### Step 1.7: Add Storage
 
@@ -139,7 +139,7 @@ Click **Edit** to expand network configuration options.
 |---------|-------|
 | **IAM instance profile** | `Bastion-Role` |
 
-> 🔑 The `Bastion-Role` profile grants the instance permissions to make requests to Amazon EC2 via the AWS CLI. **This is required for Task 3.**
+>  The `Bastion-Role` profile grants the instance permissions to make requests to Amazon EC2 via the AWS CLI. **This is required for Task 3.**
 
 ### Step 1.9: Launch the Instance
 
@@ -160,7 +160,7 @@ In this task, you use **EC2 Instance Connect** to securely log in to the bastion
 3. Select the **EC2 Instance Connect** tab
 4. Click **Connect**
 
-> 💡 A browser-based terminal session opens, connected to your bastion host.
+>  A browser-based terminal session opens, connected to your bastion host.
 
 ### Step 2.2: Verify Connection
 
@@ -174,7 +174,7 @@ hostname
 # Output: ip-xxx-xxx-xxx-xxx
 ```
 
-> 🎉 You are now connected to the bastion host and can use the AWS CLI to call AWS services.
+>  You are now connected to the bastion host and can use the AWS CLI to call AWS services.
 
 ---
 
@@ -201,7 +201,7 @@ echo $AWS_DEFAULT_REGION
 - Derives the Region by removing the last character (e.g., `us-west-2a` → `us-west-2`)
 - Exports it for subsequent AWS CLI commands
 
-> ⚠️ **Important**: If your EC2 Instance Connect session disconnects, environment variables are lost. Refresh your browser to reconnect and **re-run all steps starting from Step 3.1**.
+>  **Important**: If your EC2 Instance Connect session disconnects, environment variables are lost. Refresh your browser to reconnect and **re-run all steps starting from Step 3.1**.
 
 ### Step 3.2: Retrieve the Latest Amazon Linux 2 AMI
 
@@ -243,7 +243,7 @@ SG=$(aws ec2 describe-security-groups \
 echo $SG
 ```
 
-> 🔒 The `WebSecurityGroup` allows inbound HTTP traffic (port 80).
+>  The `WebSecurityGroup` allows inbound HTTP traffic (port 80).
 
 ### Step 3.5: Download the User Data Script
 
@@ -310,7 +310,7 @@ aws ec2 describe-instances \
     --output text
 ```
 
-> ⏳ The status will show `pending` initially. **Re-run the command until it returns `running`**.
+>  The status will show `pending` initially. **Re-run the command until it returns `running`**.
 
 ### Step 3.8: Test the Web Server
 
@@ -333,7 +333,7 @@ ec2-35-11-22-33.us-west-2.compute.amazonaws.com
 2. Open a new browser tab
 3. Paste the DNS name and press **Enter**
 
-> ✅ A web page should load, confirming the web server was successfully launched and configured.
+>  A web page should load, confirming the web server was successfully launched and configured.
 
 **Verify in the Console:**
 1. Return to the **EC2 Management Console**
@@ -345,7 +345,7 @@ ec2-35-11-22-33.us-west-2.compute.amazonaws.com
 
 ---
 
-## 📊 Comparison: Launch Methods
+##  Comparison: Launch Methods
 
 | Method | Best For | Pros | Cons |
 |--------|----------|------|------|
@@ -353,11 +353,11 @@ ec2-35-11-22-33.us-west-2.compute.amazonaws.com
 | **AWS CLI / Scripts** | Automated, repeatable deployments | Programmatic, version-controlled, consistent | Requires scripting knowledge |
 | **AWS CloudFormation** | Launching related resources together | Infrastructure as Code, declarative, manages dependencies | Steeper learning curve |
 
-> 💡 **Recommendation**: Use the Console for quick experiments, CLI/scripts for automation, and CloudFormation for production infrastructure.
+>  **Recommendation**: Use the Console for quick experiments, CLI/scripts for automation, and CloudFormation for production infrastructure.
 
 ---
 
-## 🏆 Optional Challenge 1: Troubleshoot EC2 Instance Connect
+##  Optional Challenge 1: Troubleshoot EC2 Instance Connect
 
 ### Scenario
 
@@ -389,7 +389,7 @@ You have an instance called **Misconfigured Web Server**. Try to connect to it u
 
 ---
 
-## 🏆 Optional Challenge 2: Fix the Web Server Installation
+##  Optional Challenge 2: Fix the Web Server Installation
 
 ### Scenario
 
@@ -430,7 +430,7 @@ The **Misconfigured Web Server** instance has a broken web server installation.
 
 ---
 
-## ✅ Conclusion
+##  Conclusion
 
 Congratulations! You have successfully completed the following:
 
@@ -454,7 +454,7 @@ Congratulations! You have successfully completed the following:
 
 ---
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [Amazon EC2 Documentation](https://docs.aws.amazon.com/ec2/)
 - [AWS CLI Command Reference - EC2](https://docs.aws.amazon.com/cli/latest/reference/ec2/)
@@ -463,4 +463,4 @@ Congratulations! You have successfully completed the following:
 
 ---
 
-*Lab complete. Happy cloud computing! ☁️*
+*Lab complete. Happy cloud computing! *
