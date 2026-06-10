@@ -89,7 +89,7 @@ Create an Amazon Linux EC2 instance to run a web application. The general steps 
 | **Instance type** | **T3 family**, size **smaller than medium** → Use `t3.micro` or `t3.small` |
 | **Key pair** | Create new OR use existing (needed for SSH) |
 | **Network settings** | **Edit** → Select your VPC and subnet |
-| **Auto-assign public IP** | **Enable** ✅ |
+| **Auto-assign public IP** | **Enable**  |
 | **Firewall (Security Group)** | Create new security group (see below) |
 
 ### Step 2.3 — Configure Security Group
