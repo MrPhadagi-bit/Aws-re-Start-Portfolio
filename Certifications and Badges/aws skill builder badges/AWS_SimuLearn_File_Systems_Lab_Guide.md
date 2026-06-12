@@ -8,22 +8,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Overview](#1-overview)
-2. [Learning Objectives](#2-learning-objectives)
-3. [Prerequisites](#3-prerequisites)
-4. [Architecture Scenario](#4-architecture-scenario)
-5. [Phase 1: Customer Discovery & Solution Design](#5-phase-1-customer-discovery--solution-design)
-6. [Phase 2: Hands-On Lab Implementation](#6-phase-2-hands-on-lab-implementation)
-7. [Step-by-Step Lab Walkthrough](#7-step-by-step-lab-walkthrough)
-8. [Verification & Testing](#8-verification--testing)
-9. [Cleanup](#9-cleanup)
-10. [Key Takeaways](#10-key-takeaways)
-11. [Troubleshooting](#11-troubleshooting)
-12. [Additional Resources](#12-additional-resources)
-
----
 
 ## 1. Overview
 
