@@ -1,67 +1,70 @@
 # Networking Labs
 
-## Overview
+## About This Folder
 
-This section is dedicated to networking concepts covered during my AWS re/Start learning journey. Networking is one of the key foundations of cloud computing because every cloud service depends on secure and reliable communication between users, applications, and infrastructure.
+This folder contains my AWS re/Start networking labs and notes. The labs focus on how networks are designed, configured, secured, and troubleshot in AWS.
 
-This folder will be used to document labs, notes, diagrams, and troubleshooting practice related to AWS networking and general networking fundamentals.
+The work in this section includes IP addressing, public and private networking, subnet planning, Amazon VPC resources, routing, internet connectivity, troubleshooting commands, and real-world cloud support scenarios.
 
-## What This Folder Is About
+## Lab Index
 
-The Networking section focuses on understanding how data moves across networks and how AWS networking services are used to design secure cloud environments.
-
-It includes concepts such as IP addressing, subnetting, routing, DNS, firewalls, VPC design, and network troubleshooting.
-
-## Key Learning Areas
-
-| Topic | Description |
+| Lab | Focus Area |
 |---|---|
-| IP Addressing | Understanding IPv4 addresses, private IP ranges, and address planning |
-| CIDR and Subnetting | Breaking networks into smaller subnet ranges |
-| Routing | Understanding how traffic moves between networks |
-| DNS | Resolving domain names into IP addresses |
-| Amazon VPC | Creating isolated cloud networks in AWS |
-| Public and Private Subnets | Separating internet-facing and internal resources |
-| Route Tables | Controlling how traffic flows inside a VPC |
-| Internet Gateway | Allowing public subnet resources to access the internet |
-| NAT Gateway | Allowing private subnet resources to reach the internet securely |
-| Security Groups | Controlling inbound and outbound traffic for AWS resources |
-| Network ACLs | Applying subnet-level traffic rules |
+| [Internet Protocols - Public and Private IP Addresses](./Internet_Protocols_Public_and_Private_IP_Addresses.md) | Understanding the difference between public and private IP addresses in customer support scenarios |
+| [Internet Protocols - Static and Dynamic Addresses](./Internet_Protocols_Static_and_Dynamic_Addresses_Lab.md) | Investigating why EC2 public IP addresses change and when to use static addressing |
+| [Internet Protocol Troubleshooting Commands](./Internet_Protocol_Troubleshooting_Commands.md) | Using commands such as `ping`, `traceroute`, `netstat`, `telnet`, and `curl` to diagnose network issues |
+| [Create Subnets and Allocate IP Addresses in Amazon VPC](./Create_Subnets_and_Allocate_IP_Addresses_in_Amazon_VPC.md) | Planning VPC CIDR ranges and creating public and private subnets |
+| [Creating Networking Resources in Amazon VPC](./Creating_Networking_Resources_in_Amazon_VPC.md) | Building VPC networking resources for internet connectivity |
+| [Build Your VPC and Launch a Web Server](./Build_Your_VPC_and_Launch_a_Web_Server.md) | Creating a custom VPC, configuring subnets and security groups, and launching a web server |
+| [Troubleshooting a Network Issue](./Troubleshooting_Network_Issue_Lab.md) | Diagnosing and fixing VPC connectivity issues using a cloud support workflow |
 
-## AWS Services Covered
+## Topics Covered
+
+| Area | What I Practised |
+|---|---|
+| IP Addressing | Public IPs, private IPs, static addresses, dynamic addresses, and address planning |
+| CIDR and Subnetting | Choosing CIDR blocks and allocating subnet IP ranges |
+| Amazon VPC | Creating isolated cloud networks and adding network components |
+| Routing | Working with route tables and internet connectivity paths |
+| Internet Access | Using internet gateways and public subnets |
+| Security | Configuring security groups and understanding network access rules |
+| Troubleshooting | Using command-line tools and AWS configuration checks to find connectivity problems |
+| Cloud Support Scenarios | Reading customer tickets, identifying root causes, and documenting solutions |
+
+## AWS Services and Tools Used
 
 - Amazon VPC
 - Amazon EC2
-- Amazon Route 53
-- Internet Gateway
-- NAT Gateway
-- Elastic Load Balancing
-- Amazon CloudWatch
+- Subnets
+- Route tables
+- Internet gateways
+- Security groups
+- Network ACL concepts
+- Public and private IP addressing
+- Linux networking commands
+- Web server testing tools
 
-## Skills I Am Building
+## Skills Practised
 
-- Reading and understanding network diagrams
-- Planning IP address ranges with CIDR notation
-- Identifying the difference between public and private networks
-- Understanding how VPCs, subnets, and route tables work together
-- Configuring basic network security rules
-- Troubleshooting connectivity problems
-- Explaining cloud networking concepts clearly
+- Explaining the difference between public and private IP addresses
+- Understanding when a static IP address is needed
+- Planning VPC and subnet CIDR ranges
+- Creating VPC networking resources
+- Launching EC2 instances into a custom network
+- Configuring security groups for web access
+- Testing connectivity with network troubleshooting commands
+- Investigating broken network paths
+- Reading support-style customer scenarios and documenting findings
 
-## Planned Documentation
+## Suggested Learning Path
 
-| Planned Item | Status |
-|---|---|
-| Networking fundamentals notes | To be added |
-| CIDR and subnetting practice | To be added |
-| Amazon VPC lab | To be added |
-| Public and private subnet lab | To be added |
-| Security groups and network ACLs lab | To be added |
-| DNS and Route 53 notes | To be added |
-| Troubleshooting notes | To be added |
+1. Start with public, private, static, and dynamic IP address labs.
+2. Practise troubleshooting commands and map them to network layers.
+3. Move into VPC CIDR planning and subnet creation.
+4. Build networking resources such as route tables and internet gateways.
+5. Launch a web server inside a custom VPC.
+6. Finish with the VPC troubleshooting lab to practise diagnosing real issues.
 
-## Why Networking Matters
+## Why This Section Matters
 
-Networking is essential for designing, deploying, and troubleshooting cloud systems. A strong networking foundation helps with understanding how AWS resources communicate, how applications are exposed to users, and how cloud environments are protected.
-
-This section will continue to grow as I complete more AWS networking labs and document what I learn.
+Networking is a foundation for almost every AWS workload. These labs helped me understand how cloud resources communicate, how traffic is controlled, and how to troubleshoot connectivity issues in a structured way.
