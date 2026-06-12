@@ -8,7 +8,7 @@
 
 ---
 
-(https://github.com/MrPhadagi-bit/ppppp1/blob/main/Screenshot%202026-06-12%20183225.png?raw=true)
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Screenshot%202026-06-12%20183225.png?raw=true)
 
 ## Lab Overview
 
