@@ -8,7 +8,7 @@ Welcome to my **AWS re/Start Portfolio** — a hands-on learning journey through
 
 ---
 
-![imagine](https://za.linkedin.com/company/praesignisdata)
+![imagine](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXOnUOTvJIa7Vh2fHe1TZCrXP1GmJN_d_Rclz9n3SyqA&s=10)
 
 ##  Why This Repo?
 
