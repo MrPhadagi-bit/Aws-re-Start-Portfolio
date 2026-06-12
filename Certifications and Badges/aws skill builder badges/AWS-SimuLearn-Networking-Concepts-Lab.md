@@ -8,23 +8,7 @@
 
 ---
 
-## Table of Contents
-
-- [Lab Overview](#lab-overview)
-- [Learning Objectives](#learning-objectives)
-- [Architecture Diagram](#architecture-diagram)
-- [Lab 1: VPC and Subnet Creation](#lab-1-vpc-and-subnet-creation)
-- [Lab 2: Security Configuration](#lab-2-security-configuration)
-- [Lab 3: EC2 Instance Deployment](#lab-3-ec2-instance-deployment)
-- [Lab 4: Connectivity Testing](#lab-4-connectivity-testing)
-- [Lab 5: DNS and VPC Endpoints](#lab-5-dns-and-vpc-endpoints-optional)
-- [Lab 6: Cleanup](#lab-6-cleanup-critical)
-- [Troubleshooting Guide](#troubleshooting-guide)
-- [Key Concepts Summary](#key-concepts-summary)
-- [Certification Mapping](#certification-mapping)
-- [Next Steps](#next-steps)
-
----
+(https://github.com/MrPhadagi-bit/ppppp1/blob/main/Screenshot%202026-06-12%20183225.png?raw=true)
 
 ## Lab Overview
 
