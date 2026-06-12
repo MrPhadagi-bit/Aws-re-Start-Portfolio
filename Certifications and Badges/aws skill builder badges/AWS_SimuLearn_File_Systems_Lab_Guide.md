@@ -7,7 +7,8 @@
 > **Format:** AI-Powered Game-Based Learning with Hands-On Lab
 
 ---
-![imagine](
+![imagine](<img width="1999" height="1545" alt="image" src="https://github.com/user-attachments/assets/c0665ac2-57c2-43b6-8753-19295e262e53" />)
+
 
 ## 1. Overview
 
