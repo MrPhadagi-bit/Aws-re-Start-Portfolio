@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Objectives
+##  Objectives
 
 After completing this lab, you should be able to:
 
@@ -19,7 +19,7 @@ After completing this lab, you should be able to:
 
 ---
 
-## 🏗️ Lab Architecture Overview
+##  Lab Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -80,7 +80,7 @@ After completing this lab, you should be able to:
 
 ---
 
-## 🎯 Business Scenario
+##  Business Scenario
 
 Your company is expanding its AWS infrastructure and has hired three new staff members with different responsibilities:
 
@@ -92,7 +92,7 @@ Your company is expanding its AWS infrastructure and has hired three new staff m
 
 ---
 
-## 📚 IAM Concepts
+##  IAM Concepts
 
 ### What is IAM?
 AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
@@ -131,7 +131,7 @@ AWS Identity and Access Management (IAM) is a web service that helps you securel
 
 ---
 
-## 🚀 Lab Tasks
+##  Lab Tasks
 
 ### Task 1: Create an Account Password Policy
 
@@ -157,18 +157,18 @@ AWS Identity and Access Management (IAM) is a web service that helps you securel
    | Setting | Value | Rationale |
    |---------|-------|-----------|
    | **Minimum password length** | `10` | Increases brute-force resistance |
-   | **Require uppercase** | ✅ | Increases character space |
-   | **Require lowercase** | ✅ | Increases character space |
-   | **Require numbers** | ✅ | Increases character space |
-   | **Require symbols** | ✅ | Significantly increases entropy |
+   | **Require uppercase** |  | Increases character space |
+   | **Require lowercase** |  | Increases character space |
+   | **Require numbers** |  | Increases character space |
+   | **Require symbols** | | Significantly increases entropy |
    | **Password expiration** | `90` days | Limits exposure window |
-   | **Password expiration requires admin reset** | ❌ | Users can self-service |
+   | **Password expiration requires admin reset** |  | Users can self-service |
    | **Prevent password reuse** | `5` passwords | Prevents password cycling |
 
 5. **Save Changes:**
    - Choose **Save changes**.
 
-> ✅ **Result:** The policy applies account-wide to all IAM users immediately.
+>  **Result:** The policy applies account-wide to all IAM users immediately.
 
 ---
 
@@ -188,7 +188,7 @@ AWS Identity and Access Management (IAM) is a web service that helps you securel
    - **Groups tab:** Not a member of any group.
    - **Security credentials tab:** Console password assigned.
 
-> 💡 **Key Insight:** A user without permissions or group membership has **zero access** to AWS resources.
+>  **Key Insight:** A user without permissions or group membership has **zero access** to AWS resources.
 
 #### 2.2 Explore User Groups
 
@@ -204,11 +204,11 @@ AWS Identity and Access Management (IAM) is a web service that helps you securel
 For each group:
   → Choose the group
   → Choose the Permissions tab
-  → Select the ➕ (plus sign) next to the policy name
+  → Select the  (plus sign) next to the policy name
   → Review the JSON policy document
 ```
 
-> 💡 **Key Insight:** Managed policies are centrally maintained — when AWS updates them, all attached entities automatically receive the update. Inline policies are tightly coupled to a single entity.
+>  **Key Insight:** Managed policies are centrally maintained — when AWS updates them, all attached entities automatically receive the update. Inline policies are tightly coupled to a single entity.
 
 ---
 
@@ -216,7 +216,7 @@ For each group:
 
 > **Objective:** Assign users to groups to inherit permissions based on their job functions.
 
-> ⚠️ **Note:** Ignore any "not authorized" errors — these are caused by lab account restrictions and won't impact completion.
+>  **Note:** Ignore any "not authorized" errors — these are caused by lab account restrictions and won't impact completion.
 
 #### 3.1 Add user-1 to S3-Support Group
 
@@ -273,7 +273,7 @@ Navigate to **User groups** and confirm each group shows **1** in the Users colu
 2. In the **AWS Account** section, locate the **Sign-in URL for IAM users**.
 3. Copy this URL (format: `https://<account-id>.signin.aws.amazon.com/console`).
 
-> 💡 **This URL is the entry point for all IAM users in this account.**
+>  **This URL is the entry point for all IAM users in this account.**
 
 #### 4.2 Test user-1 (S3 Support)
 
@@ -287,12 +287,12 @@ Password: Lab-Password1
 **Test S3 Access:**
 1. From Services menu, choose **S3**.
 2. Choose a bucket name and browse contents.
-3. ✅ **Expected:** Successfully view bucket list and contents.
+3.  **Expected:** Successfully view bucket list and contents.
 
 **Test EC2 Access:**
 1. From Services menu, choose **EC2**.
 2. In left navigation, choose **Instances**.
-3. ❌ **Expected:** "You are not authorized to perform this operation."
+3.  **Expected:** "You are not authorized to perform this operation."
 
 **Sign Out:** Click `user-1` (top-right) → **Sign out**.
 
@@ -310,18 +310,18 @@ Password: Lab-Password2
 **Test EC2 Read Access:**
 1. From Services menu, choose **EC2**.
 2. In left navigation, choose **Instances**.
-3. ✅ **Expected:** EC2 instance is visible (read-only access working).
+3.  **Expected:** EC2 instance is visible (read-only access working).
 
 **Test EC2 Write Access:**
 1. Select the EC2 instance.
 2. From **Instance state** dropdown, choose **Stop instance**.
 3. In the confirmation window, choose **Stop**.
-4. ❌ **Expected:** "Failed to stop the instance. You are not authorized..."
+4.  **Expected:** "Failed to stop the instance. You are not authorized..."
 5. Choose **Cancel**.
 
 **Test S3 Access:**
 1. From Services menu, choose **S3**.
-2. ❌ **Expected:** "You don't have permissions to list buckets."
+2.  **Expected:** "You don't have permissions to list buckets."
 
 **Sign Out:** Click `user-2` (top-right) → **Sign out**.
 
@@ -342,13 +342,13 @@ Password: Lab-Password3
 3. Select the EC2 instance.
 4. From **Instance state** dropdown, choose **Stop instance**.
 5. In the confirmation window, choose **Stop**.
-6. ✅ **Expected:** Instance enters **Stopping** state and shuts down successfully.
+6.  **Expected:** Instance enters **Stopping** state and shuts down successfully.
 
 **Sign Out:** Click `user-3` (top-right) → **Sign out**.
 
 ---
 
-## 📊 Expected Results Summary
+##  Expected Results Summary
 
 ```
 ┌─────────┬──────────────┬──────────────┬──────────────┬──────────────┐
@@ -362,7 +362,7 @@ Password: Lab-Password3
 
 ---
 
-## 🎓 Key Takeaways
+##  Key Takeaways
 
 ### Principle of Least Privilege
 Each user has access **only** to the resources and actions required for their specific role. This minimizes the attack surface and limits potential damage from compromised credentials.
@@ -384,7 +384,7 @@ Strong password policies are your first line of defense. They apply globally and
 
 ---
 
-## 🧹 Lab Cleanup
+##  Lab Cleanup
 
 This lab uses pre-created resources that do not require cleanup. In a production environment, you would:
 
@@ -394,7 +394,7 @@ This lab uses pre-created resources that do not require cleanup. In a production
 
 ---
 
-## 📖 Additional Resources
+##  Additional Resources
 
 - [AWS IAM Documentation](https://docs.aws.amazon.com/iam/)
 - [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
@@ -404,16 +404,16 @@ This lab uses pre-created resources that do not require cleanup. In a production
 
 ---
 
-## ✅ Conclusion
+##  Conclusion
 
 Congratulations! You have successfully:
 
-- ✅ Created and applied a custom IAM password policy
-- ✅ Explored pre-created IAM users and user groups
-- ✅ Inspected IAM policies (managed vs. inline)
-- ✅ Added users to groups with specific capabilities
-- ✅ Located and used the IAM sign-in URL
-- ✅ Experimented with policy effects on service access
+-  Created and applied a custom IAM password policy
+-  Explored pre-created IAM users and user groups
+-  Inspected IAM policies (managed vs. inline)
+-  Added users to groups with specific capabilities
+-  Located and used the IAM sign-in URL
+-  Experimented with policy effects on service access
 
 You now understand the fundamentals of AWS IAM and can apply these principles to secure your own AWS environments.
 
