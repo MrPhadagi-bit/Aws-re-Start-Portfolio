@@ -4,7 +4,7 @@
 > **Awarded to:** Phadagi Mannda Raven  
 > **Issued by:** AWS Training & Certification — Michelle Vaz, Director, AWS Training & Certification
 
-![AWS SimuLearn: Core Security Concepts Completion Certificate])
+![AWS SimuLearn: Core Security Concepts Completion Certificate](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Screenshot%202026-06-11%20143126.png?raw=true)
 
 ---
 
