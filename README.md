@@ -8,6 +8,8 @@ Welcome to my **AWS re/Start Portfolio** — a hands-on learning journey through
 
 ---
 
+![imagine](
+
 ##  Why This Repo?
 
 Cloud computing is reshaping how the world builds and runs technology. This portfolio documents my growth as I work through the **AWS re/Start Programme** — combining theory with real labs to develop practical skills for entry-level cloud and infrastructure roles.
