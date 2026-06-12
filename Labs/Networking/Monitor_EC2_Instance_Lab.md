@@ -4,22 +4,6 @@
 
 ---
 
-## Table of Contents
-
-- [Lab Objectives](#lab-objectives)
-- [Architecture Overview](#architecture-overview)
-- [Prerequisites](#prerequisites)
-- [Lab Environment](#lab-environment)
-- [Task 1: Configure Amazon SNS](#task-1-configure-amazon-sns)
-- [Task 2: Create a CloudWatch Alarm](#task-2-create-a-cloudwatch-alarm)
-- [Task 3: Stress Test the EC2 Instance](#task-3-stress-test-the-ec2-instance)
-- [Task 4: Create a CloudWatch Dashboard](#task-4-create-a-cloudwatch-dashboard)
-- [Cleanup](#cleanup)
-- [Troubleshooting](#troubleshooting)
-- [Key Takeaways](#key-takeaways)
-
----
-
 ## Lab Objectives
 
 After completing this lab, you should be able to:
@@ -131,14 +115,14 @@ After completing this lab, you should be able to:
 
 ```
 ┌─────────────────────────────────────────┐
-│  ✅ Subscription Status: Confirmed      │
+│   Subscription Status: Confirmed      │
 │  Topic: MyCwAlarm                       │
 │  Protocol: Email                        │
 │  Endpoint: yourname@example.com         │
 └─────────────────────────────────────────┘
 ```
 
-> **⚠️ Important:** The alarm **cannot send emails** until the subscription is confirmed. If you don't see the confirmation email within 2 minutes, check your spam/junk folder.
+> ** Important:** The alarm **cannot send emails** until the subscription is confirmed. If you don't see the confirmation email within 2 minutes, check your spam/junk folder.
 
 ---
 
@@ -378,7 +362,7 @@ stress: info: [1234] successful run completed in 400s
 
 ## Cleanup
 
-> **⚠️ Important:** To avoid unexpected charges, clean up resources if this is not a persistent lab environment.
+> ** Important:** To avoid unexpected charges, clean up resources if this is not a persistent lab environment.
 
 | Resource | Action |
 |----------|--------|
@@ -408,21 +392,21 @@ stress: info: [1234] successful run completed in 400s
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  📊 MONITORING STRATEGY                                       │
+│   MONITORING STRATEGY                                       │
 │                                                               │
 │  1. METRICS    → CloudWatch collects EC2 CPUUtilization      │
 │  2. ALARMS     → Threshold-based alerting (60% CPU)        │
 │  3. ACTIONS    → SNS sends email when threshold breached     │
 │  4. VISIBILITY → Dashboard provides centralized monitoring   │
 │                                                               │
-│  🛡️ SECURITY IMPLICATIONS                                     │
+│   SECURITY IMPLICATIONS                                     │
 │                                                               │
 │  • CPU spikes can indicate malware, crypto-mining, or        │
 │    unauthorized resource consumption                          │
 │  • Automated alerting enables rapid incident response        │
 │  • Dashboards improve operational awareness                  │
 │                                                               │
-│  💡 BEST PRACTICES                                            │
+│   BEST PRACTICES                                            │
 │                                                               │
 │  • Use multiple alarm thresholds (e.g., 60% warning, 80%   │
 │    critical) for tiered response                              │
@@ -452,6 +436,6 @@ stress: info: [1234] successful run completed in 400s
 
 ---
 
-*Lab completed successfully! 🎉*
+*Lab completed successfully! *
 
 *Last updated: 2026-06-12*
