@@ -4,20 +4,7 @@
 > **Awarded to:** Phadagi Mannda Raven  
 > **Issued by:** AWS Training & Certification — Michelle Vaz, Director, AWS Training & Certification
 
-![AWS SimuLearn: Core Security Concepts Completion Certificate](aws_simulearn_certificate.png)
-
----
-
-## Table of Contents
-
-1. [Course Overview](#course-overview)
-2. [Learning Objectives](#learning-objectives)
-3. [Learning Phase](#learning-phase)
-4. [Hands-On Lab: Guided Simulation](#hands-on-lab-guided-simulation)
-5. [DIY Challenge (Do-It-Yourself)](#diy-challenge-do-it-yourself)
-6. [Key Concepts & Services Covered](#key-concepts--services-covered)
-7. [Skills Developed](#skills-developed)
-8. [Reflection & Takeaways](#reflection--takeaways)
+![AWS SimuLearn: Core Security Concepts Completion Certificate])
 
 ---
 
