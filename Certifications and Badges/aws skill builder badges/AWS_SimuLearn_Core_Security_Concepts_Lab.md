@@ -4,10 +4,8 @@
 > **Awarded to:** Phadagi Mannda Raven  
 > **Issued by:** AWS Training & Certification — Michelle Vaz, Director, AWS Training & Certification
 
-![AWS SimuLearn: Core Security Concepts Completion Certificate](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Screenshot%202026-06-11%20143126.png?raw=true)
-
 ---
-
+![AWS SimuLearn: Core Security Concepts Completion Certificate](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Screenshot%202026-06-11%20143126.png?raw=true)
 ## Course Overview
 
 **AWS SimuLearn: Core Security Concepts** is an AI-powered, hands-on simulation course designed by AWS Training & Certification. Unlike traditional video-based training, SimuLearn immerses learners in realistic AWS cloud scenarios where they must design and implement security solutions using actual AWS services.
