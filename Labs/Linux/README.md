@@ -1,6 +1,6 @@
 # Linux Labs
 
-![image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxVkqt36vcgClnGgbkhkCL-rF2NZz-RuBz1kaBg2hBww&s=10)
+![image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5NLP7kUvdCodkikkoWnQLitjji-SQ9wbjxCWAJSJ6Og&s=10)
 
 ## About This Folder
 
