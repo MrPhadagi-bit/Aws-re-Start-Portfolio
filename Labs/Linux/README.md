@@ -1,5 +1,7 @@
 # Linux Labs
 
+![image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxVkqt36vcgClnGgbkhkCL-rF2NZz-RuBz1kaBg2hBww&s=10)
+
 ## About This Folder
 
 This folder contains my Linux labs and notes completed as part of the AWS re/Start programme. The labs focus on building practical command-line confidence on Amazon Linux EC2 instances.
