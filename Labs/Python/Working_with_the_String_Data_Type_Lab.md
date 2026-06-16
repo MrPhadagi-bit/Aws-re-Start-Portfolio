@@ -21,16 +21,6 @@ In this lab, you will:
 - A text editor or IDE (e.g., VS Code, PyCharm, or a simple text editor)
 - Basic familiarity with running Python scripts from the terminal/command line
 
----
-
-## Table of Contents
-
-1. [Exercise 1: Introducing the String Data Type](#exercise-1-introducing-the-string-data-type)
-2. [Exercise 2: Working with String Concatenation](#exercise-2-working-with-string-concatenation)
-3. [Exercise 3: Working with Input Strings](#exercise-3-working-with-input-strings)
-4. [Exercise 4: Formatting Output Strings](#exercise-4-formatting-output-strings)
-
----
 
 ## Exercise 1: Introducing the String Data Type
 
