@@ -276,10 +276,10 @@ When your script wants to communicate information back to the user, it is called
 
 Congratulations! You have used Python to:
 
-1. ✅ Work with the **string data type**
-2. ✅ **Concatenate** strings using the `+` operator
-3. ✅ Collect **input** from the user using `input()`
-4. ✅ **Format** output strings using the `format()` method
+1.  Work with the **string data type**
+2.  **Concatenate** strings using the `+` operator
+3.  Collect **input** from the user using `input()`
+4.  **Format** output strings using the `format()` method
 
 ### Quick Reference
 
