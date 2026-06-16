@@ -7,19 +7,6 @@
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Environment Setup](#environment-setup)
-- [Exercise 1: Introducing Python](#exercise-1-introducing-python)
-- [Exercise 2: Writing Your First Python Program](#exercise-2-writing-your-first-python-program)
-- [Verification](#verification)
-- [Troubleshooting](#troubleshooting)
-- [Next Steps](#next-steps)
-
----
-
 ## Overview
 
 Welcome to your first programming lab! In this hands-on exercise, you will:
@@ -120,8 +107,8 @@ Python has two major release families:
 
 | Version | Status | Notes |
 |---------|--------|-------|
-| Python 2.x | ⚠️ End-of-Life (January 2020) | Legacy code only; do not use for new projects |
-| Python 3.x | ✅ Active Development | Current standard; used in this course |
+| Python 2.x |  End-of-Life (January 2020) | Legacy code only; do not use for new projects |
+| Python 3.x |  Active Development | Current standard; used in this course |
 
 > **Backward Compatibility:** Python generally maintains compatibility within minor versions (e.g., 3.10 → 3.11), but major versions (2.x → 3.x) have significant syntax differences.
 
@@ -195,7 +182,7 @@ python3 hello-world.py
 Hello, World
 ```
 
-🎉 **Congratulations!** You have successfully written and executed your first Python program.
+ **Congratulations!** You have successfully written and executed your first Python program.
 
 ---
 
