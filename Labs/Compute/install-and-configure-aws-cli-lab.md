@@ -12,10 +12,9 @@ During this activity, you establish a Secure Shell (SSH) connection to the insta
 
 When you finish the activity, it will reflect the following diagram:
 
-```
 ![imagine](https://labs.vocareum.com/web/5053054/5296753.0/ASNLIB/public/docs/lang/en-us/images/archi_diagram.png)
 
-```
+
 
 In the preceding diagram, you can access the AWS Cloud through an SSH connection. Within the AWS Cloud, a virtual private cloud (VPC) with a Red Hat EC2 instance is configured with the AWS CLI. IAM is configured, and you use the AWS CLI to interact with IAM.
 
