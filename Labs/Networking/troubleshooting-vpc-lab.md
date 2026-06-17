@@ -17,84 +17,20 @@ Your tasks include the following:
 3. Troubleshooting the VPC configuration issues to allow access to the resources
 4. Downloading and analyzing the flow log data
 
----
-
-## Table of Contents
-
-- [Objectives](#objectives)
-- [Duration](#duration)
-- [Prerequisites](#prerequisites)
-- [Architecture Diagram](#architecture-diagram)
-- [Task 1: Connecting to the CLI Host Instance](#task-1-connecting-to-the-cli-host-instance)
-  - [Task 1.1: Configuring the AWS CLI](#task-11-configuring-the-aws-cli)
-- [Task 2: Creating VPC Flow Logs](#task-2-creating-vpc-flow-logs)
-- [Task 3: Troubleshooting VPC Configuration Issues](#task-3-troubleshooting-vpc-configuration-issues)
-  - [Troubleshooting Challenge #1: Web Server Access](#troubleshooting-challenge-1-web-server-access)
-  - [Troubleshooting Challenge #2: SSH Access](#troubleshooting-challenge-2-ssh-access)
-- [Task 4: Analyzing Flow Logs](#task-4-analyzing-flow-logs)
-  - [Task 4.1: Downloading and Extracting Flow Logs](#task-41-downloading-and-extracting-flow-logs)
-  - [Task 4.2: Analyzing the Logs](#task-42-analyzing-the-logs)
-- [Conclusion](#conclusion)
-- [Additional Resources](#additional-resources)
-
----
-
 ## Objectives
 
 By the end of this lab, you will be able to do the following:
 
-- ✅ **Create VPC Flow Logs** — Set up an S3 bucket and configure flow logs to capture IP traffic data.
-- ✅ **Troubleshoot VPC configuration issues** — Identify and resolve routing, security group, and network ACL problems.
-- ✅ **Analyze flow logs** — Download, extract, and query VPC Flow Logs to diagnose network issues.
+-  **Create VPC Flow Logs** — Set up an S3 bucket and configure flow logs to capture IP traffic data.
+-  **Troubleshoot VPC configuration issues** — Identify and resolve routing, security group, and network ACL problems.
+- **Analyze flow logs** — Download, extract, and query VPC Flow Logs to diagnose network issues.
 
----
 
 ## Duration
 
 This lab requires approximately **75 minutes** to complete.
 
----
-
-## Prerequisites
-
-Before starting this lab, ensure you have:
-
-- Access to the AWS Management Console with appropriate permissions
-- Basic familiarity with AWS CLI commands
-- Understanding of VPC fundamentals (subnets, route tables, security groups, network ACLs)
-- A text editor to store values (Access Key, Secret Key, IP addresses, IDs)
-
-> **Note:** Throughout this lab, you will collect various resource IDs and IP addresses. Keep a text editor open to store these values for later use.
-
----
-
-## Architecture Diagram
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                              AWS Cloud                                       │
-│                                                                              │
-│  ┌─────────────────────────────┐    ┌─────────────────────────────────────┐  │
-│  │      CLI Host VPC          │    │           VPC1                      │  │
-│  │  ┌─────────────────────┐    │    │  ┌─────────────────────────────┐    │  │
-│  │  │   CLI Host          │    │    │  │   Public Subnet             │    │  │
-│  │  │   (AWS CLI)         │    │    │  │   ┌─────────────────────┐   │    │  │
-│  │  │                     │    │    │  │   │  Café Web Server    │   │    │  │
-│  │  │  #1 Connect         │    │    │  │   │  (HTTP/SSH)         │   │    │  │
-│  │  │  #2 Create Flow Logs│◄───┼────┼──┼──►│                     │   │    │  │
-│  │  │  #4 Analyze Logs    │    │    │  │   │  #3 Troubleshoot    │   │    │  │
-│  │  └─────────────────────┘    │    │  │   └─────────────────────┘   │    │  │
-│  │                             │    │  │                             │    │  │
-│  └─────────────────────────────┘    │  │   Internet Gateway          │    │  │
-│                                     │  │   Route Table               │    │  │
-│                                     │  │   Security Group            │    │  │
-│                                     │  │   Network ACL               │    │  │
-│                                     │  └─────────────────────────────┘    │  │
-│                                     │                                     │  │
-│                                     │  VPC Flow Logs ──► S3 Bucket        │  │
-│                                     └─────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+![imagine ](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Architecture%20(1).png?raw=true)
 
 ---
 
