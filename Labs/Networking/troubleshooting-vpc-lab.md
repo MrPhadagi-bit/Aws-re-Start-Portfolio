@@ -1,13 +1,5 @@
 # Troubleshooting a VPC
 
-## Lab Overview
-
-In this lab, you troubleshoot virtual private cloud (VPC) configurations and analyze VPC Flow Logs.
-
-You begin with an environment that includes two VPCs, Amazon Elastic Compute Cloud (Amazon EC2) instances, and other networking components shown in the following diagram.
-
-This diagram also shows four numbered circles (#1–4) that indicate the order in which you work through this lab.
-
 > **VPC components** that support the café web server instance runtime environment. The diagram also shows a CLI Host instance located in a separate VPC to run AWS CLI commands for troubleshooting. Numbered labels in the diagram identify these tasks.
 
 Your tasks include the following:
@@ -25,10 +17,13 @@ By the end of this lab, you will be able to do the following:
 -  **Troubleshoot VPC configuration issues** — Identify and resolve routing, security group, and network ACL problems.
 - **Analyze flow logs** — Download, extract, and query VPC Flow Logs to diagnose network issues.
 
-
 ## Duration
 
 This lab requires approximately **75 minutes** to complete.
+
+### Architecture Diagram
+
+The following diagram shows the final lab architecture:
 
 ![imagine ](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Architecture%20(1).png?raw=true)
 
