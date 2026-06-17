@@ -16,17 +16,6 @@ In this lab, you will:
 - [x] Use the **tuple** data type
 - [x] Use the **dictionary** data type
 
----
-
-## Table of Contents
-
-1. [Exercise 1: Introducing the List Data Type](#exercise-1-introducing-the-list-data-type)
-2. [Exercise 2: Introducing the Tuple Data Type](#exercise-2-introducing-the-tuple-data-type)
-3. [Exercise 3: Introducing the Dictionary Data Type](#exercise-3-introducing-the-dictionary-data-type)
-4. [Summary](#summary)
-
----
-
 ## Exercise 1: Introducing the List Data Type
 
 > **Estimated Time:** 15 minutes
@@ -270,10 +259,10 @@ pineapple
 | Feature | List | Tuple | Dictionary |
 |---------|------|-------|------------|
 | **Syntax** | `[]` | `()` | `{}` |
-| **Ordered** | ✅ Yes | ✅ Yes | ✅ Yes (Python 3.7+) |
-| **Mutable** | ✅ Yes | ❌ No (Immutable) | ✅ Yes |
+| **Ordered** |  Yes |  Yes |  Yes (Python 3.7+) |
+| **Mutable** |  Yes |  No (Immutable) |  Yes |
 | **Indexed by** | Numeric index (0, 1, 2...) | Numeric index (0, 1, 2...) | Named keys |
-| **Duplicates** | ✅ Allowed | ✅ Allowed | ❌ Keys must be unique |
+| **Duplicates** |  Allowed |  Allowed |  Keys must be unique |
 | **Use Case** | Changeable collections | Fixed collections | Key-value mappings |
 
 ---
@@ -354,4 +343,4 @@ pineapple
 
 ---
 
-*Congratulations! You have successfully worked with the list, tuple, and dictionary data types in Python.* 🎉
+*Congratulations! You have successfully worked with the list, tuple, and dictionary data types in Python.* 
