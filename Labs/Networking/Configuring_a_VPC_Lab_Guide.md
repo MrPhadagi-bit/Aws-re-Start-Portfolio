@@ -10,37 +10,7 @@ In this lab, you build a virtual private cloud (VPC) and other network component
 
 The following diagram shows the final lab architecture:
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                              AWS Cloud                                   │
-│  ┌─────────────────────────────────────────────────────────────────────┐ │
-│  │                         Lab VPC (10.0.0.0/16)                        │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐ │ │
-│  │  │                    Availability Zone 1                           │ │ │
-│  │  │  ┌────────────────────────────┐  ┌────────────────────────────┐ │ │ │
-│  │  │  │     Public Subnet          │  │     Private Subnet         │ │ │ │
-│  │  │  │     (10.0.0.0/24)          │  │     (10.0.2.0/23)          │ │ │ │
-│  │  │  │                            │  │                            │ │ │ │
-│  │  │  │  ┌────────────────────┐    │  │  ┌────────────────────┐    │ │ │ │
-│  │  │  │  │  Bastion Server    │    │  │  │  Private Instance  │    │ │ │ │
-│  │  │  │  │  (EC2 t3.micro)    │    │  │  │  (EC2 t3.micro)    │    │ │ │ │
-│  │  │  │  │  Amazon Linux 2023 │    │  │  │  Amazon Linux 2023 │    │ │ │ │
-│  │  │  │  └────────────────────┘    │  │  └────────────────────┘    │ │ │ │
-│  │  │  │                            │  │                            │ │ │ │
-│  │  │  │  NAT Gateway (in Public)   │  │                            │ │ │ │
-│  │  │  │  Elastic IP                │  │                            │ │ │ │
-│  │  │  └────────────────────────────┘  └────────────────────────────┘ │ │ │
-│  │  │  Route Table:                    Route Table:                    │ │ │
-│  │  │  - 10.0.0.0/16 → local           - 10.0.0.0/16 → local          │ │ │
-│  │  │  - 0.0.0.0/0 → IGW               - 0.0.0.0/0 → NAT Gateway      │ │ │
-│  │  └─────────────────────────────────────────────────────────────────┘ │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐ │ │
-│  │  │              Internet Gateway (Lab IGW)                          │ │ │
-│  │  │              (Attached to Lab VPC)                                │ │ │
-│  │  └─────────────────────────────────────────────────────────────────┘ │ │
-│  └─────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+![imagine]( https://github.com/MrPhadagi-bit/ppppp1/blob/main/architecture.png?raw=true)
 
 ### Network Components
 
@@ -401,11 +371,11 @@ PING amazon.com (176.32.98.166) 56(84) bytes of data.
 
 Congratulations! You have successfully completed the following:
 
-✅ Created a VPC with a private and public subnet, an internet gateway, and a NAT gateway  
-✅ Configured route tables associated with subnets to handle local and internet-bound traffic  
-✅ Launched a bastion server in a public subnet  
-✅ Used a bastion server to log in to an instance in a private subnet  
-✅ *(Optional)* Verified NAT gateway functionality by testing internet connectivity from a private instance
+ Created a VPC with a private and public subnet, an internet gateway, and a NAT gateway  
+ Configured route tables associated with subnets to handle local and internet-bound traffic  
+ Launched a bastion server in a public subnet  
+ Used a bastion server to log in to an instance in a private subnet  
+ *(Optional)* Verified NAT gateway functionality by testing internet connectivity from a private instance
 
 ---
 
@@ -435,4 +405,4 @@ To avoid incurring charges, delete the following resources after completing the 
 
 ---
 
-*Lab complete - Happy learning!* 🎓
+*Lab complete - Happy learning!* 
