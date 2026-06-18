@@ -316,7 +316,7 @@ When you run the complete code, you should see output similar to:
 
 ---
 
-## Congratulations! 🎉
+## Congratulations! 
 
 You have successfully worked with **lists** and **loops** in a Python function to solve a real-world biochemistry problem. You calculated the net charge of human insulin across a pH range — a fundamental concept in protein chemistry and drug formulation!
 
