@@ -2,19 +2,6 @@
 
 **Duration:** Approximately 40 minutes
 
----
-
-## Table of Contents
-1. [Connecting to the Linux Host](#connecting-to-the-linux-host)
-   - [Windows Users: Using SSH to Connect](#windows-users-using-ssh-to-connect)
-   - [macOS and Linux Users: Using SSH to Connect](#macos-and-linux-users-using-ssh-to-connect)
-2. [Your Challenge](#your-challenge)
-3. [Step-by-Step Instructions](#step-by-step-instructions)
-4. [Solution Walkthrough](#solution-walkthrough)
-5. [Verification](#verification)
-6. [Lab Complete](#lab-complete)
-
----
 
 ## Connecting to the Linux Host
 
