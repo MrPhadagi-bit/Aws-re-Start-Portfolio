@@ -5,19 +5,6 @@
 > **Date:** 2026-06-18  
 > **Objective:** Understand the relationship, similarities, and differences between software automation and software orchestration by researching and categorizing key concepts.
 
----
-
-## Table of Contents
-
-1. [Lab Overview](#lab-overview)
-2. [Key Definitions](#key-definitions)
-3. [Exercise 1: Research Automation & Orchestration](#exercise-1-research-automation--orchestration)
-4. [Exercise 2: Compare and Contrast](#exercise-2-compare-and-contrast)
-5. [Research Summary & Reasoning](#research-summary--reasoning)
-6. [Conclusion](#conclusion)
-
----
-
 ## Lab Overview
 
 **Software automation** and **software orchestration** are closely related disciplines in modern IT and DevOps, but they operate at fundamentally different scales and scopes.
@@ -204,7 +191,7 @@ Use the table below to record your findings during the research phase.
 
 ---
 
-> ✅ **STOP**  
+>  **STOP**  
 > You have successfully completed this lab.
 
 ---
