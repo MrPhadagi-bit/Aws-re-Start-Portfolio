@@ -8,15 +8,15 @@ With Python, you can mix types in a list. In this lab, you will create a list wi
 
 In this lab, you will:
 
-- ✅ Use **numeric data types**
-- ✅ Use **string data types**
-- ✅ Use the **list data type**
-- ✅ Use a **for loop**
-- ✅ Use the **`print()` function**
+-  Use **numeric data types**
+-  Use **string data types**
+-  Use the **list data type**
+-  Use a **for loop**
+-  Use the **`print()` function**
 
 ## Estimated Completion Time
 
-⏱️ **30 minutes**
+ **30 minutes**
 
 ---
 
@@ -40,7 +40,7 @@ Define a list with different types, like the following example:
 myMixedTypeList = [45, 290578, 1.02, True, "My dog is on the bed.", "45"]
 ```
 
-> 💡 **Note:** Notice that the last element `"45"` is a **string** (enclosed in quotes), while the first element `45` is an **integer**. This distinction is important in Python!
+>  **Note:** Notice that the last element `"45"` is a **string** (enclosed in quotes), while the first element `45` is an **integer**. This distinction is important in Python!
 
 #### Step 3: Loop Through the List
 
@@ -105,7 +105,7 @@ This exercise reinforced the Python programming concepts that were covered in la
 
 ---
 
-## 🎉 Congratulations!
+##  Congratulations!
 
 You have worked with the **list data type** and learned about Python's support for mixing data types in a list declaration.
 
