@@ -61,7 +61,7 @@ After you read the GitHub Hello World guide, make sure that you are logged in to
 
 1. Give your repository a name, such as `aws_restart`.
 2. **Visibility:** Choose **Private** (you can also choose Public, but for this lab, select Private).
-3. **Initialize this repository with a README:** ✅ Check this option.
+3. **Initialize this repository with a README:**  Check this option.
 
    > **Why a README?** A README file helps others understand what your project is about and how to use it.
 
@@ -98,7 +98,7 @@ To download your repository to your local machine:
 
 ## Conclusion
 
-**Congratulations!** 🎉
+**Congratulations!** 
 
 You have successfully:
 
