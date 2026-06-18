@@ -20,11 +20,9 @@ In this lab, you will:
 - Use the **else** statement
 - Use the **import** statement
 
----
-
 ## Estimated Completion Time
 
-⏱️ **45 minutes**
+ **45 minutes**
 
 ---
 
@@ -59,7 +57,7 @@ TMX20121,AnyCompany Motors, SUV, 2012, 295, 155, 4.7, 100000
 TMX20204,AnyCompany Motors, Truck, 2020, 300, 155, 3.5, 0
 ```
 
-> 💡 **Tip:** If a pop-up window opens with the message *Native Clipboard Unavailable*, use the keyboard, not the browser menu, to perform copy and paste actions.
+>  **Tip:** If a pop-up window opens with the message *Native Clipboard Unavailable*, use the keyboard, not the browser menu, to perform copy and paste actions.
 > - On **Windows**: Use `CTRL+C` and `CTRL+V`
 > - On **Mac**: Use `Command+C` and `Command+V`
 
@@ -104,7 +102,7 @@ for key, value in myVehicle.items():
     print("{} : {}".format(key, value))
 ```
 
-> 📌 **Note:** The `items()` function belongs to the dictionary data type. It tells the for loop to traverse the collection owned by the dictionary data type.
+>  **Note:** The `items()` function belongs to the dictionary data type. It tells the for loop to traverse the collection owned by the dictionary data type.
 
 5. Define an **empty list** to hold the car inventory that you will read:
 
@@ -120,8 +118,8 @@ myInventoryList = []
 
 You will read in the data from disk (hard drive) and make an **in-memory** (random access memory, or RAM) copy.
 
-> 💾 **Hard Drive** stores data long term, including when the power is turned off.  
-> ⚡ **RAM** refers to temporary memory that is faster, but it is erased when the computer's power is turned off.
+>  **Hard Drive** stores data long term, including when the power is turned off.  
+>  **RAM** refers to temporary memory that is faster, but it is erased when the computer's power is turned off.
 
 You will be introduced to the **`with open`** syntax statement, which keeps a file open while you read data. It will **automatically close** the CSV file when the code inside the `with` block is finished running.
 
@@ -159,7 +157,7 @@ with open('car_fleet.csv') as csvFile:
 
 ---
 
-#### 🔍 Deep Dive: Understanding `copy.deepcopy()`
+####  Deep Dive: Understanding `copy.deepcopy()`
 
 ```python
 currentVehicle = copy.deepcopy(myVehicle)
@@ -207,7 +205,7 @@ Save the file.
 python3 filename.py
 ```
 
-> 📝 Replace `filename.py` with the actual name of your Python file.
+>  Replace `filename.py` with the actual name of your Python file.
 
 4. **Confirm** that the script runs correctly and that the output displays as you expect it to.
 
@@ -336,7 +334,7 @@ for myCarProperties in myInventoryList:
 
 ---
 
-## Congratulations! 🎉
+## Congratulations! 
 
 You have successfully worked with composite data types in Python! You created a string-in-dictionary-in-list structure, read data from a CSV file, and managed memory using deep copies.
 
