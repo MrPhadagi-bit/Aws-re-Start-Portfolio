@@ -5,23 +5,6 @@
 > **Lab Type:** Group Research & Presentation  
 > **Last Updated:** June 2026
 
----
-
-## Table of Contents
-
-1. [What You Will Do in This Lab](#what-you-will-do-in-this-lab)
-2. [Before You Start](#before-you-start)
-3. [Step-by-Step Instructions](#step-by-step-instructions)
-   - [Part 1: Form Your Group](#part-1-form-your-group)
-   - [Part 2: Pick a Tool](#part-2-pick-a-tool)
-   - [Part 3: Research the Tool](#part-3-research-the-tool)
-   - [Part 4: Build Your Presentation](#part-4-build-your-presentation)
-   - [Part 5: Present to the Class](#part-5-present-to-the-class)
-4. [How to Research Each Question](#how-to-research-each-question)
-5. [Tips for a Great Presentation](#tips-for-a-great-presentation)
-6. [What Happens Next](#what-happens-next)
-
----
 
 ## What You Will Do in This Lab
 
