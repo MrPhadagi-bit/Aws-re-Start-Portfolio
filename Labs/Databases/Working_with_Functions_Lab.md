@@ -236,3 +236,4 @@ You have successfully completed the **Working with Functions** lab.
 | `LENGTH()` | `LENGTH(str)` | Returns the length of a string in bytes |
 | `TRIM()` | `TRIM(str)` | Removes leading and trailing spaces from a string |
 | `DISTINCT()` | `DISTINCT(column)` | Returns only unique (different) values |
+![image]()
