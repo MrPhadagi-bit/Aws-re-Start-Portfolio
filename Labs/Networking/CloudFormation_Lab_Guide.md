@@ -18,13 +18,7 @@ This lab will require approximately **45 minutes** to complete.
 
 ---
 
-## Prerequisites
-
-- Access to the AWS Management Console
-- A text editor (not a word processor) for editing YAML files
-- The provided CloudFormation template file: `task1.yaml`
-
----
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/initial-template.png?raw=true)
 
 ## Task 1: Deploy a CloudFormation Stack
 
