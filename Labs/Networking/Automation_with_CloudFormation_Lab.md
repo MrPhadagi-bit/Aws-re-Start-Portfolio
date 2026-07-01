@@ -15,19 +15,11 @@ By the end of this lab, you will be able to:
 3. **Update** an existing CloudFormation stack by modifying its template.
 4. **Terminate** an AWS CloudFormation stack and its respective resources.
 
----
-
-## Prerequisites
-
-- An active AWS account with appropriate IAM permissions to create and manage CloudFormation stacks, VPCs, S3 buckets, and EC2 instances.
-- Basic understanding of YAML syntax (indentation and structure).
-- Access to the AWS Management Console.
-
----
-
 ## Duration
 
-⏱️ **Approximately 45 minutes**
+ **Approximately 45 minutes**
+
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/architecture.png?raw=true)
 
 ---
 
@@ -78,7 +70,7 @@ In this task, you will deploy a CloudFormation stack that creates a VPC, as illu
 
 1. Review the summary of all settings.
 2. Some resources are defined with **custom names**, which can lead to naming conflicts. CloudFormation will prompt you to acknowledge this.
-3. ✅ Check the acknowledgement box for custom names.
+3.  Check the acknowledgement box for custom names.
 4. Click **Create stack**.
 
 ### Step 1.6: Monitor Stack Creation
@@ -89,7 +81,7 @@ In this task, you will deploy a CloudFormation stack that creates a VPC, as illu
    - Any errors encountered
 3. Click the **Resources** tab to see resources being created. CloudFormation automatically determines the optimal creation order (e.g., VPC before subnet).
 4. Wait until the status changes to **`CREATE_COMPLETE`**.
-   > 💡 Click **Refresh** occasionally to update the display.
+   >  Click **Refresh** occasionally to update the display.
 
 > **Optional:** Navigate to the **VPC Console** to verify the `Lab` VPC was created, then return to CloudFormation.
 
@@ -261,4 +253,4 @@ When a CloudFormation stack is deleted, all resources that it created are automa
 
 ---
 
-*Lab Complete* ✅
+*Lab Complete* 
