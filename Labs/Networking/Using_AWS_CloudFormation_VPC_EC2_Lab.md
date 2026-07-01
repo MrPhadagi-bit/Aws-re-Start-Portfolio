@@ -6,20 +6,6 @@
 
 ---
 
-## Table of Contents
-
-1. [Lab Overview](#1-lab-overview)
-2. [Architecture Diagram](#2-architecture-diagram)
-3. [Lab Environment Setup](#3-lab-environment-setup)
-4. [CloudFormation Template](#4-cloudformation-template)
-5. [Deploying the Stack](#5-deploying-the-stack)
-6. [Validating the Deployment](#6-validating-the-deployment)
-7. [Troubleshooting](#7-troubleshooting)
-8. [Cleanup](#8-cleanup)
-9. [Appendix: Full Template Reference](#9-appendix-full-template-reference)
-
----
-
 ## 1. Lab Overview
 
 ### Objective
