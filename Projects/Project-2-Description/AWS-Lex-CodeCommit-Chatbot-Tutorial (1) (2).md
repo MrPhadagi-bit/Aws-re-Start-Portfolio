@@ -528,6 +528,7 @@ def response(event, dialog_action_type, message, session_attributes):
         "messages": [{"contentType": "PlainText", "content": message}],
     }
 
+```
 
 ### 10.5 Deploy the Function
 
