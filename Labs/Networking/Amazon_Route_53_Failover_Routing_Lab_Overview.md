@@ -6,20 +6,7 @@
 
 ---
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Architecture Overview](#architecture-overview)
-3. [Prerequisites](#prerequisites)
-4. [Objectives](#objectives)
-5. [Lab Tasks](#lab-tasks)
-   - [Task 1: Confirming the Cafe Websites](#task-1-confirming-the-cafe-websites)
-   - [Task 2: Configuring a Route 53 Health Check](#task-2-configuring-a-route-53-health-check)
-   - [Task 3: Configuring Route 53 Records](#task-3-configuring-route-53-records)
-   - [Task 4: Verifying the DNS Resolution](#task-4-verifying-the-dns-resolution)
-   - [Task 5: Verifying the Failover Functionality](#task-5-verifying-the-failover-functionality)
-6. [Conclusion](#conclusion)
-7. [Cleanup Notes](#cleanup-notes)
+![Imgaine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/StartingArchitecture%20(1).png?raw=true)
 
 ---
 
@@ -36,38 +23,8 @@ Your goal is to configure Route 53 so that:
 
 ## Architecture Overview
 
-```
-+-----------------------------------------------------------------------------+
-|                              AWS Cloud (us-west-2)                           |
-|                                                                             |
-|   +-------------------------+         +-------------------------+          |
-|   |  Availability Zone 1      |         |  Availability Zone 2      |          |
-|   |  (us-west-2a)             |         |  (us-west-2b)             |          |
-|   |                           |         |                           |          |
-|   |  +-------------------+   |         |  +-------------------+   |          |
-|   |  |  CafeInstance1    |   |         |  |  CafeInstance2    |   |          |
-|   |  |  (PRIMARY)        |   |         |  |  (SECONDARY)      |   |          |
-|   |  |  LAMP + Cafe App  |   |         |  |  LAMP + Cafe App  |   |          |
-|   |  |  IP: <PrimaryIP>  |   |         |  |  IP: <SecondaryIP>|   |          |
-|   |  +-------------------+   |         |  +-------------------+   |          |
-|   |           ^              |         |           ^              |          |
-|   +-----------+--------------+         +-----------+--------------+          |
-|               |                                    |                         |
-|               +------------------------------------+                         |
-|                            |                                               |
-|                    +-------+-------+                                       |
-|                    |   Route 53    |                                       |
-|                    |   Failover    |                                       |
-|                    |   Records     |                                       |
-|                    |               |                                       |
-|                    |  Health Check |---> SNS Email Alert                  |
-|                    |  (Primary)    |                                       |
-|                    +-------+-------+                                       |
-|                            |                                               |
-|                    www.XXXXXX_XXXXXXXXXX.vocareum.training                   |
-|                                                                             |
-+-----------------------------------------------------------------------------+
-```
+
+![Imgaine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/FinalArchitecture%20(1).png?raw=true)
 
 ### Traffic Flow
 
