@@ -31,7 +31,11 @@ After completing this lab, you should be able to do the following:
 
 This lab requires approximately **45 minutes** to complete.
 
+![Imgaine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/StartingArchitecture.png?raw=true)
+
 ---
+
+![Imgaine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/FinalArchitecture.png?raw=true)
 
 ## Lab Tasks
 
