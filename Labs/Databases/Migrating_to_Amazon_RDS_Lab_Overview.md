@@ -16,39 +16,9 @@ During the migration process, you build the required components, including two p
 
 The following diagram illustrates the topology of the café web application runtime environment **before** the migration:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        AWS Cloud                                │
-│                                                                 │
-│  ┌──────────────────────────────────────────────────────────┐   │
-│  │                    VPC: Cafe VPC                         │   │
-│  │              CIDR: 10.200.0.0/20                           │   │
-│  │                                                          │   │
-│  │   ┌──────────────────────────────────────────────────┐   │   │
-│  │   │           Public Subnet: 10.200.0.0/24           │   │   │
-│  │   │                                                  │   │   │
-│  │   │  ┌──────────────────────────────────────────┐    │   │   │
-│  │   │  │     CafeInstance (T3 Small)              │    │   │   │
-│  │   │  │  ┌──────────────────────────────────┐    │    │   │   │
-│  │   │  │  │  LAMP Stack Application          │    │    │   │   │
-│  │   │  │  │  ┌────────────┐  ┌──────────┐  │    │    │   │   │
-│  │   │  │  │  │  Web App   │  │ Local DB │  │    │    │   │   │
-│  │   │  │  │  │  (Apache)  │  │ (MariaDB)│  │    │    │   │   │
-│  │   │  │  │  └────────────┘  └──────────┘  │    │    │   │   │
-│  │   │  │  └──────────────────────────────────┘    │    │   │   │
-│  │   │  └──────────────────────────────────────────┘    │   │   │
-│  │   │                                                  │   │   │
-│  │   │  ┌──────────────────────────────────────────┐    │   │   │
-│  │   │  │     CLI Host Instance                    │    │   │   │
-│  │   │  │     (AWS CLI Administration)             │    │   │   │
-│  │   │  └──────────────────────────────────────────┘    │   │   │
-│  │   │                                                  │   │   │
-│  │   └──────────────────────────────────────────────────┘   │   │
-│  │                                                          │   │
-│  └──────────────────────────────────────────────────────────┘   │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+
+![Imgaine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/StartingArchitecture.png?raw=true)
+
 
 **Key characteristics of the starting architecture:**
 - The application database runs in an **Amazon EC2** Linux, Apache, MySQL, and PHP (**LAMP**) instance along with the application code.
@@ -61,46 +31,9 @@ The following diagram illustrates the topology of the café web application runt
 
 The following diagram illustrates the topology of the café web application runtime environment **after** the migration:
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                              AWS Cloud                                      │
-│                                                                             │
-│  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                        VPC: Cafe VPC                               │   │
-│  │                  CIDR: 10.200.0.0/20                                   │   │
-│  │                                                                      │   │
-│  │   ┌─────────────────────┐   ┌──────────────────────────────────┐   │   │
-│  │   │   Private Subnet 1  │   │      Public Subnet: 10.200.0.0/24 │   │   │
-│  │   │   10.200.2.0/23     │   │                                   │   │   │
-│  │   │                     │   │  ┌─────────────────────────────┐   │   │   │
-│  │   │  ┌───────────────┐  │   │  │   CafeInstance (T3 Small)  │   │   │   │
-│  │   │  │ CafeDBInstance│  │   │  │  ┌──────────────────────┐  │   │   │   │
-│  │   │  │  (MariaDB)    │  │   │  │  │   Web App (Apache)  │  │   │   │   │
-│  │   │  │  Amazon RDS   │  │   │  │  └──────────────────────┘  │   │   │   │
-│  │   │  │               │  │   │  └─────────────────────────────┘   │   │   │
-│  │   │  └───────────────┘  │   │                                   │   │   │
-│  │   │                     │   │  ┌─────────────────────────────┐   │   │   │
-│  │   └─────────────────────┘   │  │     CLI Host Instance        │   │   │   │
-│  │   ┌─────────────────────┐   │  │     (AWS CLI Administration) │   │   │   │
-│  │   │   Private Subnet 2  │   │  └─────────────────────────────┘   │   │   │
-│  │   │   10.200.10.0/23    │   │                                   │   │   │
-│  │   │   (Standby/HA)      │   └──────────────────────────────────┘   │   │
-│  │   └─────────────────────┘                                          │   │
-│  │                                                                      │   │
-│  │   ┌──────────────────────────────────────────────────────────────┐   │   │
-│  │   │              DB Subnet Group: CafeDB Subnet Group             │   │   │
-│  │   │         (Spans Private Subnet 1 & Private Subnet 2)           │   │   │
-│  │   └──────────────────────────────────────────────────────────────┘   │   │
-│  │                                                                      │   │
-│  │   ┌──────────────────────────────────────────────────────────────┐   │   │
-│  │   │         Security Group: CafeDatabaseSG (Port 3306)            │   │   │
-│  │   │         Allows MySQL traffic from CafeSecurityGroup only      │   │   │
-│  │   └──────────────────────────────────────────────────────────────┘   │   │
-│  │                                                                      │   │
-│  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+
+![Imgaine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/FinalArchitecture.png?raw=true)
+
 
 **Key characteristics of the final architecture:**
 - The local café database is migrated to an **Amazon RDS database** that resides **outside** the EC2 instance.
