@@ -6,35 +6,7 @@ Amazon Elastic Block Store (Amazon EBS) is a scalable, high-performance block-st
 
 ## Lab Architecture
 
-```
-┌─────────────────────────────────────────┐
-│           AWS Cloud                      │
-│  ┌─────────────────────────────┐        │
-│  │      EC2 Instance (Lab)     │        │
-│  │  ┌─────────────────────┐    │        │
-│  │  │  Root Volume (8 GiB)│    │        │
-│  │  │  /dev/nvme0n1p1     │    │        │
-│  │  └─────────────────────┘    │        │
-│  │  ┌─────────────────────┐    │        │
-│  │  │  New Volume (1 GiB) │    │        │
-│  │  │  /dev/sdb → /mnt/   │    │        │
-│  │  │       data-store    │    │        │
-│  │  └─────────────────────┘    │        │
-│  │  ┌─────────────────────┐    │        │
-│  │  │  Restored Volume    │    │        │
-│  │  │  /dev/sdc → /mnt/   │    │        │
-│  │  │       data-store2   │    │        │
-│  │  └─────────────────────┘    │        │
-│  └─────────────────────────────┘        │
-│              │                          │
-│              ▼                          │
-│  ┌─────────────────────────────┐        │
-│  │      EBS Snapshot           │        │
-│  │    (Stored in Amazon S3)    │        │
-│  │         My Snapshot         │        │
-│  └─────────────────────────────┘        │
-└─────────────────────────────────────────┘
-```
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/lab-scenario.png?raw=true)
 
 ---
 
