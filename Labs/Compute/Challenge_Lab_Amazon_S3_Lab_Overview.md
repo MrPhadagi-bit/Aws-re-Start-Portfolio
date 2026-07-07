@@ -4,36 +4,15 @@
 > **Duration:** ~45 minutes  
 > **Prerequisites:** AWS Management Console access, EC2 Instance Connect or SSH client
 
----
-
-## Table of Contents
-
-1. [Lab Objectives](#objectives)
-2. [Architecture Overview](#architecture-overview)
-3. [Task 1: Connecting to the CLI Host Instance](#task-1-connecting-to-the-cli-host-instance)
-4. [Task 2: Configuring the AWS CLI](#task-2-configuring-the-aws-cli)
-5. [Task 3: Finishing the Challenge](#task-3-finishing-the-challenge)
-   - [Step 3.1: Create an S3 Bucket](#step-31-create-an-s3-bucket)
-   - [Step 3.2: Upload an Object](#step-32-upload-an-object)
-   - [Step 3.3: Attempt to Access the Object via Browser](#step-33-attempt-to-access-the-object-via-browser)
-   - [Step 3.4: Make the Object Publicly Accessible](#step-34-make-the-object-publicly-accessible)
-   - [Step 3.5: Access the Object via Browser (Public)](#step-35-access-the-object-via-browser-public)
-   - [Step 3.6: List Bucket Contents via AWS CLI](#step-36-list-bucket-contents-via-aws-cli)
-6. [Expected Results & Validation](#expected-results--validation)
-7. [Troubleshooting](#troubleshooting)
-8. [Cleanup (Post-Lab)](#cleanup-post-lab)
-9. [References](#references)
-
----
 
 ## Objectives
 
 By the end of this challenge, you should be able to do the following:
 
-- ✅ Create an Amazon S3 bucket.
-- ✅ Upload an object into the bucket.
-- ✅ Access the object using a web browser.
-- ✅ List the contents of the S3 bucket using the AWS Command Line Interface (AWS CLI).
+-  Create an Amazon S3 bucket.
+-  Upload an object into the bucket.
+- Access the object using a web browser.
+-  List the contents of the S3 bucket using the AWS Command Line Interface (AWS CLI).
 
 ---
 
@@ -87,7 +66,7 @@ To start the challenge, you connect to the CLI Host instance that is already pro
    - On the **EC2 Instance Connect** tab, choose **Connect**.
    - A new browser tab opens with a terminal session to your EC2 instance.
 
-> **💡 Note:** If you prefer to use an SSH client (e.g., Terminal on macOS/Linux, PuTTY on Windows), see the AWS documentation: [Connect to Your Linux Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html).
+> ** Note:** If you prefer to use an SSH client (e.g., Terminal on macOS/Linux, PuTTY on Windows), see the AWS documentation: [Connect to Your Linux Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html).
 
 4. **Verify Connection**
    - Once connected, you should see a terminal prompt similar to:
@@ -132,7 +111,7 @@ Now that you are connected to the CLI Host instance, you must configure the AWS 
    ```
    You should see a JSON response with your Account, UserId, and ARN.
 
-> **⚠️ Security Tip:** The credentials file is stored at `~/.aws/credentials`. Never share or commit this file to version control.
+> ** Security Tip:** The credentials file is stored at `~/.aws/credentials`. Never share or commit this file to version control.
 
 ---
 
@@ -157,7 +136,7 @@ aws s3 mb s3://<your-unique-bucket-name>
 aws s3 mb s3://my-challenge-bucket-12345-uswest2
 ```
 
-> **📌 Naming Rules:**
+> ** Naming Rules:**
 > - Must be globally unique (no two AWS accounts can have the same bucket name).
 > - 3–63 characters long.
 > - Can contain only lowercase letters, numbers, dots (`.`), and hyphens (`-`).
@@ -169,7 +148,7 @@ aws s3 mb s3://my-challenge-bucket-12345-uswest2
 make_bucket: my-challenge-bucket-12345-uswest2
 ```
 
-**📸 Screenshot:** Capture the terminal showing the successful bucket creation.
+** Screenshot:** Capture the terminal showing the successful bucket creation.
 
 ---
 
@@ -197,7 +176,7 @@ aws s3 cp hello.html s3://my-challenge-bucket-12345-uswest2/
 upload: ./hello.html to s3://my-challenge-bucket-12345-uswest2/hello.html
 ```
 
-**📸 Screenshot:** Capture the terminal showing the successful upload.
+** Screenshot:** Capture the terminal showing the successful upload.
 
 ---
 
@@ -228,15 +207,15 @@ You should see an **Access Denied** XML error page:
 </Error>
 ```
 
-> **📝 Why?** By default, all S3 objects are **private**. Only the bucket owner has access until explicit permissions are granted.
+> ** Why?** By default, all S3 objects are **private**. Only the bucket owner has access until explicit permissions are granted.
 
-**📸 Screenshot:** Capture the browser showing the Access Denied error.
+** Screenshot:** Capture the browser showing the Access Denied error.
 
 ---
 
 ### Step 3.4: Make the Object Publicly Accessible
 
-> **⚠️ Important:** The requirement is to make the **object** public, **not the entire bucket**. Making a bucket public is a broader security risk and should generally be avoided in production.
+> ** Important:** The requirement is to make the **object** public, **not the entire bucket**. Making a bucket public is a broader security risk and should generally be avoided in production.
 
 #### Method A: Using the AWS CLI (Recommended)
 
@@ -281,7 +260,7 @@ aws s3api get-object-acl --bucket <your-bucket-name> --key hello.html
 
 You should see a `Grantee` with `URI` containing `AllUsers` and `Permission: READ`.
 
-**📸 Screenshot:** Capture the terminal showing the ACL update or bucket policy application.
+** Screenshot:** Capture the terminal showing the ACL update or bucket policy application.
 
 ---
 
@@ -306,9 +285,9 @@ The browser should now display the content of `hello.html`:
 Hello from S3!
 ```
 
-> **🎉 Success!** The object is now publicly accessible over the internet.
+> ** Success!** The object is now publicly accessible over the internet.
 
-**📸 Screenshot:** Capture the browser successfully displaying the object content.
+** Screenshot:** Capture the browser successfully displaying the object content.
 
 ---
 
@@ -331,14 +310,14 @@ aws s3 ls s3://my-challenge-bucket-12345-uswest2/
 2026-07-07 11:45:32         62 hello.html
 ```
 
-> **📊 Output Format:** `LastModified  Size(bytes)  ObjectKey`
+> ** Output Format:** `LastModified  Size(bytes)  ObjectKey`
 
 #### Alternative: Using `s3api` for Detailed JSON Output
 ```bash
 aws s3api list-objects --bucket <your-bucket-name>
 ```
 
-**📸 Screenshot:** Capture the terminal showing the bucket listing.
+** Screenshot:** Capture the terminal showing the bucket listing.
 
 ---
 
@@ -346,7 +325,7 @@ aws s3api list-objects --bucket <your-bucket-name>
 
 Use the following checklist to verify successful completion:
 
-| # | Task | Validation Criteria | ✅ |
+| # | Task | Validation Criteria |  |
 |---|------|---------------------|----|
 | 1 | S3 bucket created | `aws s3 mb` returns success | ☐ |
 | 2 | Object uploaded | Object appears in bucket listing | ☐ |
@@ -403,7 +382,7 @@ aws s3 rm s3://my-challenge-bucket-12345-uswest2/hello.html
 aws s3 rb s3://my-challenge-bucket-12345-uswest2
 ```
 
-> **💰 Cost Note:** S3 charges for storage, requests, and data transfer. Emptying and deleting the bucket prevents ongoing storage charges.
+> ** Cost Note:** S3 charges for storage, requests, and data transfer. Emptying and deleting the bucket prevents ongoing storage charges.
 
 ---
 
@@ -424,12 +403,12 @@ aws s3 rb s3://my-challenge-bucket-12345-uswest2
 
 ## Conclusion
 
-Congratulations! 🎉 You have successfully completed the Amazon S3 Challenge Lab. You have demonstrated the ability to:
+Congratulations!  You have successfully completed the Amazon S3 Challenge Lab. You have demonstrated the ability to:
 
-1. ✅ **Create an S3 bucket** using the AWS CLI.
-2. ✅ **Upload an object** into the bucket.
-3. ✅ **Access the object** using a web browser (after configuring public permissions).
-4. ✅ **List the contents** of the S3 bucket using the AWS CLI.
+1.  **Create an S3 bucket** using the AWS CLI.
+2.  **Upload an object** into the bucket.
+3.  **Access the object** using a web browser (after configuring public permissions).
+4.  **List the contents** of the S3 bucket using the AWS CLI.
 
 These foundational skills are essential for working with object storage in AWS and serve as building blocks for more advanced architectures involving static website hosting, data lakes, and backup strategies.
 
