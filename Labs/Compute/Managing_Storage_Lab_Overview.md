@@ -10,28 +10,7 @@ In the challenge section of this lab, you are challenged to sync the contents of
 
 ## Lab Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Amazon VPC                           │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │              Public Subnet                        │  │
-│  │                                                   │  │
-│  │   ┌──────────────┐      ┌──────────────┐         │  │
-│  │   │ Command Host │      │  Processor   │         │  │
-│  │   │  (EC2)       │──────│   (EC2)      │         │  │
-│  │   │  Admin Node  │      │  EBS Volume  │         │  │
-│  │   └──────────────┘      └──────────────┘         │  │
-│  │                                                   │  │
-│  └───────────────────────────────────────────────────┘  │
-│                          │                              │
-│                          ▼                              │
-│              ┌──────────────────┐                       │
-│              │   Amazon S3      │                       │
-│              │   Bucket         │                       │
-│              │   (File Storage) │                       │
-│              └──────────────────┘                       │
-└─────────────────────────────────────────────────────────┘
-```
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/architecture.png?raw=true)
 
 ### Environment Components
 
