@@ -8,6 +8,8 @@ In this lab, you create and configure an Amazon Simple Storage Service (Amazon S
 
 ## Architecture Overview
 
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/Architecture%20(1).png?raw=true)
+
 ### Component Architecture
 
 An AWS Identity and Access Management (IAM) user named `mediacouser`, which represents an external user at a media company, has been pre-created with the appropriate Amazon S3 permissions to allow the user to add, change, or delete images from the bucket. The necessary Amazon S3 permissions are reviewed for each user to make sure that access to the bucket is secure and appropriate for each role.
