@@ -1,18 +1,5 @@
 # Working with AWS CloudTrail: Activity Overview
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Activity Overview](#activity-overview)
-3. [Prerequisites](#prerequisites)
-4. [Architecture](#architecture)
-5. [Task 1: Modifying a Security Group and Observing the Website](#task-1)
-6. [Task 2: Creating a CloudTrail Log and Observing the Hacked Website](#task-2)
-7. [Task 3: Analyzing the CloudTrail Logs by Using grep](#task-3)
-8. [Task 4: Analyzing the CloudTrail Logs by Using Athena](#task-4)
-9. [Challenge: Identify the Hacker](#challenge)
-10. [Task 5: Analyzing the Hack Further and Improving Security](#task-5)
-11. [Conclusion](#conclusion)
-
 ---
 
 ## Introduction
@@ -61,43 +48,7 @@ Before starting this activity, ensure you have:
 
 The architectural diagram illustrates the setup that this activity uses:
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                           AWS Cloud                                  │
-│                                                                      │
-│   ┌─────────────────────────────────────────────────────────────┐    │
-│   │                    AWS Management Console                    │    │
-│   │                                                              │    │
-│   │   ┌─────────────┐    ┌─────────────┐    ┌──────────────┐    │    │
-│   │   │   CloudTrail │    │    EC2      │    │    Athena    │    │    │
-│   │   │   (Trail)   │───▶│  (Web Server)│    │  (Query Logs)│    │    │
-│   │   └──────┬──────┘    └──────┬──────┘    └──────────────┘    │    │
-│   │          │                  │                                │    │
-│   │          ▼                  ▼                                │    │
-│   │   ┌──────────────────────────────────────┐                   │    │
-│   │   │         S3 Bucket                   │                   │    │
-│   │   │    (monitoring#### - Log Storage)   │                   │    │
-│   │   └──────────────────────────────────────┘                   │    │
-│   │                                                              │    │
-│   └─────────────────────────────────────────────────────────────┘    │
-│                                                                      │
-│   ┌─────────────────────────────────────────────────────────────┐    │
-│   │              SSH Connection (Port 22)                      │    │
-│   │         ┌──────────┐          ┌──────────────┐             │    │
-│   │         │  Your IP  │◄────────►│ Café Web     │             │    │
-│   │         │  (/32)    │          │ Server (EC2) │             │    │
-│   │         └──────────┘          └──────────────┘             │    │
-│   └─────────────────────────────────────────────────────────────┘    │
-│                                                                      │
-│   ┌─────────────────────────────────────────────────────────────┐    │
-│   │              HTTP Access (Port 80)                          │    │
-│   │         ┌──────────┐          ┌──────────────┐             │    │
-│   │         │  Browser  │◄────────►│ Café Website │             │    │
-│   │         │  (Any IP) │          │  (/cafe/)    │             │    │
-│   │         └──────────┘          └──────────────┘             │    │
-│   └─────────────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────┘
-```
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/architecture%20(2).png?raw=true)
 
 ### Key Components
 
