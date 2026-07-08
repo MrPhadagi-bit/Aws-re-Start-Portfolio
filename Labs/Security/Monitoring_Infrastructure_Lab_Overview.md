@@ -10,18 +10,6 @@ This lab shows you how to use **Amazon CloudWatch Metrics**, **Amazon CloudWatch
 
 ---
 
-## Learning Objectives
-
-After completing this lab, you will be able to:
-
-- Use the **AWS Systems Manager Run Command** to install the **CloudWatch agent** on **Amazon EC2** instances
-- Monitor application logs using **CloudWatch agent** and **CloudWatch Logs**
-- Monitor system metrics using **CloudWatch agent** and **CloudWatch Metrics**
-- Create real-time notifications using **CloudWatch Events**
-- Track infrastructure compliance using **AWS Config**
-
----
-
 ## Duration
 
 This lab requires approximately **60 minutes** to complete.
