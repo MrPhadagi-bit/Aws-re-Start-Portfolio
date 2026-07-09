@@ -84,6 +84,7 @@ For this project, the traditional Amazon Lex approach was selected
 
 ### 3. Solution Overview
 The proposed solution is an interactive rule-based quiz chatbot developed using Amazon Lex. This solution follows a predefined conversational flow. The chatbot uses intents, sample utterances, slots, and preconfigured responses to guide learners through the quiz and provide immediate feedback based on their answers. The flow diagram of the solution is shown in the image below.
+
 <a href="./resources/AWSLexFlow.png">
   <img src="./resources/AWSLexFlow.png" 
        alt="AmazonLexFlow" 
@@ -162,6 +163,7 @@ While the project focused on a relatively simple educational chatbot, it highlig
 This section shows screenshots of the work done on the project and  AWS Lex Bot in action:
 
 ##### 3.6.1. Configuring the logic of the chatbot in AWS Lamda.
+
 <a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png">
   <img src="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png" 
        alt="BotLogicLambda" 
@@ -176,6 +178,7 @@ This section shows screenshots of the work done on the project and  AWS Lex Bot 
 </a>
 
 ##### 3.6.3. The User trying out the Chatbot
+
 <a href="./Amazon lex response/Screenshot 2026-07-05 120404.png">
   <img src="./Amazon lex response/Screenshot 2026-07-05 120404.png" 
        alt="UserBotConverse" 
