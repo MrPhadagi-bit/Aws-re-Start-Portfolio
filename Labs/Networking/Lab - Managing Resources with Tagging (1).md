@@ -8,7 +8,6 @@ This lab is divided into two main portions:
 
 **Challenge Portion:** You will be challenged to develop a solution to terminate instances that fail to implement specific tags required for security compliance.
 
----
 
 ## Objectives
 
@@ -26,7 +25,9 @@ After completing this lab, you will be able to:
 
 **Estimated Time:** Approximately 45 minutes to complete
 
----
+
+![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/lab-7-less-instances.png?raw=true)
+
 
 ## Scenario
 
