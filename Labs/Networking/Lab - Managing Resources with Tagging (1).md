@@ -564,11 +564,11 @@ Return to the EC2 Management Console and verify that the two instances you remov
 
 Congratulations! You have successfully completed the lab. You have:
 
-✅ Connected to the CommandHost and authenticated with AWS  
-✅ Used AWS CLI commands with JMESPath queries to find resources by tags  
-✅ Modified tags on EC2 instances using automated scripts  
-✅ Stopped and started resources based on tag criteria  
-✅ Implemented and executed a security compliance automation workflow  
+ Connected to the CommandHost and authenticated with AWS  
+ Used AWS CLI commands with JMESPath queries to find resources by tags  
+ Modified tags on EC2 instances using automated scripts  
+ Stopped and started resources based on tag criteria  
+ Implemented and executed a security compliance automation workflow  
 
 ### Key Takeaways
 
