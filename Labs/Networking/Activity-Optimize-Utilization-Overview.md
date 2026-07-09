@@ -27,11 +27,11 @@ This optimization activity demonstrates practical cost management strategies fol
 
 After completing this activity, you will be able to:
 
-- ✅ Optimize an Amazon Elastic Compute Cloud (Amazon EC2) instance to reduce costs
-- ✅ Use the AWS Pricing Calculator to estimate AWS service costs
-- ✅ Identify and implement cost-saving opportunities in AWS infrastructure
-- ✅ Use the AWS Command Line Interface (AWS CLI) to manage EC2 instances
-- ✅ Calculate projected cost savings from resource optimization
+-  Optimize an Amazon Elastic Compute Cloud (Amazon EC2) instance to reduce costs
+-  Use the AWS Pricing Calculator to estimate AWS service costs
+-  Identify and implement cost-saving opportunities in AWS infrastructure
+-  Use the AWS Command Line Interface (AWS CLI) to manage EC2 instances
+-  Calculate projected cost savings from resource optimization
 
 ---
 
@@ -158,12 +158,12 @@ By completing this activity, you will achieve significant cost reductions:
 
 ## Important Notes
 
-⚠️ **Pricing Information**
+ **Pricing Information**
 - Pricing examples shown in this activity are current as of April 2020
 - Refer to the official AWS website for current pricing by service
 - Actual costs may vary based on region, usage patterns, and current pricing models
 
-ℹ️ **Regional Considerations**
+ **Regional Considerations**
 - All resources should be deployed in the same region
 - Note the region where instances are running (e.g., us-east-1, eu-west-2)
 - Regional pricing may differ
@@ -174,12 +174,12 @@ By completing this activity, you will achieve significant cost reductions:
 
 Upon successful completion of this activity, you will have:
 
-- ✅ Successfully removed the decommissioned local database from the Café instance
-- ✅ Downsized the EC2 instance from t3.small to t3.micro
-- ✅ Verified that the Café web application remains functional after optimization
-- ✅ Calculated cost estimates using AWS Pricing Calculator
-- ✅ Documented projected monthly cost savings of over $10
-- ✅ Demonstrated practical knowledge of AWS cost optimization
+-  Successfully removed the decommissioned local database from the Café instance
+-  Downsized the EC2 instance from t3.small to t3.micro
+-  Verified that the Café web application remains functional after optimization
+-  Calculated cost estimates using AWS Pricing Calculator
+-  Documented projected monthly cost savings of over $10
+-  Demonstrated practical knowledge of AWS cost optimization
 
 ---
 
