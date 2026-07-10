@@ -85,11 +85,8 @@ For this project, the traditional Amazon Lex approach was selected
 ### 3. Solution Overview
 The proposed solution is an interactive rule-based quiz chatbot developed using Amazon Lex. This solution follows a predefined conversational flow. The chatbot uses intents, sample utterances, slots, and preconfigured responses to guide learners through the quiz and provide immediate feedback based on their answers. The flow diagram of the solution is shown in the image below.
 
-<a href="./resources/AWSLexFlow.png">
-  <img src="./resources/AWSLexFlow.png" 
-       alt="AmazonLexFlow" 
-       style="width: 100%; max-width: 900px; height: auto;">
-</a>
+
+![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/resources/AWSLexFlow.png)
 
 
 When a learner starts the chatbot, they are welcomed and introduced to the quiz. The chatbot then asks a series of Amazon S3 questions, one at a time. After each response, the chatbot evaluates the answer against predefined correct answers, informs the learner whether their answer is correct or incorrect, and updates their score. Once all questions have been completed, the chatbot displays the learner's final score and offers the option to retake the quiz or end the conversation.
