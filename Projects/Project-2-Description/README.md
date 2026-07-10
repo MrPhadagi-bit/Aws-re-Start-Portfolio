@@ -167,7 +167,6 @@ This section shows screenshots of the work done on the project and  AWS Lex Bot 
 ##### 3.6.3. The User trying out the Chatbot
 
 ![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/Amazon%20lex%20response/Screenshot%202026-07-05%20120404.png)
-
 ---
 
 ### 4. Group 6 Tasks Delegation
