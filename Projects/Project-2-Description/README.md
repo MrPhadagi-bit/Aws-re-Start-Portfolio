@@ -93,11 +93,8 @@ When a learner starts the chatbot, they are welcomed and introduced to the quiz.
 
 The architecture of the AWS solution is displayed below:
 
-<a href="./resources/AWSLexArchDiag01.png">
-  <img src="./resources/AWSLexArchDiag01.png" 
-       alt="AmazonLexArchDiag" 
-       style="width: 100%; max-width: 900px; height: auto;">
-</a>
+![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/resources/AWSLexArchDiag01.png)
+
 As illustrated in the architecture diagram, learners or employees interact with the chatbot through the internet using a web interface or an application integrated with Amazon Lex. User messages are sent securely over HTTPS to Amazon Lex, which interprets the learner's intent and manages the conversation.
 
 **AWS Lambda** function is invoked whenever **business logic** is required—such as validating quiz answers, determining the next question, managing the learner's progress, or calculating the final score. The Lambda function processes the request and returns the appropriate response to Amazon Lex, which then presents it to the learner.
