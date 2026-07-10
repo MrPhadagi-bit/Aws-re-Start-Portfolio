@@ -158,11 +158,7 @@ This section shows screenshots of the work done on the project and  AWS Lex Bot 
 
 ##### 3.6.1. Configuring the logic of the chatbot in AWS Lamda.
 
-<a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png">
-  <img src="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png" 
-       alt="BotLogicLambda" 
-       style="width: 100%; max-width: 900px; height: auto;">
-</a>
+![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/resources/amazon%20lex%20screenshot/Screenshot%202026-07-04%20130246.png)
 
 ##### 3.6.2. The intents that were added for the chatbot
 <a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 131355.png">
