@@ -7,7 +7,7 @@ This folder contains portfolio projects that apply AWS re/Start concepts in prac
 | # | Project | Status | Main Focus |
 |---|---|---|---|
 | 01 | [AWS Static Web Hosting](./Aws%20static%20web%20hosting/) | Completed | Hosting a static restaurant website with Amazon S3 and documenting AWS migration benefits. |
-| 02 | [Project 2 Description](./Project-2-Description/) | In progress | Placeholder for the next AWS portfolio project. |
+| 02 | [Amazon Lex](./Amazon%20Lex/) | Completed | Building an Amazon Lex chatbot with AWS Lambda logic and documented chatbot workflow. |
 
 ## Project 01: AWS Static Web Hosting
 
@@ -38,9 +38,9 @@ The first project is based on a restaurant-style website called **Zani Eatery**.
 - Explaining migration benefits for a small business use case
 - Identifying future improvements using additional AWS services
 
-## Project 02: In Progress
+## Project 02: Amazon Lex
 
-The second project folder is reserved for the next portfolio project. It currently includes a starter README with suggested documentation sections such as overview, tools used, architecture, completed steps, challenges, and lessons learned.
+The second project documents an Amazon Lex chatbot project. It includes the business context, chatbot requirements, solution overview, AWS service usage, implementation notes, screenshots, lessons learned, and team contributions.
 
 ## Recommended Project Documentation Format
 

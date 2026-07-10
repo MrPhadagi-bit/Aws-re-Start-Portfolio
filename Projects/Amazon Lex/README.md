@@ -1,4 +1,4 @@
-# AWS-re-Start-Lex-Chatbot-Project
+# Amazon Lex
 
 ## Authors
 ---
