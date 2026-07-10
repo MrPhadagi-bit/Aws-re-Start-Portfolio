@@ -42,6 +42,33 @@ The first project is based on a restaurant-style website called **Zani Eatery**.
 
 The second project documents an Amazon Lex chatbot project. It includes the business context, chatbot requirements, solution overview, AWS service usage, implementation notes, screenshots, lessons learned, and team contributions.
 
+### What It Includes
+
+- Amazon Lex chatbot project documentation
+- Business and functional requirements for a learning quiz chatbot
+- Architecture and workflow explanation using Amazon Lex, AWS Lambda, IAM, and CloudWatch
+- Cost estimate for a small chatbot deployment
+- Screenshots showing chatbot setup and testing
+- Lessons learned and team contribution details
+
+### AWS Services And Concepts
+
+| Area | Details |
+|---|---|
+| Amazon Lex | Conversational chatbot interface for a quiz experience |
+| AWS Lambda | Business logic for quiz flow, validation, scoring, and responses |
+| IAM | Secure permissions between Amazon Lex and Lambda |
+| CloudWatch Logs | Monitoring and troubleshooting Lambda execution |
+| Serverless architecture | Managed services with low operational overhead |
+
+### Skills Demonstrated
+
+- Designing a conversational chatbot workflow
+- Defining chatbot requirements and user interaction flows
+- Explaining serverless AWS architecture
+- Estimating cloud service costs
+- Documenting project outcomes for a technical portfolio
+
 ## Recommended Project Documentation Format
 
 Use this structure when adding new projects:

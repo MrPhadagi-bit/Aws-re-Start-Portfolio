@@ -1,5 +1,7 @@
 # Amazon Lex
 
+This project demonstrates how Amazon Lex can be used to build a conversational quiz chatbot for cloud learners. The chatbot is designed to guide users through AWS-related questions, validate answers, track progress, calculate scores, and provide a simple learning experience using serverless AWS services.
+
 ## Authors
 ---
 <details>
@@ -20,7 +22,7 @@
 ---
 
 ### Introduction
-The aim of this project is to design a chatbot using AWS Lex. 
+The aim of this project is to design a chatbot using Amazon Lex.
 
 ---
 
@@ -78,7 +80,7 @@ Originally, Amazon Lex was designed around Natural Language Understanding (NLU),
 
 Amazon Lex has introduced support for Large Language Models (LLMs) through integration with services such as Amazon Bedrock, allowing developers to build more intelligent and flexible conversational experiences.
 
-For this project, the traditional Amazon Lex approach was selected
+For this project, the traditional Amazon Lex approach was selected.
 
 ---
 
@@ -89,7 +91,7 @@ The proposed solution is an interactive rule-based quiz chatbot developed using 
 ![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/resources/AWSLexFlow.png)
 
 
-When a learner starts the chatbot, they are welcomed and introduced to the quiz. The chatbot then asks a series of Amazon S3 questions, one at a time. After each response, the chatbot evaluates the answer against predefined correct answers, informs the learner whether their answer is correct or incorrect, and updates their score. Once all questions have been completed, the chatbot displays the learner's final score and offers the option to retake the quiz or end the conversation.
+When a learner starts the chatbot, they are welcomed and introduced to the quiz. The chatbot then asks a series of AWS CodeCommit questions, one at a time. After each response, the chatbot evaluates the answer against predefined correct answers, informs the learner whether each answer is correct or incorrect, and updates the score. Once all questions have been completed, the chatbot displays the learner's final score and offers the option to retake the quiz or end the conversation.
 
 The architecture of the AWS solution is displayed below:
 
@@ -97,7 +99,7 @@ The architecture of the AWS solution is displayed below:
 
 As illustrated in the architecture diagram, learners or employees interact with the chatbot through the internet using a web interface or an application integrated with Amazon Lex. User messages are sent securely over HTTPS to Amazon Lex, which interprets the learner's intent and manages the conversation.
 
-**AWS Lambda** function is invoked whenever **business logic** is required—such as validating quiz answers, determining the next question, managing the learner's progress, or calculating the final score. The Lambda function processes the request and returns the appropriate response to Amazon Lex, which then presents it to the learner.
+An **AWS Lambda** function is invoked whenever **business logic** is required, such as validating quiz answers, determining the next question, managing the learner's progress, or calculating the final score. The Lambda function processes the request and returns the appropriate response to Amazon Lex, which then presents it to the learner.
 
 **IAM** is used to control access between Amazon Lex and AWS Lambda using IAM permissions to ensure that only the authorised chatbot can invoke the Lambda function. Throughout execution, Lambda automatically sends logs to **Amazon CloudWatch Logs**, allowing developers to monitor chatbot activity, identify errors, and troubleshoot issues during development and after deployment.
 
@@ -137,7 +139,7 @@ Depending on the **organisation's requirements**, the **Group 6** cloud practiti
 #### 3.4 Lessons Learnt
 While the project focused on a relatively simple educational chatbot, it highlighted several important lessons about cloud-native development, managed services, and modern application architecture.
 
-- One of the key lessons learnt was the value of using managed cloud services. Rather than building a chatbot framework from scratch, Amazon Lex provides built-in capabilities for natural language understanding, intent recognition, and conversation management. Similar with AWS Lambda.
+- One of the key lessons learnt was the value of using managed cloud services. Rather than building a chatbot framework from scratch, Amazon Lex provides built-in capabilities for natural language understanding, intent recognition, and conversation management. AWS Lambda also simplifies the backend logic by running code without requiring server management.
 
 - A common misconception is that cloud solutions are expensive and are only suitable for large organisations. This project demonstrated that many AWS services operate on a pay-as-you-use pricing model, making them affordable even for students, startups, and small businesses. This shows that organisations can build professional, scalable applications without making significant upfront investments in servers or infrastructure.
 
@@ -153,8 +155,8 @@ While the project focused on a relatively simple educational chatbot, it highlig
 - **Managing Quiz Logic**: Although the chatbot itself was relatively simple, managing quiz progression, score calculation, and branching logic required careful consideration. Separating these responsibilities into AWS Lambda simplified the overall chatbot design and improved maintainability.
 - **Understanding AWS Architecture**: Another challenge was distinguishing between a conversation flow diagram and a cloud architecture diagram. While both describe the system, they communicate different aspects of the solution. This highlighted the importance of selecting the appropriate type of diagram when **documenting** cloud-based applications.
 
-#### 3.6 AWS Lex In Action
-This section shows screenshots of the work done on the project and  AWS Lex Bot in action:
+#### 3.6 Amazon Lex In Action
+This section shows screenshots of the work done on the project and the Amazon Lex bot in action:
 
 ##### 3.6.1. Configuring the logic of the chatbot in AWS Lamda.
 
