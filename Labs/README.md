@@ -11,7 +11,7 @@ This folder contains hands-on labs and practice exercises completed during the A
 | [Linux](./Linux/) | 16 | Linux CLI, files, permissions, users, groups, processes, services, logs, package management, and bash scripting. |
 | [Python](./Python/) | 3 | Python basics, Hello World, strings, numeric data types, and beginner programming practice. |
 | [Databases](./Databases/) | 4 | SQL basics, table operations, selecting data, and insert, update, and delete statements. |
-| [Security](./Security/) | 7 | IAM, encryption, monitoring, vulnerability assessment, patching, malware protection, and AWS security services. |
+| [Security](./Security/) | 8 | IAM, encryption, monitoring, vulnerability assessment, patching, malware protection, and AWS security services. |
 
 ## Recommended Review Path
 
