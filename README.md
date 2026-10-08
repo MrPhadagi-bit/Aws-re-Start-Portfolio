@@ -17,16 +17,7 @@ Here you will find:
 - **Certifications and badges** earned along the way
 - A growing record of practical cloud skills
 
-## Table of Contents
 
-- [Getting Started](#getting-started)
-- [What I'm Learning](#what-im-learning)
-- [Repository Structure](#repository-structure)
-- [Labs](#labs)
-- [Projects](#projects)
-- [Certifications and Badges](#certifications-and-badges)
-- [Goals](#goals)
-- [Connect](#connect)
 
 ## Getting Started
 
